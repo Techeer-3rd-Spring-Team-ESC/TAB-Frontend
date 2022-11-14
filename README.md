@@ -5,14 +5,21 @@
     ```
     git clone https://github.com/Techeer3-Spring-Study/TAB-Frontend.git
     ```
+
+2. node module install
     
-2. Android run
+    ```
+   npm install
+    ```
+
+
+3. Android run
     
     ```
     npm run android
     ```
     
-3. iOS run
+4. iOS run
     
     ```
     cd ios
