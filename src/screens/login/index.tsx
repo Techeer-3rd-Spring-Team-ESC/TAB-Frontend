@@ -4,15 +4,15 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
 
-type authScreenProp = StackNavigationProp<RootStackParamList, 'Auth'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 function AuthScreen() {
-  const navigation = useNavigation<authScreenProp>();
+  const navigation = useNavigation<loginScreenProp>();
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Auth Screen</Text>
-      <Button title="Login" onPress={() => navigation.navigate('Main')} />
+      <Text>로그인 화면</Text>
+      <Button title="로그인하기" onPress={() => navigation.navigate('Main')} />
     </View>
   );
 }

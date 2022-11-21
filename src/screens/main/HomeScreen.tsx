@@ -17,8 +17,7 @@ function HomeScreen() {
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button title="Login" onPress={() => navigation.navigate('Auth')} />
+      <Text>홈 화면</Text>
     </View>
   );
 }
