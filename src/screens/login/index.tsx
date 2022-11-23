@@ -1,13 +1,9 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet, TextInput} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../RootStackParams';
-
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
+import LoginButton from '../../components/LoginButton';
+import ForgotButton from '../../components/ForgotButton';
 
 function LoginScreen() {
-  const navigation = useNavigation<loginScreenProp>();
 
   const styles = StyleSheet.create({
     center: {
@@ -24,15 +20,17 @@ function LoginScreen() {
 
     logintext: {
       fontFamily: 'GmarketSansTTFBold',
-      fontSize: 60,
-      alignItems : "center"
+      fontSize: 30,
+      textAlign : "center",
+      color: "black"
     },
 
     idbox: {
-      marginTop: 40,
+      marginTop: 20,
       marginLeft: 20,
       marginRight: 20,
-      fontSize: 30,
+      fontFamily: 'GmarketSansTTFLight',
+      fontSize: 10,
       paddingHorizontal: 10,
       borderRadius: 10,
       borderColor: 'gray',
@@ -43,7 +41,8 @@ function LoginScreen() {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      fontSize: 30,
+      fontFamily: 'GmarketSansTTFLight',
+      fontSize: 10,
       paddingHorizontal: 10,
       borderRadius: 10,
       borderColor: 'gray',
@@ -54,6 +53,7 @@ function LoginScreen() {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
+      fontFamily: 'GmarketSansTTFLight',
       fontSize: 30,
     },
 
@@ -63,7 +63,6 @@ function LoginScreen() {
       marginRight: 20,
       alignItems : "center",
       fontSize: 30,
-      color: 'green',
       border: "none"
     }
 
@@ -72,26 +71,17 @@ function LoginScreen() {
   return (
     <View>
       <View style={styles.image}></View>
-      <View style={styles.logintext}>
-        <Text>로그인</Text>
-      </View>
-      <View style={styles.idbox}>
-        <TextInput>아이디</TextInput>
-      </View>
-      <View style={styles.pwbox}>
-        <TextInput>비밀번호</TextInput>
-      </View>
-      <View style={styles.loginbox}>
-        <Button 
-          title="로그인하기" 
-          color='#2BC63B'
-          onPress={() => navigation.navigate('Main')} />
-      </View>
-      <View style={styles.missing}>
-        <Button 
-            title="계정을 잊으셨나요?"
-            onPress={() => navigation.navigate('Main')} />
-      </View>
+      <Text style = {styles.logintext}>
+        로그인
+      </Text>
+      <TextInput style={styles.idbox}>
+        아이디
+      </TextInput>
+      <TextInput style={styles.pwbox}>
+        비밀번호
+      </TextInput>
+      <LoginButton/>
+      <ForgotButton/>
     </View>
   );
 }

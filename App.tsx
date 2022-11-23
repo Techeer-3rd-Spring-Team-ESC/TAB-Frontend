@@ -12,6 +12,7 @@
  import {createStackNavigator} from '@react-navigation/stack';
  import MainScreen from './src/screens/main';
  import LoginScreen from './src/screens/login';
+ import SignUpScreen from './src/screens/signup';
  import {RootStackParamList} from './src/screens/RootStackParams';
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -78,6 +79,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
