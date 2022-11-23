@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text} from "react-native";
+import { TextInput, Text} from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../screens/RootStackParams';
@@ -10,26 +10,23 @@ const LoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();
     
     return (
-        <TouchableOpacity
+        <TextInput
             style={{ 
-            marginTop: 20,
-            marginLeft: 20,
             marginRight: 20,
             padding: 8,
-            backgroundColor: '#2BC63B',
+            backgroundColor: 'white',
+            borderColor: '#FFFFF',
             borderRadius: 8,
             }}
-            onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: 'white', 
-                fontSize: 20,
-                fontFamily: 'GmarketSansTTFMedium',
-                textAlign: 'center'
+                color: 'gray', 
+                fontSize: 15,
+                fontFamily: 'GmarketSansTTFLight',
                 }}>
-                로그인
+                아이디
             </Text>
-        </TouchableOpacity>
+        </TextInput>
     );
 };
 

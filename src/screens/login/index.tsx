@@ -1,18 +1,21 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 import LoginButton from '../../components/LoginButton';
 import ForgotButton from '../../components/ForgotButton';
+import InputboxID from '../../components/InputboxID';
+import InputboxPW from '../../components/InputboxPW';
 
 function LoginScreen() {
 
   const styles = StyleSheet.create({
-    center: {
-
+    container: {
+      height: 1000,
+      backgroundColor: 'white'
     },
 
     image: {
       width: 500,
-      height : 200,
+      height: 200,
       marginTop: 20,
       marginBottom: 20,
       backgroundColor: 'powderblue'
@@ -21,7 +24,7 @@ function LoginScreen() {
     logintext: {
       fontFamily: 'GmarketSansTTFBold',
       fontSize: 30,
-      textAlign : "center",
+      textAlign: "center",
       color: "black"
     },
 
@@ -69,17 +72,17 @@ function LoginScreen() {
   });
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.image}></View>
       <Text style = {styles.logintext}>
         로그인
       </Text>
-      <TextInput style={styles.idbox}>
-        아이디
-      </TextInput>
-      <TextInput style={styles.pwbox}>
-        비밀번호
-      </TextInput>
+      <View style={styles.idbox}>
+        <InputboxID/>
+      </View>
+      <View style={styles.pwbox}>
+        <InputboxPW/>
+      </View>
       <LoginButton/>
       <ForgotButton/>
     </View>
