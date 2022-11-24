@@ -1,7 +1,7 @@
 import React from "react";
 import { TextInput, Text} from "react-native";
 
-const LoginButton = () => {
+const InputboxID = () => {
     
     return (
         <TextInput
@@ -12,7 +12,7 @@ const LoginButton = () => {
             borderColor: '#FFFFF',
             borderRadius: 8,
             }}
-            placeholder="아이디"
+            placeholder="이메일"
         >
             <Text style={{ 
                 color: 'gray', 
@@ -24,4 +24,4 @@ const LoginButton = () => {
     );
 };
 
-export default LoginButton;
+export default InputboxID;

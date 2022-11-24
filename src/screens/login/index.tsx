@@ -17,30 +17,19 @@ function LoginScreen() {
       width: 500,
       height: 200,
       marginTop: 20,
-      marginBottom: 20,
+      marginBottom: 30,
       backgroundColor: 'powderblue'
     },
 
     logintext: {
+      marginBottom: 20,
       fontFamily: 'GmarketSansTTFBold',
       fontSize: 30,
       textAlign: "center",
       color: "black"
     },
 
-    idbox: {
-      marginTop: 20,
-      marginLeft: 20,
-      marginRight: 20,
-      fontFamily: 'GmarketSansTTFLight',
-      fontSize: 10,
-      paddingHorizontal: 10,
-      borderRadius: 10,
-      borderColor: 'gray',
-      borderWidth: 1
-    },
-
-    pwbox: {
+    inputbox: {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
@@ -77,11 +66,10 @@ function LoginScreen() {
       <Text style = {styles.logintext}>
         로그인
       </Text>
-      <View style={styles.idbox}>
-        
+      <View style={styles.inputbox}>
         <InputboxID/>
       </View>
-      <View style={styles.pwbox}>
+      <View style={styles.inputbox}>
         <InputboxPW/>
       </View>
       <LoginButton/>

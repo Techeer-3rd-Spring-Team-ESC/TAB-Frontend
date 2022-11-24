@@ -1,7 +1,7 @@
 import React from "react";
 import { TextInput, Text} from "react-native";
 
-const InputboxPW = () => {
+const InputboxPWcheck = () => {
     
     return (
         <TextInput
@@ -12,7 +12,7 @@ const InputboxPW = () => {
             borderColor: '#FFFFF',
             borderRadius: 8,
             }}
-            placeholder="비밀번호"
+            placeholder="비밀번호 확인"
         >
             <Text style={{ 
                 color: 'gray', 
@@ -24,4 +24,4 @@ const InputboxPW = () => {
     );
 };
 
-export default InputboxPW;
+export default InputboxPWcheck;

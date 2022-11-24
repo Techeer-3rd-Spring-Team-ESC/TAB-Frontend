@@ -1,7 +1,7 @@
 import React from "react";
 import { TextInput, Text} from "react-native";
 
-const LoginButton = () => {
+const InputboxPW = () => {
     
     return (
         <TextInput
@@ -24,4 +24,4 @@ const LoginButton = () => {
     );
 };
 
-export default LoginButton;
+export default InputboxPW;
