@@ -12,10 +12,10 @@ const SignUpButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 20,
+            marginTop: 30,
             marginLeft: 20,
             marginRight: 20,
-            padding: 8,
+            padding: 15,
             backgroundColor: '#2BC63B',
             borderRadius: 8,
             }}

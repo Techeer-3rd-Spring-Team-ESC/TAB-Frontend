@@ -6,6 +6,7 @@ const InputboxPW = () => {
     return (
         <TextInput
             style={{ 
+            marginTop: 4,
             marginRight: 20,
             padding: 8,
             backgroundColor: 'white',

@@ -5,7 +5,8 @@ const InputboxIDcheck = () => {
     
     return (
         <TextInput
-            style={{ 
+            style={{
+            marginTop: 4,  
             marginRight: 20,
             padding: 8,
             backgroundColor: 'white',
