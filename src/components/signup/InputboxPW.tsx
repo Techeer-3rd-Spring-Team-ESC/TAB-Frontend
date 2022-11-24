@@ -1,13 +1,7 @@
 import React from "react";
 import { TextInput, Text} from "react-native";
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../screens/RootStackParams';
-
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 const LoginButton = () => {
-    const navigation = useNavigation<loginScreenProp>();
     
     return (
         <TextInput
@@ -18,13 +12,13 @@ const LoginButton = () => {
             borderColor: '#FFFFF',
             borderRadius: 8,
             }}
+            placeholder="비밀번호"
         >
             <Text style={{ 
                 color: 'gray', 
                 fontSize: 15,
                 fontFamily: 'GmarketSansTTFLight',
                 }}>
-                비밀번호
             </Text>
         </TextInput>
     );

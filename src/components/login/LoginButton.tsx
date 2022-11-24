@@ -2,35 +2,35 @@ import React from "react";
 import { TouchableOpacity, Text} from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../screens/RootStackParams';
+import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
-const ForgotButton = () => {
+const LoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();
     
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 10,
+            marginTop: 20,
             marginLeft: 20,
             marginRight: 20,
             padding: 8,
-            alignItems: "center",
+            backgroundColor: '#2BC63B',
             borderRadius: 8,
             }}
-            onPress={() => navigation.navigate('SignUp')}
+            onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: 'green', 
-                fontSize: 15,
-                textAlign: "center",
-                fontFamily: 'GmarketSansTTFLight',
+                color: 'white', 
+                fontSize: 20,
+                fontFamily: 'GmarketSansTTFMedium',
+                textAlign: 'center'
                 }}>
-                계정을 잊으셨나요?
+                로그인
             </Text>
         </TouchableOpacity>
     );
 };
 
-export default ForgotButton;
+export default LoginButton;

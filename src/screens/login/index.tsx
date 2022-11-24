@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
-import LoginButton from '../../components/LoginButton';
-import ForgotButton from '../../components/ForgotButton';
-import InputboxID from '../../components/InputboxID';
-import InputboxPW from '../../components/InputboxPW';
+import LoginButton from '../../components/login/LoginButton';
+import ForgotButton from '../../components/login/ForgotButton';
+import InputboxID from '../../components/login/InputboxID';
+import InputboxPW from '../../components/login/InputboxPW';
 
 function LoginScreen() {
 
@@ -78,6 +78,7 @@ function LoginScreen() {
         로그인
       </Text>
       <View style={styles.idbox}>
+        
         <InputboxID/>
       </View>
       <View style={styles.pwbox}>
