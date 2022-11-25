@@ -4,9 +4,9 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
 
-const ForgotButton = () => {
+const KakaoLoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();
     
     return (
@@ -15,22 +15,23 @@ const ForgotButton = () => {
             marginTop: 10,
             marginLeft: 20,
             marginRight: 20,
-            padding: 8,
-            alignItems: "center",
+            padding: 12,
+            backgroundColor: '#F7E600',
             borderRadius: 8,
+            borderColor: 'black'
             }}
-            onPress={() => navigation.navigate('SignUp')}
+            onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: 'green', 
+                color: 'black', 
                 fontSize: 15,
-                textAlign: "center",
-                fontFamily: 'GmarketSansTTFLight',
+                fontFamily: 'GmarketSansTTFMedium',
+                textAlign: 'center'
                 }}>
-                계정이 없으신가요?
+                카카오톡으로 시작하기
             </Text>
         </TouchableOpacity>
     );
 };
 
-export default ForgotButton;
+export default KakaoLoginButton;

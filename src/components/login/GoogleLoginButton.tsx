@@ -4,33 +4,35 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
 
-const LoginButton = () => {
+const GoogleLoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();
     
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 20,
+            marginTop: 10,
             marginLeft: 20,
             marginRight: 20,
-            padding: 8,
-            backgroundColor: '#2BC63B',
+            padding: 12,
+            backgroundColor: 'white',
             borderRadius: 8,
+            borderWidth: 1, 
+            borderColor: 'black'
             }}
             onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: 'white', 
-                fontSize: 20,
+                color: 'black', 
+                fontSize: 15,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'
                 }}>
-                로그인
+                구글로 시작하기
             </Text>
         </TouchableOpacity>
     );
 };
 
-export default LoginButton;
+export default GoogleLoginButton;

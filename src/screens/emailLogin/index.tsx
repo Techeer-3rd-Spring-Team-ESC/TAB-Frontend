@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import EmailLoginButton from '../../components/login/EmailLoginButton';
-import KakaoLoginButton from '../../components/login/KakaoLoginButton';
-import GoogleLoginButton from '../../components/login/GoogleLoginButton';
-import GithubLoginButton from '../../components/login/GithubLoginButton';
-import ForgotButton from '../../components/login/ForgotButton';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
+import LoginButton from '../../components/emailLogin/LoginButton';
+import ForgotButton from '../../components/emailLogin/ForgotButton';
+import InputboxID from '../../components/emailLogin/InputboxID';
+import InputboxPW from '../../components/emailLogin/InputboxPW';
 
-
-function LoginScreen() {
+function EmailLoginScreen() {
 
   const styles = StyleSheet.create({
     container: {
@@ -47,7 +45,8 @@ function LoginScreen() {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      borderColor: "black"
+      fontFamily: 'GmarketSansTTFLight',
+      fontSize: 30,
     },
 
     missing:{
@@ -67,13 +66,16 @@ function LoginScreen() {
       <Text style = {styles.logintext}>
         로그인
       </Text>
-      <KakaoLoginButton/>
-      <GoogleLoginButton/>
-      <GithubLoginButton/>
-      <EmailLoginButton/>
+      <View style={styles.inputbox}>
+        <InputboxID/>
+      </View>
+      <View style={styles.inputbox}>
+        <InputboxPW/>
+      </View>
+      <LoginButton/>
       <ForgotButton/>
     </View>
   );
 }
 
-export default LoginScreen;
+export default EmailLoginScreen;

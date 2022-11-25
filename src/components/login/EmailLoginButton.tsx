@@ -4,9 +4,9 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
 
-const ForgotButton = () => {
+const EmailLoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();
     
     return (
@@ -15,22 +15,22 @@ const ForgotButton = () => {
             marginTop: 10,
             marginLeft: 20,
             marginRight: 20,
-            padding: 8,
-            alignItems: "center",
+            padding: 12,
+            backgroundColor: '#2BC63B',
             borderRadius: 8,
             }}
-            onPress={() => navigation.navigate('SignUp')}
+            onPress={() => navigation.navigate('EmailLogin')}
         >
             <Text style={{ 
-                color: 'green', 
+                color: 'white', 
                 fontSize: 15,
-                textAlign: "center",
-                fontFamily: 'GmarketSansTTFLight',
+                fontFamily: 'GmarketSansTTFMedium',
+                textAlign: 'center'
                 }}>
-                계정이 없으신가요?
+                이메일로 시작하기
             </Text>
         </TouchableOpacity>
     );
 };
 
-export default ForgotButton;
+export default EmailLoginButton;

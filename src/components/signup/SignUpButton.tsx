@@ -19,7 +19,7 @@ const SignUpButton = () => {
             backgroundColor: '#2BC63B',
             borderRadius: 8,
             }}
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.navigate('EmailLogin')}
         >
             <Text style={{ 
                 color: 'white', 

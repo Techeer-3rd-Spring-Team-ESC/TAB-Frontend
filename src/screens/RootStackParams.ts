@@ -1,5 +1,6 @@
 export type RootStackParamList = {
-    Main: undefined;
     Login: undefined;
+    EmailLogin: undefined;
     SignUp: undefined;
+    Main: undefined;
 };
