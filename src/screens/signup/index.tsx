@@ -21,7 +21,7 @@ import React from 'react';
   },
 
   signuptext: {
-    marginTop: 70,
+    marginTop: 150,
     marginBottom: 30,
     fontFamily: 'GmarketSansTTFBold',
     fontSize: 30,

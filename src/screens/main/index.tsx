@@ -9,8 +9,8 @@ const BottomTab = createBottomTabNavigator<MainBottomTabParamList>();
 function MainScreen() {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Home" component={HomeScreen} />
-      <BottomTab.Screen name="Community" component={CommunityScreen} />
+      <BottomTab.Screen name="Home" component={HomeScreen} options={{headerShown: false,}}/>
+      <BottomTab.Screen name="Community" component={CommunityScreen} options={{headerShown: false,}}/>
     </BottomTab.Navigator>
   );
 }

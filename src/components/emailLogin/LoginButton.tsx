@@ -15,7 +15,7 @@ const LoginButton = () => {
             marginTop: 20,
             marginLeft: 20,
             marginRight: 20,
-            padding: 8,
+            padding: 10,
             backgroundColor: '#2BC63B',
             borderRadius: 8,
             }}

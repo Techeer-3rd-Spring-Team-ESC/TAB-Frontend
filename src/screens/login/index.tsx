@@ -18,7 +18,7 @@ function LoginScreen() {
     image: {
       width: 500,
       height: 200,
-      marginTop: 20,
+      marginTop: 80,
       marginBottom: 30,
       backgroundColor: 'powderblue'
     },
