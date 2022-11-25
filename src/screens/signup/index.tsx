@@ -1,26 +1,18 @@
-import React, {useState, Component} from 'react';
+import React from 'react';
  import {View, Text, StyleSheet} from 'react-native';
- import { Dropdown } from 'react-native-material-dropdown';
- import SignUpButton from '../../components/signup/SignUpButton';
+
  import InputboxID from '../../components/signup/InputboxID';
  import InputboxDomain from '../../components/signup/InputboxDomain';
+ import EmailCheckButton from '../../components/signup/EmailCheckButton';
  import InputboxIDcheck from '../../components/signup/InputboxIDcheck';
  import InputboxPW from '../../components/signup/InputboxPW';
  import InputboxPWcheck from '../../components/signup/InputboxPWcheck';
  import InputboxName from '../../components/signup/InputboxName';
+ import SignUpButton from '../../components/signup/SignUpButton';
 
 
 
  function SignUpScreen() {
-
-  const [selected, setSelected] = useState(undefined);
-  const data = [
-    { label: 'One', value: '1' },
-    { label: 'Two', value: '2' },
-    { label: 'Three', value: '3' },
-    { label: 'Four', value: '4' },
-    { label: 'Five', value: '5' },
-  ];
 
   const styles = StyleSheet.create({
   container: {
@@ -37,12 +29,8 @@ import React, {useState, Component} from 'react';
     color: "black"
   },
 
-  normaltext: {
-    fontFamily: 'GmarketSansTTFLight',
-  },
-
   idcontainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
 
   inputIDbox: {
@@ -60,6 +48,7 @@ import React, {useState, Component} from 'react';
 
   domainbox: {
     height: 50,
+    width: 100,
     marginTop: 20,
     marginLeft: 10,
     fontFamily: 'GmarketSansTTFLight',
@@ -69,6 +58,13 @@ import React, {useState, Component} from 'react';
     borderRadius: 10,
     borderColor: 'gray',
     borderWidth: 1
+  },
+
+  emailcheckbox: {
+    marginTop: 16,
+    marginLeft: 8,
+    padding: 4,
+    paddingHorizontal: 10,
   },
 
   inputbox: {
@@ -83,14 +79,6 @@ import React, {useState, Component} from 'react';
     borderRadius: 10,
     borderColor: 'gray',
     borderWidth: 1
-  },
-
-  scollbox: {
-    width: 140,
-    maxHeight: 300,
-    marginTop: 5,
-    padding: 4,
-    paddingHorizontal: 10,
   },
 
   signupbox: {
@@ -112,14 +100,17 @@ import React, {useState, Component} from 'react';
       <View style={styles.inputIDbox}>
         <InputboxID/>
       </View>
-      <View style={{marginLeft: 10, marginTop: 15, justifyContent: 'center'}}>
+      <View style={{
+        marginTop: 15, 
+        marginLeft: 10, 
+        justifyContent: 'center'}}>
         <Text> @ </Text>
       </View>
       <View style={styles.domainbox}>
         <InputboxDomain/>
       </View>
-      <View style={styles.scollbox}>
-      
+      <View style={styles.emailcheckbox}>
+        <EmailCheckButton/>
       </View>
     </View>
     <View style={styles.inputbox}>
