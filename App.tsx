@@ -8,6 +8,16 @@
  * @format
  */
 
+ import {NavigationContainer} from '@react-navigation/native';
+ import {createStackNavigator} from '@react-navigation/stack';
+ import LoginScreen from './src/screens/login';
+ import EmailLoginScreen from './src/screens/emailLogin';
+ import SignUpScreen from './src/screens/signup';
+ import MainScreen from './src/screens/main';
+ import {RootStackParamList} from './src/screens/RootStackParams';
+const Stack = createStackNavigator<RootStackParamList>();
+
+
 import React, {type PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -26,6 +36,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -65,36 +76,14 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false,}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
