@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import EmailLoginButton from '../../components/login/EmailLoginButton';
 import KakaoLoginButton from '../../components/login/KakaoLoginButton';
 import GoogleLoginButton from '../../components/login/GoogleLoginButton';
@@ -18,9 +18,8 @@ function LoginScreen() {
     image: {
       width: 500,
       height: 200,
-      marginTop: 80,
-      marginBottom: 30,
-      backgroundColor: 'powderblue'
+      marginTop: 120,
+      marginLeft: 10
     },
 
     logintext: {
@@ -63,7 +62,11 @@ function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.image}></View>
+      <View style={styles.image}>
+        <Image
+          source={require('../../../assets/images/tab.png')}
+        />
+      </View>
       <Text style = {styles.logintext}>
         로그인
       </Text>

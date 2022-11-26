@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import LoginButton from '../../components/emailLogin/LoginButton';
 import ForgotButton from '../../components/emailLogin/ForgotButton';
 import InputboxID from '../../components/emailLogin/InputboxID';
@@ -16,9 +16,8 @@ function EmailLoginScreen() {
     image: {
       width: 500,
       height: 200,
-      marginTop: 80,
-      marginBottom: 30,
-      backgroundColor: 'powderblue'
+      marginTop: 120,
+      marginLeft: 10,
     },
 
     logintext: {
@@ -62,7 +61,11 @@ function EmailLoginScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.image}></View>
+      <View style={styles.image}>
+        <Image
+          source={require('../../../assets/images/tab.png')}
+        />
+      </View>
       <Text style = {styles.logintext}>
         로그인
       </Text>

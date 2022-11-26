@@ -7,10 +7,10 @@ const InputboxPW = () => {
         <TextInput
             style={{ 
             marginRight: 20,
-            padding: 8,
+            padding: 10,
             backgroundColor: 'white',
             borderColor: '#FFFFF',
-            borderRadius: 8,
+            borderRadius: 10,
             }}
             placeholder="비밀번호"
         >

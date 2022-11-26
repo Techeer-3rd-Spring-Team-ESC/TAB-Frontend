@@ -7,7 +7,7 @@ const InputboxID = () => {
         <TextInput
             style={{ 
             marginRight: 20,
-            padding: 8,
+            padding: 10,
             backgroundColor: 'white',
             borderColor: '#FFFFF',
             borderRadius: 8,
