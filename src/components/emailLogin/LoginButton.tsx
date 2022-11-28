@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 const LoginButton = () => {
     const navigation = useNavigation<loginScreenProp>();

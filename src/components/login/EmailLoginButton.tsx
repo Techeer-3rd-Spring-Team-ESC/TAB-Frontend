@@ -4,10 +4,10 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
+type EmailLoginScreenProp = StackNavigationProp<RootStackParamList, 'EmailLogin'>;
 
 const EmailLoginButton = () => {
-    const navigation = useNavigation<loginScreenProp>();
+    const navigation = useNavigation<EmailLoginScreenProp>();
     
     return (
         <TouchableOpacity

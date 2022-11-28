@@ -4,10 +4,10 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
 const ForgotButton = () => {
-    const navigation = useNavigation<loginScreenProp>();
+    const navigation = useNavigation<SignUpScreenProp>();
     
     return (
         <TouchableOpacity

@@ -3,4 +3,6 @@ export type RootStackParamList = {
     EmailLogin: undefined;
     SignUp: undefined;
     Main: undefined;
+    Post: undefined;
+    Community: undefined;
 };

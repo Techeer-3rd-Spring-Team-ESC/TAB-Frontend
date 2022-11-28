@@ -19,7 +19,7 @@ function MainScreen() {
         options={{
           headerShown: false,
           tabBarIcon: () => (
-            <Icon name="comments" size={30} color="green" />
+            <Icon name="comments" size={30} color="black" />
           ),
           }}
       />
@@ -29,7 +29,7 @@ function MainScreen() {
         options={{
           headerShown: false,
           tabBarIcon: () => (
-            <Icon name="home" size={30} color="green" />
+            <Icon name="home" size={30} color="black" />
           ),
           }}
       />
@@ -38,7 +38,7 @@ function MainScreen() {
         component={InformationScreen} 
         options={{headerShown: false,
           tabBarIcon: () => (
-          <Icon name="info" size={30} color="green" />
+          <Icon name="info" size={30} color="black" />
           ),
           }}
       />
