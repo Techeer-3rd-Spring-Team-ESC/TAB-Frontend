@@ -14,6 +14,7 @@
  import EmailLoginScreen from './src/screens/emailLogin';
  import SignUpScreen from './src/screens/signup';
  import PostScreen from './src/screens/main/PostScreen';
+ import SearchScreen from './src/screens/main/SearchScreen';
  import MainScreen from './src/screens/main';
  import {RootStackParamList} from './src/screens/RootStackParams';
 const Stack = createStackNavigator<RootStackParamList>();
@@ -83,6 +84,7 @@ const App = () => {
         <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Post" component={PostScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="Search" component={SearchScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false,}}/>
       </Stack.Navigator>
     </NavigationContainer>

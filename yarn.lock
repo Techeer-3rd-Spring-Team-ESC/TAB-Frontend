@@ -1893,10 +1893,10 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@^0.70.6":
-  "integrity" "sha512-ynQ2jj0km9d7dbnyKqVdQ6Nti7VQ8SLTA/KKkkS5+FnvGyvij2AOo1/xnkBR/jnSNXuzrvGVzw2n0VWfppmfKw=="
-  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.70.6.tgz"
-  "version" "0.70.6"
+"@types/react-native@*", "@types/react-native@^0.70.7":
+  "integrity" "sha512-hBzeUWwk8sfj3vDfwEXb4hbjWjl0jb5CvWlu2gLrOUJyFHVzJ+x6Y9ilO2eVtJW7l5QmmNLILE1PkVfKRkqYuQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.70.7.tgz"
+  "version" "0.70.7"
   dependencies:
     "@types/react" "*"
 
@@ -6510,6 +6510,11 @@
     "jscodeshift" "^0.13.1"
     "nullthrows" "^1.1.1"
 
+"react-native-config@^1.4.11":
+  "integrity" "sha512-PdBFnfR3pljUNrJu4B2wiJ9TbAiz1J1WcG5KP8AFBqZi8ve5MV/CTCDnANaGrqhOxkBDJV73D/SrMENHe7TKBg=="
+  "resolved" "https://registry.npmjs.org/react-native-config/-/react-native-config-1.4.11.tgz"
+  "version" "1.4.11"
+
 "react-native-custom-tabbar@^0.1.0":
   "integrity" "sha512-paWOyWP1kcmc9b+a1u3YWfWZnLY/AFQPub/V0I1kasCnKBJiRjp7WOgNGm/jzIHUBnVIVwOs4cFUn4UFJ0gwLg=="
   "resolved" "https://registry.npmjs.org/react-native-custom-tabbar/-/react-native-custom-tabbar-0.1.0.tgz"
@@ -7768,10 +7773,10 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^4.8.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  "integrity" "sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz"
-  "version" "4.8.4"
+"typescript@^4.9.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+  "integrity" "sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.3.tgz"
+  "version" "4.9.3"
 
 "uglify-es@^3.1.9":
   "integrity" "sha512-r+MU0rfv4L/0eeW3xZrd16t4NZfK8Ld4SWVglYBb7ez5uXFWHuVRs6xCTrf1yirs9a4j4Y27nn7SRfO6v67XsQ=="

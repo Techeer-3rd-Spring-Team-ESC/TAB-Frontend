@@ -6,7 +6,7 @@ import {RootStackParamList} from '../../screens/RootStackParams';
 
 type PostScreenProp = StackNavigationProp<RootStackParamList, 'Post'>;
 
-const CancelButton = () => {
+const UploadButton = () => {
     const navigation = useNavigation<PostScreenProp>();
     
     return (
@@ -16,23 +16,21 @@ const CancelButton = () => {
             marginLeft: 20,
             marginRight: 20,
             padding: 10,
-            backgroundColor: 'white',
+            backgroundColor: '#2BC63B',
             borderRadius: 8,
-            borderColor: 'black',
-            borderWidth: 1, 
             }}
             onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: '#2BC63B', 
+                color: 'white', 
                 fontSize: 20,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'
                 }}>
-                취소
+                등록
             </Text>
         </TouchableOpacity>
     );
 };
 
-export default CancelButton;
+export default UploadButton;
