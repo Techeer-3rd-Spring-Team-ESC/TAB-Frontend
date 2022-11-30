@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import PostButton from '../../components/community/PostButton';
 import Searchbox from '../../components/community/Searchbox';
 import SearchButton from '../../components/community/SearchButton';

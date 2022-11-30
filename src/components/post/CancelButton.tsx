@@ -13,8 +13,9 @@ const CancelButton = () => {
         <TouchableOpacity
             style={{ 
             marginTop: 20,
-            marginLeft: 20,
+            marginLeft: 100,
             marginRight: 20,
+            marginBottom: 10,
             padding: 10,
             backgroundColor: 'white',
             borderRadius: 8,
@@ -24,7 +25,8 @@ const CancelButton = () => {
             onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: '#2BC63B', 
+                color: '#2BC63B',
+                marginTop: 5,  
                 fontSize: 20,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'

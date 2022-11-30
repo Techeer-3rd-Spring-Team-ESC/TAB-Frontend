@@ -13,8 +13,8 @@ const UploadButton = () => {
         <TouchableOpacity
             style={{ 
             marginTop: 20,
-            marginLeft: 20,
             marginRight: 20,
+            marginBottom: 10,
             padding: 10,
             backgroundColor: '#2BC63B',
             borderRadius: 8,
@@ -22,7 +22,8 @@ const UploadButton = () => {
             onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: 'white', 
+                color: 'white',
+                marginTop: 5, 
                 fontSize: 20,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'
