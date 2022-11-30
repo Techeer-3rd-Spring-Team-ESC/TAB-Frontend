@@ -1,5 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import AnonymousCheck from '../../components/post/AnonymousCheck';
+import InformationCheck from '../../components/post/InformationCheck';
+import QuestionCheck from '../../components/post/QuestionCheck';
 import ImageButton from '../../components/post/ImageButton';
 import LinkButton from '../../components/post/LinkButton';
 import CancelButton from '../../components/post/CancelButton';
@@ -12,11 +15,6 @@ function PostScreen() {
             height: 1000,
             backgroundColor: 'white'
         },
-        
-        buttoncontainer: {
-            marginTop: 600,
-            flexDirection: 'row',
-        },
 
         posttext: {
             marginTop: 100,
@@ -27,15 +25,21 @@ function PostScreen() {
         },
 
         anonymous:{
-
+            marginTop: 50,
         },
 
         category:{
-
+            marginTop: 20,
+            flexDirection: 'row'
         },
 
         dividingline:{
-
+            width: 500,
+            height: 200,
+            marginTop: 20,
+            marginBottom: 20,
+            color: '#2BC63B',
+            
         },
 
         hashtag: {
@@ -48,8 +52,12 @@ function PostScreen() {
 
         textbox: {
 
-        }
+        },
       
+        buttoncontainer: {
+            marginTop: 400,
+            flexDirection: 'row'
+        },
     });
 
 
@@ -58,6 +66,13 @@ function PostScreen() {
             <Text style = {styles.posttext}>
                 게시물 작성
             </Text>
+            <View style ={styles.anonymous}>
+                <AnonymousCheck/>
+            </View>
+            <View style ={styles.category}>
+                <InformationCheck/>
+                <QuestionCheck/>
+            </View>
             <View style={styles.buttoncontainer}>
                 <ImageButton/>
                 <LinkButton/>
