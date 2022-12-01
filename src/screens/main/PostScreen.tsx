@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Platform, View, Text, StyleSheet} from 'react-native';
 import AnonymousCheck from '../../components/post/AnonymousCheck';
 import InformationCheck from '../../components/post/InformationCheck';
 import QuestionCheck from '../../components/post/QuestionCheck';
@@ -20,7 +20,7 @@ function PostScreen() {
         },
 
         posttext: {
-            marginTop: 60,
+            marginTop: Platform.OS == "ios" ? 80 : 20,
             fontFamily: 'GmarketSansTTFMedium',
             fontSize: 20,
             textAlign: "center",
@@ -31,15 +31,21 @@ function PostScreen() {
             flexDirection: 'row'
         },
 
+        categorytext:{
+            marginLeft: 20,
+            fontFamily: 'GmarketSansTTFMedium',
+            fontSize: Platform.OS == "ios" ? 25 : 20,
+            color: "#2BC63B"
+        },
+
         category:{
-            marginLeft: 7,
+            marginLeft: Platform.OS == "ios" ? 5 : 10,
             flexDirection: 'row',
             justifyContent: 'space-around'
         },
 
         dividingline:{
             height: 10,
-            marginTop: 20,
             marginBottom: 20,
             color: '#2BC63B',
             borderRadius: 20,
@@ -48,16 +54,28 @@ function PostScreen() {
             alignSelf: "center"
         },
 
-        hashtag: {
-
+        hashtag: { // 해쉬태그 밑으로 내리기
+            marginTop: Platform.OS == "ios" ? 10 : 0,
+            marginLeft: 10,
+            marginRight: 10,
+            color: '#2BC63B',
+            borderRadius: 8,
+            borderWidth: 2, 
+            borderColor: '#2BC63B',
         },
 
         title: {
-
+            marginTop: Platform.OS == "ios" ? 20 : 10,
+            marginLeft: 10,
+            marginRight: 10,
+            color: '#2BC63B',
+            borderRadius: 8,
+            borderWidth: 2, 
+            borderColor: '#2BC63B',
         },
 
         textbox: {
-            marginTop: 10,
+            marginTop: Platform.OS == "ios" ? 20 : 10,
             marginLeft: 10,
             marginRight: 10,
             color: '#2BC63B',
@@ -80,14 +98,17 @@ function PostScreen() {
             <View style ={styles.anonymous}>
                 <AnonymousCheck/>
             </View>
+            <Text style ={styles.categorytext}>
+                카테고리
+            </Text>
             <View style ={styles.category}>
                 <InformationCheck/>
                 <QuestionCheck/>
             </View>
-            <View style ={styles.textbox}>
+            <View style ={styles.hashtag}>
                 <HashtagInputbox/>
             </View>
-            <View style ={styles.textbox}>
+            <View style ={styles.title}>
                 <TitleInputbox/>
             </View>    
             <View style ={styles.textbox}>

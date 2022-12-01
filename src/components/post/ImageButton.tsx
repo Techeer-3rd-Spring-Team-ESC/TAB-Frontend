@@ -1,5 +1,5 @@
 import React from "react";
-import {TouchableOpacity} from "react-native";
+import {Platform, TouchableOpacity} from "react-native";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const ImageButton = () => {
@@ -7,8 +7,8 @@ const ImageButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 20,
-            marginLeft: 20,
+            marginTop: Platform.OS == "ios" ? 20 : 10,
+            marginLeft: 10,
             padding: 10,
             backgroundColor: 'white',
             borderRadius: 8,

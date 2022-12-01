@@ -1,5 +1,5 @@
 import React from "react";
-import {TouchableOpacity, Text} from "react-native";
+import {Platform, TouchableOpacity, Text} from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -12,9 +12,9 @@ const UploadButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 20,
+            marginTop: Platform.OS == "ios" ? 30 : 20,
             marginRight: 20,
-            marginBottom: 10,
+            marginBottom: Platform.OS == "ios" ? 30 : 50,
             padding: 10,
             backgroundColor: '#2BC63B',
             borderRadius: 8,
@@ -24,7 +24,7 @@ const UploadButton = () => {
             <Text style={{ 
                 color: 'white',
                 marginTop: 5, 
-                fontSize: 20,
+                fontSize: Platform.OS == "ios" ? 20 : 15,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'
                 }}>

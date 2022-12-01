@@ -1,13 +1,13 @@
 import React from "react";
-import { TextInput, Text} from "react-native";
+import {Platform, TextInput, Text} from "react-native";
 
 const TitleInputbox = () => {
     
     return (
         <TextInput
             style={{
-            marginTop: 4, 
-            marginRight: 20,
+            marginTop: Platform.OS == "ios" ? 5 : 0,
+            marginBottom: Platform.OS == "ios" ? 5 : 0,
             padding: 8,
             backgroundColor: 'white',
             borderColor: '#FFFFF',

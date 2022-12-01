@@ -1,16 +1,16 @@
 import React from "react";
-import { TextInput, Text} from "react-native";
+import {Platform, TextInput, Text} from "react-native";
 
 const TextInputbox = () => {
     
     return (
         <TextInput
             style={{
-            height: 200,
-            marginTop: 4, 
+            height: Platform.OS == "ios" ? 370 : 230,
+            marginTop: Platform.OS == "ios" ? 10 : 10,
             padding: 8,
             backgroundColor: 'white',
-            borderColor: '#FFFFF', 
+            borderColor: 'white', 
             borderRadius: 8,
             textAlignVertical:"top", // 안드로이드 텍스트 상단정렬
             
@@ -19,10 +19,8 @@ const TextInputbox = () => {
             multiline={true} // 아이폰 텍스트 상단정렬
             >
             <Text style={{ 
-                marginTop: 10,
                 color: 'gray', 
                 fontSize: 15,
-                
                 fontFamily: 'GmarketSansTTFLight',
                 }}>
             </Text>

@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, StyleSheet, View} from "react-native";
+import {Platform, Text, StyleSheet, View} from "react-native";
 import {Checkbox} from 'react-native-paper';
 
 const AnonymousCheck = () => {
@@ -17,7 +17,7 @@ const AnonymousCheck = () => {
 
     checkbox: {
       marginLeft: 10,
-      backgroundColor: '#A4E9A2',
+      backgroundColor: Platform.OS == "ios" ? '#A4E9A2': 'white',
       borderRadius: 20,
       borderWidth: 2, 
       borderColor: 'white',

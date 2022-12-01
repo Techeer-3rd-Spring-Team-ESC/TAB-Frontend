@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, StyleSheet, View} from "react-native";
+import {Platform, Text, StyleSheet, View} from "react-native";
 import {Checkbox} from 'react-native-paper';
 
 const QuestionCheck = () => {
@@ -9,26 +9,26 @@ const QuestionCheck = () => {
     checkboxContainer: {
       marginLeft: 90,  
       marginRight: 200,
-      marginBottom: 20,
+
       padding: 10,
       borderRadius: 8,
       flexDirection: "row",
     },
 
-    checkbox: {
-      marginLeft: 20,
-      backgroundColor: '#A4E9A2',
-      borderRadius: 20,
+    checkbox: { // radio button 으로 수정
+      marginLeft: 10,
+      backgroundColor: Platform.OS == "ios" ? '#A4E9A2': 'white',
+      borderRadius: 8,
       borderWidth: 2, 
       borderColor: 'white',
       alignSelf: "center"
     },
 
     buttontitle: {
-      marginTop: 10,
+      marginTop: Platform.OS == "ios" ? 10 : 8,
       marginLeft: 5, 
       fontSize: 20,
-      fontFamily: 'GmarketSansTTFMedium',
+      fontFamily: 'GmarketSansTTFBold',
       color: '#2BC63B',
     }
 
