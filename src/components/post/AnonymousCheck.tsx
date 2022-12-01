@@ -7,7 +7,6 @@ const AnonymousCheck = () => {
   const styles = StyleSheet.create({
 
     checkboxContainer: {
-      marginTop: 10,
       marginLeft: 20, 
       marginRight: 300,
       marginBottom: 20,
@@ -18,10 +17,10 @@ const AnonymousCheck = () => {
 
     checkbox: {
       marginLeft: 10,
-      backgroundColor: 'white',
+      backgroundColor: '#A4E9A2',
       borderRadius: 20,
       borderWidth: 2, 
-      borderColor: '#2BC63B',
+      borderColor: 'white',
       alignSelf: "center"
     },
 
@@ -31,6 +30,7 @@ const AnonymousCheck = () => {
       fontSize: 20,
       fontFamily: 'GmarketSansTTFMedium',
       color: '#2BC63B',
+      theme: '#2BC63B'
     }
 
 
@@ -48,6 +48,7 @@ const AnonymousCheck = () => {
           setChecked(!checked);
         }}
         color={'#2BC63B'}
+        uncheckedColor={'#A4E9A2'}
       />
       </View>
     </View>

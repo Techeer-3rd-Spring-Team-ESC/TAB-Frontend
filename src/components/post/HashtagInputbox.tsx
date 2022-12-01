@@ -1,18 +1,19 @@
 import React from "react";
 import { TextInput, Text} from "react-native";
 
-const InputboxDomain = () => {
+const InputboxID = () => {
     
     return (
         <TextInput
             style={{
             marginTop: 4, 
+            marginRight: 20,
             padding: 8,
             backgroundColor: 'white',
             borderColor: '#FFFFF',
             borderRadius: 8,
             }}
-            placeholder="직접입력"
+            placeholder="해쉬태그"
         >
             <Text style={{ 
                 color: 'gray', 
@@ -24,4 +25,4 @@ const InputboxDomain = () => {
     );
 };
 
-export default InputboxDomain;
+export default InputboxID;

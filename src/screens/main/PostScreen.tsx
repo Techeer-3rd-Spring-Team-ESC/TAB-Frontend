@@ -3,6 +3,9 @@ import {View, Text, StyleSheet} from 'react-native';
 import AnonymousCheck from '../../components/post/AnonymousCheck';
 import InformationCheck from '../../components/post/InformationCheck';
 import QuestionCheck from '../../components/post/QuestionCheck';
+import HashtagInputbox from '../../components/post/HashtagInputbox';
+import TitleInputbox from '../../components/post/TitleInputbox';
+import TextInputbox from '../../components/post/TextInputbox';
 import ImageButton from '../../components/post/ImageButton';
 import LinkButton from '../../components/post/LinkButton';
 import CancelButton from '../../components/post/CancelButton';
@@ -17,7 +20,7 @@ function PostScreen() {
         },
 
         posttext: {
-            marginTop: 100,
+            marginTop: 60,
             fontFamily: 'GmarketSansTTFMedium',
             fontSize: 20,
             textAlign: "center",
@@ -25,21 +28,24 @@ function PostScreen() {
         },
 
         anonymous:{
-            marginTop: 50,
-        },
-
-        category:{
-            marginTop: 20,
             flexDirection: 'row'
         },
 
+        category:{
+            marginLeft: 7,
+            flexDirection: 'row',
+            justifyContent: 'space-around'
+        },
+
         dividingline:{
-            width: 500,
-            height: 200,
+            height: 10,
             marginTop: 20,
             marginBottom: 20,
             color: '#2BC63B',
-            
+            borderRadius: 20,
+            borderWidth: 2, 
+            borderColor: '#2BC63B',
+            alignSelf: "center"
         },
 
         hashtag: {
@@ -51,11 +57,16 @@ function PostScreen() {
         },
 
         textbox: {
-
+            marginTop: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            color: '#2BC63B',
+            borderRadius: 8,
+            borderWidth: 2, 
+            borderColor: '#2BC63B',
         },
       
         buttoncontainer: {
-            marginTop: 400,
             flexDirection: 'row'
         },
     });
@@ -73,13 +84,21 @@ function PostScreen() {
                 <InformationCheck/>
                 <QuestionCheck/>
             </View>
+            <View style ={styles.textbox}>
+                <HashtagInputbox/>
+            </View>
+            <View style ={styles.textbox}>
+                <TitleInputbox/>
+            </View>    
+            <View style ={styles.textbox}>
+                <TextInputbox/>
+            </View>
             <View style={styles.buttoncontainer}>
                 <ImageButton/>
                 <LinkButton/>
                 <CancelButton/>
                 <UploadButton/>
             </View>
-            
         </View>
     );
 }

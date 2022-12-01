@@ -6,7 +6,6 @@ const Searchbox = () => {
     return (
         <TextInput
             style={{ 
-            marginRight: 20,
             padding: 10,
             backgroundColor: 'white',
             borderColor: '#FFFFF',

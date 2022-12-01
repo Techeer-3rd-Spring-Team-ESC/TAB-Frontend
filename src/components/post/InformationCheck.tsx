@@ -7,9 +7,8 @@ const InformationCheck = () => {
   const styles = StyleSheet.create({
 
     checkboxContainer: {
-      marginTop: 10,
-      marginLeft: 20, 
-      marginRight: 300,
+      marginLeft: 90, 
+      marginRight: 100,
       marginBottom: 20,
       padding: 10,
       borderRadius: 8,
@@ -18,10 +17,10 @@ const InformationCheck = () => {
 
     checkbox: {
       marginLeft: 10,
-      backgroundColor: 'white',
+      backgroundColor: '#A4E9A2',
       borderRadius: 20,
       borderWidth: 2, 
-      borderColor: '#2BC63B',
+      borderColor: 'white',
       alignSelf: "center"
     },
 
@@ -48,6 +47,7 @@ const InformationCheck = () => {
           setChecked(!checked);
         }}
         color={'#2BC63B'}
+        uncheckedColor={'#A4E9A2'}
       />
       </View>
     </View>

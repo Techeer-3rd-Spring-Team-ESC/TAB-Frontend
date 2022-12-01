@@ -12,7 +12,7 @@ function CommunityScreen() {
         },
         
         searchcontainer: {
-            marginTop: 80,
+            marginTop: 20,
             flexDirection: 'row',
         },
 
@@ -25,7 +25,7 @@ function CommunityScreen() {
         
         search: {
             marginTop: 50,
-            marginRight: 20,
+            marginRight: 50,
             marginBottom: 50,
             fontFamily: 'GmarketSansTTFLight',
             fontSize: 10,
@@ -37,8 +37,9 @@ function CommunityScreen() {
         },
 
         post: {
-            marginTop: 300,
-            marginLeft: 200
+            marginTop: 350,
+            marginLeft: 200,
+
         }
       
     });
