@@ -32,6 +32,7 @@ function PostScreen() {
         },
 
         categorytext:{
+            marginTop: Platform.OS == "ios" ? 20 : 20,
             marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
             fontSize: Platform.OS == "ios" ? 25 : 20,
@@ -43,24 +44,16 @@ function PostScreen() {
             flexDirection: 'row'
         },
 
-        dividingline:{
-            height: 10,
-            marginBottom: 20,
-            color: '#2BC63B',
-            borderRadius: 20,
-            borderWidth: 2, 
-            borderColor: '#2BC63B',
-            alignSelf: "center"
+        verticleLine: {
+            width: '91%',
+            height: 2,
+            marginLeft: 20,
+            backgroundColor: '#909090',
         },
 
         title: {
-            // marginTop: Platform.OS == "ios" ? 20 : 10,
             marginLeft: 10,
             marginRight: 10,
-            color: '#2BC63B',
-            borderRadius: 8,
-            borderWidth: 2, 
-            borderColor: '#2BC63B',
         },
 
         textbox: {
@@ -97,14 +90,20 @@ function PostScreen() {
             <View style = {styles.anonymous}>
                 <AnonymousCheck/>
             </View>
+            <View style = {styles.verticleLine}>
+            </View>
             <Text style = {styles.categorytext}>
                 카테고리
             </Text>
             <View style = {styles.category}>
                 <CategoryCheck/>
             </View>
+            <View style = {styles.verticleLine}>
+            </View>
             <View style = {styles.title}>
                 <TitleInputbox/>
+            </View>
+            <View style = {styles.verticleLine}>
             </View>    
             <View style = {styles.textbox}>
                 <TextInputbox/>

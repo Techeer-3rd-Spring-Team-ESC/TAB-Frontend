@@ -2,7 +2,15 @@ import React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import PostButton from '../../components/community/PostButton';
 import Searchbox from '../../components/community/Searchbox';
+import InformationTag from '../../components/community/InformationTag';
+import QuestionTag from '../../components/community/QuestionTag';
+import PostList from '../../components/community/PostList';
+import Profile from '../../components/community/Profile';
+import BookmarkButton from '../../components/community/BookmarkButton';
+import LikeButton from '../../components/community/LikeButton';
+import CommentButton from '../../components/community/CommentButton';
 import SearchButton from '../../components/community/SearchButton';
+
 
 function CommunityScreen() {
     const styles = StyleSheet.create({
@@ -24,9 +32,9 @@ function CommunityScreen() {
         },
         
         search: {
+            height: 60,
             marginTop: 50,
             marginRight: 50,
-            marginBottom: 50,
             fontFamily: 'GmarketSansTTFLight',
             fontSize: 10,
             paddingHorizontal: 10,
@@ -36,10 +44,21 @@ function CommunityScreen() {
             flexDirection: 'row',
         },
 
+        postcontainer:{
+            flexDirection: 'row',
+        },
+
+        verticleLine: {
+            marginTop: 10,
+            width: '91%',
+            height: 2,
+            marginLeft: 20,
+            backgroundColor: '#909090',
+        },
+
         post: {
             marginTop: 350,
             marginLeft: 200,
-
         }
       
     });
@@ -57,6 +76,37 @@ function CommunityScreen() {
                     <SearchButton/>
                 </View>
             </View>
+
+            <InformationTag/>
+            <PostList/>
+            <View style={styles.postcontainer}> 
+                <Profile/>
+                <BookmarkButton/>
+                <LikeButton/>
+                <CommentButton/>
+            </View>
+            <View style = {styles.verticleLine}/>
+
+            <QuestionTag/>
+            <PostList/>
+            <View style={styles.postcontainer}> 
+                <Profile/>
+                <BookmarkButton/>
+                <LikeButton/>
+                <CommentButton/>
+            </View>
+            <View style = {styles.verticleLine}/> 
+            
+            <InformationTag/>
+            <PostList/>
+            <View style={styles.postcontainer}> 
+                <Profile/>
+                <BookmarkButton/>
+                <LikeButton/>
+                <CommentButton/>
+            </View>
+            <View style = {styles.verticleLine}/>
+
             <View style={styles.post}>
                 <PostButton/>
             </View>
