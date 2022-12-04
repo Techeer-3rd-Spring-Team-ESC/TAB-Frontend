@@ -1,8 +1,7 @@
 import React from 'react';
 import {Platform, View, Text, StyleSheet} from 'react-native';
 import AnonymousCheck from '../../components/post/AnonymousCheck';
-import InformationCheck from '../../components/post/InformationCheck';
-import QuestionCheck from '../../components/post/QuestionCheck';
+import CategoryCheck from '../../components/post/CategoryCheck';
 import HashtagInputbox from '../../components/post/HashtagInputbox';
 import TitleInputbox from '../../components/post/TitleInputbox';
 import TextInputbox from '../../components/post/TextInputbox';
@@ -19,15 +18,16 @@ function PostScreen() {
             backgroundColor: 'white'
         },
 
-        posttext: {
+        anonymoustext:{
             marginTop: Platform.OS == "ios" ? 80 : 20,
+            marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
-            fontSize: 20,
-            textAlign: "center",
-            color: "black"
+            fontSize: Platform.OS == "ios" ? 25 : 20,
+            color: "#2BC63B"
         },
 
         anonymous:{
+            marginLeft: 5,
             flexDirection: 'row'
         },
 
@@ -40,8 +40,7 @@ function PostScreen() {
 
         category:{
             marginLeft: Platform.OS == "ios" ? 5 : 10,
-            flexDirection: 'row',
-            justifyContent: 'space-around'
+            flexDirection: 'row'
         },
 
         dividingline:{
@@ -54,18 +53,8 @@ function PostScreen() {
             alignSelf: "center"
         },
 
-        hashtag: { // 해쉬태그 밑으로 내리기
-            marginTop: Platform.OS == "ios" ? 10 : 0,
-            marginLeft: 10,
-            marginRight: 10,
-            color: '#2BC63B',
-            borderRadius: 8,
-            borderWidth: 2, 
-            borderColor: '#2BC63B',
-        },
-
         title: {
-            marginTop: Platform.OS == "ios" ? 20 : 10,
+            // marginTop: Platform.OS == "ios" ? 20 : 10,
             marginLeft: 10,
             marginRight: 10,
             color: '#2BC63B',
@@ -75,7 +64,17 @@ function PostScreen() {
         },
 
         textbox: {
-            marginTop: Platform.OS == "ios" ? 20 : 10,
+            marginTop: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            color: '#2BC63B',
+            borderRadius: 8,
+            borderWidth: 2, 
+            borderColor: '#2BC63B',
+        },
+
+        hashtag: { // 해쉬태그 밑으로 내리기
+            marginTop: 10,
             marginLeft: 10,
             marginRight: 10,
             color: '#2BC63B',
@@ -92,29 +91,28 @@ function PostScreen() {
 
     return (
         <View style={styles.container}>
-            <Text style = {styles.posttext}>
-                게시물 작성
+            <Text style = {styles.anonymoustext}>
+                공개여부
             </Text>
-            <View style ={styles.anonymous}>
+            <View style = {styles.anonymous}>
                 <AnonymousCheck/>
             </View>
-            <Text style ={styles.categorytext}>
+            <Text style = {styles.categorytext}>
                 카테고리
             </Text>
-            <View style ={styles.category}>
-                <InformationCheck/>
-                <QuestionCheck/>
+            <View style = {styles.category}>
+                <CategoryCheck/>
             </View>
-            <View style ={styles.hashtag}>
-                <HashtagInputbox/>
-            </View>
-            <View style ={styles.title}>
+            <View style = {styles.title}>
                 <TitleInputbox/>
             </View>    
-            <View style ={styles.textbox}>
+            <View style = {styles.textbox}>
                 <TextInputbox/>
             </View>
-            <View style={styles.buttoncontainer}>
+            <View style = {styles.hashtag}>
+                <HashtagInputbox/>
+            </View>
+            <View style= {styles.buttoncontainer}>
                 <ImageButton/>
                 <LinkButton/>
                 <CancelButton/>

@@ -1,5 +1,6 @@
 import React from "react";
-import {TouchableOpacity, Text} from "react-native";
+import {TouchableOpacity, Platform} from "react-native";
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -12,23 +13,16 @@ const PostButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 20,
-            marginLeft: 20,
+            marginTop: Platform.OS == 'ios' ? 240 : 10,
+            marginLeft: 130,
             marginRight: 20,
             padding: 10,
-            backgroundColor: '#2BC63B',
+            backgroundColor: 'white',
             borderRadius: 8,
             }}
             onPress={() => navigation.navigate('Post')}
         >
-            <Text style={{ 
-                color: 'white', 
-                fontSize: 20,
-                fontFamily: 'GmarketSansTTFMedium',
-                textAlign: 'center'
-                }}>
-                포스팅하기
-            </Text>
+            <FontAwesome name='pencil' size={40} color='#2BC63B' />
         </TouchableOpacity>
     );
 };

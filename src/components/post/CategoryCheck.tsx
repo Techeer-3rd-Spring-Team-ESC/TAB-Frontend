@@ -9,7 +9,7 @@ const AnonymousCheck = () => {
     checkboxContainer: {
       marginLeft: 20, 
       marginRight: 300,
-      marginBottom: Platform.OS == "ios" ? 20 : 10,
+      marginBottom: Platform.OS == "ios" ? 10 : 0,
       padding: 10,
       borderRadius: 8,
       flexDirection: "row",
@@ -24,18 +24,18 @@ const AnonymousCheck = () => {
       alignSelf: "center"
     },
 
-    anonymoustitle: {
+    informationtitle: {
       marginTop: 10,
-      marginLeft: Platform.OS == "ios" ? 5: 7,
+      marginLeft: 5, 
       fontSize: 20,
       fontFamily: 'GmarketSansTTFBold',
       color: '#2BC63B',
       theme: '#2BC63B'
     },
 
-    realnametitle: {
+    questiontitle: {
       marginTop: 10,
-      marginLeft: Platform.OS == "ios" ? 73: 62,
+      marginLeft: Platform.OS == "ios" ? 73: 60,
       fontSize: 20,
       fontFamily: 'GmarketSansTTFBold',
       color: '#2BC63B',
@@ -47,8 +47,8 @@ const AnonymousCheck = () => {
 
   return (
     <View style={styles.checkboxContainer}>
-      <Text style={styles.anonymoustitle}>
-        익명
+      <Text style={styles.informationtitle}>
+        정보
       </Text>
       <View style={styles.radio}>
         <RadioButton
@@ -59,8 +59,8 @@ const AnonymousCheck = () => {
           uncheckedColor={'#2BC63B'}
         />
       </View>
-      <Text style={styles.realnametitle}>
-        실명
+      <Text style={styles.questiontitle}>
+        질문
       </Text>
       <View style={styles.radio}>
         <RadioButton
