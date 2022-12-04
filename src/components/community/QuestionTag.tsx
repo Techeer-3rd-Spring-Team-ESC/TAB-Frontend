@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text} from "react-native";
+import {Platform, TouchableOpacity, Text} from "react-native";
 
 const QuestionTag = () => {
 
@@ -9,7 +9,7 @@ const QuestionTag = () => {
             marginTop: 10,
             marginLeft: 20,
             marginRight: 300,
-            padding: 12,
+            padding: Platform.OS == 'ios' ? 10 : 5,
             backgroundColor: '#A3F4A1',
             borderRadius: 8,
             borderColor: 'black'

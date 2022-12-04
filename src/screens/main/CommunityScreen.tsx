@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {Platform, View, StyleSheet, Image} from 'react-native';
 import PostButton from '../../components/community/PostButton';
 import Searchbox from '../../components/community/Searchbox';
 import InformationTag from '../../components/community/InformationTag';
@@ -20,7 +20,7 @@ function CommunityScreen() {
         },
         
         searchcontainer: {
-            marginTop: 20,
+            marginTop: Platform.OS == 'ios' ? 20 : 0,
             flexDirection: 'row',
         },
 
@@ -57,7 +57,6 @@ function CommunityScreen() {
         },
 
         post: {
-            marginTop: 350,
             marginLeft: 200,
         }
       

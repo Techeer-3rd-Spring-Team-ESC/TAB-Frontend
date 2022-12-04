@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text} from "react-native";
+import {Platform, TouchableOpacity, Text} from "react-native";
 
 const InformationTag = () => {
 
@@ -9,7 +9,7 @@ const InformationTag = () => {
             marginTop: 10,
             marginLeft: 20,
             marginRight: 300,
-            padding: 12,
+            padding: Platform.OS == 'ios' ? 10 : 5,
             backgroundColor: '#ca8080',
             borderRadius: 8,
             borderColor: 'black'
