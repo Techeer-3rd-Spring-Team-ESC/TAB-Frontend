@@ -1,21 +1,36 @@
 import React from "react";
-import {Platform, Text} from "react-native";
+import { TouchableOpacity, Platform, Text} from "react-native";
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../screens/RootStackParams';
+
+type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
 const PostList = () => {
+    const navigation = useNavigation<SignUpScreenProp>();
 
     return (
-        <Text
+        <TouchableOpacity
+            style={{ 
+            backgroundColor: 'white',
+            borderRadius: 8,
+            }}
+            onPress={() => navigation.navigate('Article')}
+        >
+            <Text
             numberOfLines= {2} 
             style={{ 
             marginTop: 10,
             marginLeft: 20,
             marginRight: 20,
             color: 'black', 
-            fontSize: 15,
+            fontSize: Platform.OS == 'ios' ? 15 : 10,
             fontFamily: 'GmarketSansTTFMedium',
             }}>
             A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun
-        </Text>
+            </Text>
+        </TouchableOpacity>
+        
     );
 };
 

@@ -13,7 +13,7 @@ const PostButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: Platform.OS == 'ios' ? 240 : 10,
+            marginTop: Platform.OS == 'ios' ? 50 : 0,
             marginLeft: 130,
             marginRight: 20,
             padding: 10,
@@ -22,7 +22,7 @@ const PostButton = () => {
             }}
             onPress={() => navigation.navigate('Post')}
         >
-            <FontAwesome name='pencil' size={40} color='#2BC63B' />
+            <FontAwesome name='pencil' size={45} color='#2BC63B' />
         </TouchableOpacity>
     );
 };

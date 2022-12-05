@@ -17,7 +17,7 @@ const AnonymousCheck = () => {
 
     radio: {
       marginLeft: 10,
-      backgroundColor: Platform.OS == "ios" ? '#A4E9A2': 'white',
+      backgroundColor: Platform.OS == "ios" ? '#CECECE': 'white',
       borderRadius: 20,
       borderWidth: 2, 
       borderColor: 'white',
@@ -29,8 +29,7 @@ const AnonymousCheck = () => {
       marginLeft: Platform.OS == "ios" ? 5: 7,
       fontSize: 20,
       fontFamily: 'GmarketSansTTFBold',
-      color: '#2BC63B',
-      theme: '#2BC63B'
+      color: '#909090',
     },
 
     realnametitle: {
@@ -38,8 +37,7 @@ const AnonymousCheck = () => {
       marginLeft: Platform.OS == "ios" ? 73: 62,
       fontSize: 20,
       fontFamily: 'GmarketSansTTFBold',
-      color: '#2BC63B',
-      theme: '#2BC63B'
+      color: '#909090',
     }
 
 
@@ -55,8 +53,8 @@ const AnonymousCheck = () => {
           value="first"
           status={ checked === 'first' ? 'checked' : 'unchecked' }
           onPress={() => setChecked('first')}
-          color={'#2BC63B'}
-          uncheckedColor={'#2BC63B'}
+          color={'#909090'}
+          uncheckedColor={'#CECECE'}
         />
       </View>
       <Text style={styles.realnametitle}>
@@ -67,8 +65,8 @@ const AnonymousCheck = () => {
           value="second"
           status={ checked === 'second' ? 'checked' : 'unchecked' }
           onPress={() => setChecked('second')}
-          color={'#2BC63B'}
-          uncheckedColor={'#2BC63B'}
+          color={'#909090'}
+          uncheckedColor={'#CECECE'}
         />
       </View>
     </View>

@@ -8,19 +8,12 @@ const TitleInputbox = () => {
             style={{
             marginTop: Platform.OS == "ios" ? 5 : 0,
             marginBottom: Platform.OS == "ios" ? 5 : 0,
-            padding: 8,
-            backgroundColor: 'white',
-            borderColor: '#FFFFF',
-            borderRadius: 8,
+            marginLeft: 20,
+            padding: 10,
             }}
             placeholder="제목"
+            placeholderTextColor={"#909090"}
         >
-            <Text style={{ 
-                color: 'gray', 
-                fontSize: 15,
-                fontFamily: 'GmarketSansTTFLight',
-                }}>
-            </Text>
         </TextInput>
     );
 };

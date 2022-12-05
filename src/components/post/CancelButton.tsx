@@ -19,13 +19,13 @@ const CancelButton = () => {
                 padding: 10,
                 backgroundColor: 'white',
                 borderRadius: 8,
-                borderColor: '#2BC63B',
+                borderColor: '#909090',
                 borderWidth: 1,
             }}
             onPress={() => navigation.navigate('Main')}
         >
             <Text style={{ 
-                color: '#2BC63B',
+                color: '#909090',
                 marginTop: 5,  
                 fontSize: Platform.OS == "ios" ? 20 : 15,
                 fontFamily: 'GmarketSansTTFMedium',

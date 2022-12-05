@@ -14,7 +14,7 @@ const ImageButton = () => {
             borderRadius: 8,
             }}
         >
-            <FontAwesome name='image' size={40} color='#2BC63B' />
+            <FontAwesome name='image' size={40} color='#909090' />
         </TouchableOpacity>
     );
 };

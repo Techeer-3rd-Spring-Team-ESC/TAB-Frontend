@@ -23,7 +23,7 @@ function PostScreen() {
             marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
             fontSize: Platform.OS == "ios" ? 25 : 20,
-            color: "#2BC63B"
+            color: "#CECECE"
         },
 
         anonymous:{
@@ -36,7 +36,7 @@ function PostScreen() {
             marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
             fontSize: Platform.OS == "ios" ? 25 : 20,
-            color: "#2BC63B"
+            color: "#CECECE"
         },
 
         category:{
@@ -46,9 +46,10 @@ function PostScreen() {
 
         verticleLine: {
             width: '91%',
-            height: 2,
+            height: 3,
             marginLeft: 20,
-            backgroundColor: '#909090',
+            borderRadius: 50,
+            backgroundColor: '#CECECE',
         },
 
         title: {
@@ -60,20 +61,15 @@ function PostScreen() {
             marginTop: 10,
             marginLeft: 10,
             marginRight: 10,
-            color: '#2BC63B',
             borderRadius: 8,
             borderWidth: 2, 
-            borderColor: '#2BC63B',
+            borderColor: '#909090',
         },
 
         hashtag: { // 해쉬태그 밑으로 내리기
             marginTop: 10,
             marginLeft: 10,
             marginRight: 10,
-            color: '#2BC63B',
-            borderRadius: 8,
-            borderWidth: 2, 
-            borderColor: '#2BC63B',
         },
       
         buttoncontainer: {
@@ -111,6 +107,7 @@ function PostScreen() {
             <View style = {styles.hashtag}>
                 <HashtagInputbox/>
             </View>
+            <View style = {styles.verticleLine}/>
             <View style= {styles.buttoncontainer}>
                 <ImageButton/>
                 <LinkButton/>

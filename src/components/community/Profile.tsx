@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, Image} from "react-native";
+import {View, Text, StyleSheet, Image, Platform} from "react-native";
 
 const PostList = () => {
     const styles = StyleSheet.create({
@@ -12,7 +12,7 @@ const PostList = () => {
             marginTop: 10,
             marginLeft: 20,
             color: 'black', 
-            fontSize: 15,
+            fontSize: Platform.OS == 'ios' ? 15 : 12,
             fontFamily: 'GmarketSansTTFBold',
         },
 

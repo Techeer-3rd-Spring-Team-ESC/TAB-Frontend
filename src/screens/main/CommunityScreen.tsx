@@ -27,13 +27,13 @@ function CommunityScreen() {
         image: {
             width: 130,
             height: 100,
-            marginTop: 30,
+            marginTop: Platform.OS == 'ios' ? 30 : 0,
             resizeMode: 'contain',
         },
         
         search: {
             height: 60,
-            marginTop: 50,
+            marginTop: Platform.OS == 'ios' ? 50 : 20,
             marginRight: 50,
             fontFamily: 'GmarketSansTTFLight',
             fontSize: 10,
@@ -49,7 +49,7 @@ function CommunityScreen() {
         },
 
         verticleLine: {
-            marginTop: 10,
+            marginTop: Platform.OS == 'ios' ? 10 : 3,
             width: '91%',
             height: 2,
             marginLeft: 20,
@@ -57,7 +57,7 @@ function CommunityScreen() {
         },
 
         post: {
-            marginLeft: 200,
+            marginLeft: Platform.OS == 'ios' ? 220 : 200,
         }
       
     });
@@ -105,6 +105,16 @@ function CommunityScreen() {
                 <CommentButton/>
             </View>
             <View style = {styles.verticleLine}/>
+
+            <QuestionTag/>
+            <PostList/>
+            <View style={styles.postcontainer}> 
+                <Profile/>
+                <BookmarkButton/>
+                <LikeButton/>
+                <CommentButton/>
+            </View>
+            <View style = {styles.verticleLine}/> 
 
             <View style={styles.post}>
                 <PostButton/>

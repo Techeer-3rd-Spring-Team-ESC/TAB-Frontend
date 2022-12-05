@@ -6,7 +6,7 @@ const QuestionTag = () => {
     return (
         <TouchableOpacity
             style={{ 
-            marginTop: 10,
+            marginTop: Platform.OS == 'ios' ? 10 : 5,
             marginLeft: 20,
             marginRight: 300,
             padding: Platform.OS == 'ios' ? 10 : 5,
@@ -17,7 +17,7 @@ const QuestionTag = () => {
         >
             <Text style={{ 
                 color: 'black', 
-                fontSize: 15,
+                fontSize: Platform.OS == 'ios' ? 15 : 13,
                 fontFamily: 'GmarketSansTTFMedium',
                 textAlign: 'center'
                 }}>
