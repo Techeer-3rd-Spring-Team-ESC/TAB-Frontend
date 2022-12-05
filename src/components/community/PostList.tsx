@@ -18,16 +18,16 @@ const PostList = () => {
             onPress={() => navigation.navigate('Article')}
         >
             <Text
-            numberOfLines= {2} 
-            style={{ 
-            marginTop: 10,
-            marginLeft: 20,
-            marginRight: 20,
-            color: 'black', 
-            fontSize: Platform.OS == 'ios' ? 15 : 10,
-            fontFamily: 'GmarketSansTTFMedium',
-            }}>
-            A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun
+                numberOfLines= {2} 
+                style={{
+                width: '90%', 
+                marginTop: 10,
+                marginLeft: 20,
+                color: 'black', 
+                fontSize: Platform.OS == 'ios' ? 15 : 10,
+                fontFamily: 'GmarketSansTTFMedium',
+                }}>
+                A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun
             </Text>
         </TouchableOpacity>
         

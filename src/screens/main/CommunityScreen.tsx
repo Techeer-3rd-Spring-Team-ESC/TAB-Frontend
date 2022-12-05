@@ -48,6 +48,12 @@ function CommunityScreen() {
             flexDirection: 'row',
         },
 
+        thumbnail:{
+            width: 50,
+            height: 50,
+            marginTop: Platform.OS == 'ios' ? 30 : 0,
+        },
+
         verticleLine: {
             marginTop: Platform.OS == 'ios' ? 10 : 3,
             width: '91%',
