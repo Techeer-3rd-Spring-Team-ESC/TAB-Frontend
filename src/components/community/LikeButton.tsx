@@ -7,7 +7,7 @@ const LikeButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            padding: 10,
+            padding: 9,
             }}
         >
             <FontAwesome name='heart' size={20} color='gray' />

@@ -11,14 +11,24 @@ const PostList = () => {
         profiletext: {
             marginTop: Platform.OS == 'ios' ? 11 : 13,
             marginLeft: 20,
+            padding: 4
+        },
+
+        profilename: {
             color: 'black', 
-            fontSize: Platform.OS == 'ios' ? 15 : 12,
+            fontSize: Platform.OS == 'ios' ? 20 : 15,
             fontFamily: 'GmarketSansTTFBold',
         },
 
+        profilemessage: {
+            color: 'black', 
+            fontSize: Platform.OS == 'ios' ? 15 : 13,
+            fontFamily: 'GmarketSansTTFLight',
+        },
+
         profileimage: {
-            width: 30,
-            height: 30,
+            width: 50,
+            height: 50,
             marginTop: 5,
             marginLeft: 10,
             borderWidth: 1, 
@@ -32,12 +42,17 @@ const PostList = () => {
 
     return (
         <View style={styles.profilecontainer}>
-            <Text style={styles.profiletext}>
-                loana Mircea
-            </Text>
             <Image style={styles.profileimage}
                 source={require('../../../assets/images/tab.png')}
             />
+            <Text style={styles.profiletext}>
+                <Text style={styles.profilename}>
+                    loana Mircea{"\n"}
+                </Text>
+                <Text style={styles.profilemessage}>
+                    Aug 29. 6 min read. Member-only
+                </Text>
+            </Text>
         </View>
     );
 };

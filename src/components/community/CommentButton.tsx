@@ -7,7 +7,7 @@ const CommentButton = () => {
     return (
         <TouchableOpacity
             style={{ 
-            padding: 10,
+            padding: 8,
             }}
         >
             <FontAwesome 
