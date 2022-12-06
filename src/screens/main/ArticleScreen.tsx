@@ -1,11 +1,12 @@
 import React from 'react';
-import {Platform, View, StyleSheet, Text} from 'react-native';
+import {Platform, View, StyleSheet, ScrollView} from 'react-native';
 import WriterProfile from '../../components/article/WriterProfile';
 import InformationTag from '../../components/community/InformationTag';
 import BookmarkButton from '../../components/community/BookmarkButton';
 import LikeButton from '../../components/community/LikeButton';
 import CommentButton from '../../components/community/CommentButton';
 import ArticleTitle from '../../components/article/ArticleTitle';
+import ArticleImage from '../../components/article/ArticleImage';
 
 
 function ArticleScreen() {
@@ -21,35 +22,36 @@ function ArticleScreen() {
         },
 
         postcontainer:{
+            marginTop: Platform.OS == 'ios' ? 0 : 5,
             flexDirection: 'row',
         },
 
-        image: {
-            width: 130,
-            height: 100,
-            marginTop: Platform.OS == 'ios' ? 30 : 0,
-            resizeMode: 'contain',
+        buttoncontainer:{
+            marginLeft: 160,
+            marginTop: Platform.OS == 'ios' ? 3 : 0,
+            flexDirection: 'row',
         },
       
     });
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.profilecontainer}>
                 <WriterProfile/>
-                <View style={styles.postcontainer}> 
-                    <InformationTag/>
-                    <BookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
-                </View>
             </View>
-        
-            
-            
+            <View style={styles.postcontainer}> 
+                    <InformationTag/>
+                    <View style={styles.buttoncontainer}> 
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+            </View>
+
             <ArticleTitle/>
-            
-        </View>
+            <ArticleImage/>
+
+        </ScrollView>
     );
 }
 export default ArticleScreen;

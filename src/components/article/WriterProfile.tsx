@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, Image, Platform} from "react-native";
 
-const PostList = () => {
+const WriterProfile = () => {
     const styles = StyleSheet.create({
         profilecontainer: {
             backgroundColor: 'white',
@@ -57,4 +57,4 @@ const PostList = () => {
     );
 };
 
-export default PostList;
+export default WriterProfile;

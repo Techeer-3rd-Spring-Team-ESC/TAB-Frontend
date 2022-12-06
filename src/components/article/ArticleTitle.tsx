@@ -1,14 +1,14 @@
 import React from "react";
 import {View, Text, StyleSheet, Platform} from "react-native";
 
-const PostList = () => {
+const ArticleTitle = () => {
     const styles = StyleSheet.create({
         titlecontainer: {
             backgroundColor: 'white',
         },
 
         titletext: {
-            marginTop: 10,
+            marginTop: Platform.OS == "ios" ? 10 : 5,
             marginLeft: 20,
             marginRight: 10,
             color: "black",
@@ -38,4 +38,4 @@ const PostList = () => {
     );
 };
 
-export default PostList;
+export default ArticleTitle;
