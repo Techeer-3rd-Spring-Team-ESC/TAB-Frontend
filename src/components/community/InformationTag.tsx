@@ -6,10 +6,11 @@ const InformationTag = () => {
     return (
         <TouchableOpacity
             style={{ 
+            width: "20%",
+            height: 30,
             marginTop: Platform.OS == 'ios' ? 10 : 5,
             marginLeft: 20,
-            marginRight: 300,
-            padding: Platform.OS == 'ios' ? 10 : 5,
+            padding: 7,
             backgroundColor: '#ca8080',
             borderRadius: 8,
             borderColor: 'black'

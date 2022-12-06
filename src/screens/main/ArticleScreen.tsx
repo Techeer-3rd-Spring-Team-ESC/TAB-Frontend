@@ -5,6 +5,7 @@ import InformationTag from '../../components/community/InformationTag';
 import BookmarkButton from '../../components/community/BookmarkButton';
 import LikeButton from '../../components/community/LikeButton';
 import CommentButton from '../../components/community/CommentButton';
+import ArticleTitle from '../../components/article/ArticleTitle';
 
 
 function ArticleScreen() {
@@ -20,7 +21,6 @@ function ArticleScreen() {
         },
 
         postcontainer:{
-            marginBottom: 10,
             flexDirection: 'row',
         },
 
@@ -30,10 +30,6 @@ function ArticleScreen() {
             marginTop: Platform.OS == 'ios' ? 30 : 0,
             resizeMode: 'contain',
         },
-
-        post: {
-            marginLeft: Platform.OS == 'ios' ? 220 : 200,
-        }
       
     });
 
@@ -42,14 +38,16 @@ function ArticleScreen() {
             <View style={styles.profilecontainer}>
                 <WriterProfile/>
                 <View style={styles.postcontainer}> 
+                    <InformationTag/>
                     <BookmarkButton/>
                     <LikeButton/>
                     <CommentButton/>
                 </View>
             </View>
-
-            <InformationTag/>
+        
             
+            
+            <ArticleTitle/>
             
         </View>
     );
