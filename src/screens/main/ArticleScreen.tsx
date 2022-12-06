@@ -7,6 +7,7 @@ import LikeButton from '../../components/community/LikeButton';
 import CommentButton from '../../components/community/CommentButton';
 import ArticleTitle from '../../components/article/ArticleTitle';
 import ArticleImage from '../../components/article/ArticleImage';
+import ArticleSubtitle from '../../components/article/ArticleSubtitle';
 
 
 function ArticleScreen() {
@@ -50,6 +51,7 @@ function ArticleScreen() {
 
             <ArticleTitle/>
             <ArticleImage/>
+            <ArticleSubtitle/>
 
         </ScrollView>
     );

@@ -26,6 +26,7 @@ const PostList = () => {
                 color: 'black', 
                 fontSize: Platform.OS == 'ios' ? 15 : 10,
                 fontFamily: 'GmarketSansTTFMedium',
+                lineHeight: 12
                 }}>
                 A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun
             </Text>

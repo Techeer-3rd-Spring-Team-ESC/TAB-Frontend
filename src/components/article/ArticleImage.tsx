@@ -21,7 +21,7 @@ const ArticleImage = () => {
             marginTop: Platform.OS == "ios" ? 15 : 10,
             textAlign: "center",
             color: "gray",
-            fontSize: Platform.OS == "ios" ? 15 : 12,
+            fontSize: Platform.OS == "ios" ? 12 : 10,
             fontFamily: 'GmarketSansTTFMedium',
         },
     });
