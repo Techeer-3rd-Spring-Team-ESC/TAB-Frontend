@@ -23,7 +23,7 @@ const ArticleSubtitle = () => {
             color: "black",
             fontSize: Platform.OS == "ios" ? 12 : 11,
             fontFamily: 'GmarketSansTTFBold',
-            lineHeight: 30
+            lineHeight: Platform.OS == "ios" ? 30 : 25,
         },
     });
 

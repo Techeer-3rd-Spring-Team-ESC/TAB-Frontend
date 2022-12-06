@@ -8,32 +8,38 @@ const ArticleText = () => {
             
         },
 
-        titletext: {
-            marginTop: Platform.OS == "ios" ? 10 : 5,
-            marginLeft: 20,
+        articletext: {
+            width: '85%',
+            marginLeft: 35,
             marginRight: 10,
-            color: "black",
-            fontSize: Platform.OS == "ios" ? 17 : 14,
-            fontFamily: 'GmarketSansTTFBold',
-            lineHeight: 20
-        },
-
-        subtext: {
-            marginTop: Platform.OS == "ios" ? 10 : 5,
-            marginLeft: 20,
             color: "gray",
-            fontSize: Platform.OS == "ios" ? 15 : 12,
+            fontSize: Platform.OS == "ios" ? 15 : 13,
             fontFamily: 'GmarketSansTTFMedium',
+            lineHeight: 20
         },
     });
 
     return (
         <View style={styles.titlecontainer}>
-            <Text style={styles.titletext}>
-            Are you looking for a new, creative project?
-            What about building your own Telegram bot in Python?
-            Sounds fun and challenging, right?
-            If you think so, read on to discover all the details.
+            <Text style={styles.articletext}>
+            Bot development has become one of the most popular 
+            activities for developers as well as users in recent time.
+            The trend began with Siri, Cortana, and Google Now
+            becoming accessible through voice commands. {"\n"}
+            {"\n"}
+            Then came the personal assistant bots like Alexa, Siri
+            and Google Assistant.
+            These virtual assistants are accessible from our phones
+            as well as third-party platforms like Slack and Telegram. {"\n"}
+            {"\n"}
+            With AI becoming more accessible to regular users, 
+            there is now an increasing demand for bots that can
+            understand natural language and assist users with
+            various tasks on their devices or apps. {"\n"}
+            {"\n"}
+            So if you’re ready to take up this challenge, read on to
+            get started with building your very own python telegram.
+            {"\n"}
             </Text>
         </View>
     );

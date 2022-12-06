@@ -13,12 +13,6 @@ const Searchbox = () => {
             }}
             placeholder="사람, 태그, 키워드로 검색하기"
         >
-            <Text style={{ 
-                color: 'gray', 
-                fontSize: 15,
-                fontFamily: 'GmarketSansTTFLight',
-                }}>
-            </Text>
         </TextInput>
     );
 };

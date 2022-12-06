@@ -26,8 +26,8 @@ function CommunityScreen() {
 
         image: {
             width: 130,
-            height: 100,
-            marginTop: Platform.OS == 'ios' ? 30 : 0,
+            height: 60,
+            marginTop: Platform.OS == 'ios' ? 50 : 20,
             resizeMode: 'contain',
         },
         
@@ -48,14 +48,8 @@ function CommunityScreen() {
             flexDirection: 'row',
         },
 
-        thumbnail:{
-            width: 50,
-            height: 50,
-            marginTop: Platform.OS == 'ios' ? 30 : 0,
-        },
-
         verticleLine: {
-            marginTop: Platform.OS == 'ios' ? 10 : 3,
+            marginTop: Platform.OS == 'ios' ? 10 : 0,
             width: '91%',
             height: 2,
             marginLeft: 20,

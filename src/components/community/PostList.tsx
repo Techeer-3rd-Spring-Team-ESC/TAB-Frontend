@@ -21,12 +21,12 @@ const PostList = () => {
                 numberOfLines= {2} 
                 style={{
                 width: '90%', 
-                marginTop: 10,
+                marginTop: Platform.OS == 'ios' ? 20 : 10,
                 marginLeft: 20,
                 color: 'black', 
                 fontSize: Platform.OS == 'ios' ? 15 : 10,
                 fontFamily: 'GmarketSansTTFMedium',
-                lineHeight: 12
+                lineHeight: Platform.OS == 'ios' ? 20 : 15,
                 }}>
                 A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun
             </Text>

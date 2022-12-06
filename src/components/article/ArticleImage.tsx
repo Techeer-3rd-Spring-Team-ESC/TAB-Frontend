@@ -22,7 +22,7 @@ const ArticleImage = () => {
             textAlign: "center",
             color: "gray",
             fontSize: Platform.OS == "ios" ? 12 : 10,
-            fontFamily: 'GmarketSansTTFMedium',
+            fontFamily: 'GmarketSansTTFLight',
         },
     });
 

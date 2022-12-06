@@ -7,7 +7,7 @@ const InformationTag = () => {
         <TouchableOpacity
             style={{ 
             width: "20%",
-            height: 30,
+            height: Platform.OS == 'ios' ? 30 : 27,
             marginTop: Platform.OS == 'ios' ? 10 : 5,
             marginLeft: 20,
             padding: 7,

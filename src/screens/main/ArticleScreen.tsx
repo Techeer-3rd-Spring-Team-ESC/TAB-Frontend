@@ -8,6 +8,7 @@ import CommentButton from '../../components/community/CommentButton';
 import ArticleTitle from '../../components/article/ArticleTitle';
 import ArticleImage from '../../components/article/ArticleImage';
 import ArticleSubtitle from '../../components/article/ArticleSubtitle';
+import ArticleText from '../../components/article/ArticleText';
 
 
 function ArticleScreen() {
@@ -52,7 +53,7 @@ function ArticleScreen() {
             <ArticleTitle/>
             <ArticleImage/>
             <ArticleSubtitle/>
-
+            <ArticleText/>
         </ScrollView>
     );
 }
