@@ -1,13 +1,36 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import CancelButton from '../../components/post/CancelButton';
 
 
 function SearchScreen() {
+    const styles = StyleSheet.create({
+        container: {
+            height: 1000,
+            backgroundColor: 'white'
+        },
+        
+        text: {
+            marginTop: 200,
+            textAlign: 'center'
+        },
+
+        button: {
+            marginTop: 100,
+            marginRight: 120,
+            alignItems: 'center', 
+            justifyContent: 'center'
+        },
+    });
+
     return (
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>검색 화면</Text>
-        <CancelButton/>
+        <View style={styles.container}>
+            <Text style={styles.text}>
+                검색 화면
+            </Text>
+            <View style={styles.button}>
+                <CancelButton/>
+            </View>
         </View>
     );
 }

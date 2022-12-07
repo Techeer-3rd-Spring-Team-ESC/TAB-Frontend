@@ -66,8 +66,8 @@ function PostScreen() {
             borderColor: '#909090',
         },
 
-        hashtag: { // 해쉬태그 밑으로 내리기
-            marginTop: 10,
+        hashtag: {
+            marginTop: Platform.OS == "ios" ? 10 : 0,
             marginLeft: 10,
             marginRight: 10,
         },

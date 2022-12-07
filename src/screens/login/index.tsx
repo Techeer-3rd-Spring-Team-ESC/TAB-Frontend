@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Platform, Image} from 'react-native';
 import EmailLoginButton from '../../components/login/EmailLoginButton';
 import KakaoLoginButton from '../../components/login/KakaoLoginButton';
 import GoogleLoginButton from '../../components/login/GoogleLoginButton';
@@ -18,7 +18,7 @@ function LoginScreen() {
     image: {
       width: 500,
       height: 200,
-      marginTop: 120,
+      marginTop: Platform.OS == 'ios' ? 200 : 60,
       marginLeft: 10
     },
 

@@ -1,5 +1,5 @@
 import React from 'react';
- import {View, Text, StyleSheet} from 'react-native';
+ import {View, Text, StyleSheet, Platform} from 'react-native';
 
  import InputboxID from '../../components/signup/InputboxID';
  import InputboxDomain from '../../components/signup/InputboxDomain';
@@ -21,7 +21,7 @@ import React from 'react';
   },
 
   signuptext: {
-    marginTop: 150,
+    marginTop: Platform.OS == 'ios' ? 200 : 100,
     marginBottom: 30,
     fontFamily: 'GmarketSansTTFBold',
     fontSize: 30,
@@ -48,7 +48,7 @@ import React from 'react';
 
   domainbox: {
     height: 50,
-    width: 100,
+    width: Platform.OS == 'ios' ? 150 : 128,
     marginTop: 20,
     marginLeft: 10,
     fontFamily: 'GmarketSansTTFLight',
@@ -62,7 +62,6 @@ import React from 'react';
 
   emailcheckbox: {
     marginTop: 16,
-    marginLeft: 8,
     padding: 4,
     paddingHorizontal: 10,
   },

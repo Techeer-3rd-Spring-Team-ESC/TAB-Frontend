@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Platform} from 'react-native';
 import LoginButton from '../../components/emailLogin/LoginButton';
 import ForgotButton from '../../components/emailLogin/ForgotButton';
 import InputboxID from '../../components/emailLogin/InputboxID';
@@ -16,7 +16,7 @@ function EmailLoginScreen() {
     image: {
       width: 500,
       height: 200,
-      marginTop: 120,
+      marginTop: Platform.OS == 'ios' ? 240 : 80,
       marginLeft: 10,
     },
 
