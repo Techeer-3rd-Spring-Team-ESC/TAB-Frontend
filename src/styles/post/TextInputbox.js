@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     inputStyle: {
         height: Platform.OS == "ios" ? 370 : 230,
         marginTop: Platform.OS == "ios" ? 10 : 10,

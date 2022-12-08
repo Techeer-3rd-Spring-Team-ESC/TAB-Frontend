@@ -14,7 +14,6 @@
  import EmailLoginScreen from './src/screens/emailLogin';
  import SignUpScreen from './src/screens/signup';
  import PostScreen from './src/screens/main/PostScreen';
- import SearchScreen from './src/screens/main/SearchScreen';
  import ArticleScreen from './src/screens/main/ArticleScreen';
  import MainScreen from './src/screens/main';
  import {RootStackParamList} from './src/screens/RootStackParams';
@@ -22,23 +21,9 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 
 import React, {type PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 
 const Section: React.FC<
@@ -85,7 +70,6 @@ const App = () => {
         <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Post" component={PostScreen} options={{headerShown: false,}}/>
-        <Stack.Screen name="Search" component={SearchScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Article" component={ArticleScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false,}}/>
       </Stack.Navigator>
