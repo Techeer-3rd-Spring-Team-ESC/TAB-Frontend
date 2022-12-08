@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    inputStyle: {
+    buttonStyle: {
         marginTop: 30,
         marginLeft: 3,
         marginRight: 3,
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
 
-    inputText: {
+    buttonTitle: {
         color: 'white',
         textAlign: 'center',
         fontSize: 20,

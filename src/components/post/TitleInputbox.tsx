@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput} from 'react-native';
-import styles from '../../styles/post/TextInputbox';
+import styles from '../../styles/post/TitleInputbox';
 
 function TitleInputbox() {
     return (
