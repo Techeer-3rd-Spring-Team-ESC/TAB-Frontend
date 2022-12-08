@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     buttonStyle: {
         marginLeft: Platform.OS == 'ios' ? 110 : 140,
         marginRight: 10,

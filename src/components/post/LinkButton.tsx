@@ -1,28 +1,21 @@
-import React from 'react';
-import {TouchableOpacity, StyleSheet, Platform} from 'react-native';
+import React, {Component} from 'react';
+import {TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import styles from '../../styles/post/AttachmentButton';
 
-const LinkButton = () => {
-    const styles = StyleSheet.create({
-        buttonStyle: {
-            marginTop: Platform.OS == "ios" ? 20 : 10,
-            marginLeft: 10,
-            padding: 10,
-            backgroundColor: 'white',
-            borderRadius: 8
-        }
-    });
-
-    return (
-        <TouchableOpacity
-            style = {styles.buttonStyle}
-        >
-            <FontAwesome 
-            name = 'link' 
-            size = {40} 
-            color = '#909090' />
-        </TouchableOpacity>
-    );
+class LinkButton extends Component {
+    render () {
+        return (
+            <TouchableOpacity
+                style = {styles.buttonStyle}
+            >
+                <FontAwesome 
+                name = 'link' 
+                size = {40} 
+                color = '#909090' />
+            </TouchableOpacity>
+        );
+    };
 };
 
 export default LinkButton;

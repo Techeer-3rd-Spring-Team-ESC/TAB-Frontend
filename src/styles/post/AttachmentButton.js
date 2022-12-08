@@ -1,10 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 const styles = StyleSheet.create ({
-    inputStyle: {
+    buttonStyle: {
+        marginTop: Platform.OS == "ios" ? 20 : 10,
+        marginLeft: 10,
         padding: 10,
         backgroundColor: 'white',
-        borderColor: '#FFFFF',
         borderRadius: 8
     }
 });

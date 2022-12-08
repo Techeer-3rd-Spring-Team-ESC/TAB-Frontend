@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     tagStyle: {
         width: '20%',
         height: Platform.OS == 'ios' ? 30 : 27,

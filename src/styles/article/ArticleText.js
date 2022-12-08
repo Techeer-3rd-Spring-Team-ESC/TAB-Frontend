@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     titleContainer: {
         backgroundColor: 'white'
     },

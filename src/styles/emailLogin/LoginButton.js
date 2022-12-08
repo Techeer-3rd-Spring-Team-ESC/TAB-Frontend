@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     buttonStyle: {
         marginTop: 20,
         marginLeft: 20,
