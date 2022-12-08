@@ -7,6 +7,7 @@ import {RootStackParamList} from '../RootStackParams';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {MainBottomTabParamList} from './MainBottomTabParams';
 import InputboxSearch from './InputboxSearch';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -25,7 +26,6 @@ function HomeScreen() {
     logoimage: {
       width: 114,
       height: 63,
-      marginTop: 30,
       marginLeft: 10,
     },
 
@@ -59,7 +59,7 @@ function HomeScreen() {
     inputbox: {
       flexDirection: 'row',
       marginLeft: 10,
-      marginTop: 50,
+      marginTop: 20,
       marginRight: 10,
       fontSize: 5,
       paddingHorizontal: 10,
@@ -110,7 +110,7 @@ function HomeScreen() {
   });
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView>
       <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
         <Image
           style={styles.logoimage}
@@ -191,7 +191,7 @@ function HomeScreen() {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
