@@ -1,13 +1,13 @@
 import React from 'react';
  import {View, StyleSheet, Platform, Text} from 'react-native';
 
- import InputboxID from '../../components/signup/InputboxID';
- import InputboxDomain from '../../components/signup/InputboxDomain';
+ import IDInputbox from '../../components/signup/IDInputbox';
+ import DomainInputbox from '../../components/signup/DomainInputbox';
  import EmailCheckButton from '../../components/signup/EmailCheckButton';
- import InputboxIDcheck from '../../components/signup/InputboxIDcheck';
- import InputboxPW from '../../components/signup/InputboxPW';
- import InputboxPWcheck from '../../components/signup/InputboxPWcheck';
- import InputboxName from '../../components/signup/InputboxName';
+ import IDInputboxCheck from '../../components/signup/IDInputboxCheck';
+ import PWInputbox from '../../components/signup/PWInputbox';
+ import PWInputboxCheck from '../../components/signup/PWInputboxCheck';
+ import NameInputbox from '../../components/signup/NameInputbox';
  import SignUpButton from '../../components/signup/SignUpButton';
 
 
@@ -97,7 +97,7 @@ import React from 'react';
       </Text>
       <View style = {styles.idContainer}>
         <View style = {styles.inputIDBox}>
-          <InputboxID/>
+          <IDInputbox/>
         </View>
         <View style = {{
           marginTop: 15, 
@@ -106,23 +106,23 @@ import React from 'react';
           <Text> @ </Text>
         </View>
         <View style = {styles.domainBox}>
-          <InputboxDomain/>
+          <DomainInputbox/>
         </View>
         <View style = {styles.emailCheckbox}>
           <EmailCheckButton/>
         </View>
       </View>
       <View style = {styles.inputBox}>
-        <InputboxIDcheck/>
+        <IDInputboxCheck/>
       </View>
       <View style = {styles.inputBox}>
-        <InputboxPW/>
+        <PWInputbox/>
       </View>
       <View style = {styles.inputBox}>
-        <InputboxPWcheck/>
+        <PWInputboxCheck/>
       </View>
       <View style = {styles.inputBox}>
-        <InputboxName/>
+        <NameInputbox/>
       </View>
       <View style = {styles.signupBox}>
         <SignUpButton/>
