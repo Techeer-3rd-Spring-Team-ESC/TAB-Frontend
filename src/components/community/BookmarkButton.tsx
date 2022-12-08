@@ -1,24 +1,20 @@
-import React from 'react';
-import {TouchableOpacity, StyleSheet} from 'react-native';
+import React, {Component} from 'react';
+import {TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import styles from '../../styles/community/EmojiButton';
 
-const BookmarkButton = () => {
-    const styles = StyleSheet.create({
-        buttonStyle: {
-            marginLeft: 5,
-            padding: 10
-        }
-    });
-
-    return (
-        <TouchableOpacity style = {styles.buttonStyle}>
-            <FontAwesome 
-                name = 'bookmark'
-                size = {20} 
-                color = 'gray'
-            />
-        </TouchableOpacity>
-    );
+class BookmarkButton extends Component{
+    render() {
+        return (
+            <TouchableOpacity style = {styles.buttonStyle}>
+                <FontAwesome 
+                    name = 'bookmark'
+                    size = {20} 
+                    color = 'gray'
+                />
+            </TouchableOpacity>
+        )
+    };
 };
 
 export default BookmarkButton;

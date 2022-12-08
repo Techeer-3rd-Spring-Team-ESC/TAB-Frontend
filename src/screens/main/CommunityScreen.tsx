@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Platform, Image} from 'react-native';
 import PostButton from '../../components/community/PostButton';
-import Searchbox from '../../components/community/Searchbox';
+import SearchBox from '../../components/community/SearchBox';
 import InformationTag from '../../components/community/InformationTag';
 import QuestionTag from '../../components/community/QuestionTag';
 import PostList from '../../components/community/PostList';
@@ -72,7 +72,7 @@ function CommunityScreen() {
                     />
                 </View>
                 <View style = {styles.search}>
-                    <Searchbox/>
+                    <SearchBox/>
                     <SearchButton/>
                 </View>
             </View>
