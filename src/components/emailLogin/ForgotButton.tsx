@@ -7,19 +7,18 @@ import styles from '../../styles/emailLogin/ForgotButton';
 
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
-class ForgotButton extends Component {
-    render () {
+function ForgotButton() {
     const navigation = useNavigation<loginScreenProp>();
-        return (
-            <TouchableOpacity
-                style = {styles.buttonStyle}
-                onPress = {() => navigation.navigate('SignUp')}
-            >
-                <Text style = {styles.buttonTitle}>
-                    계정이 없으신가요?
-                </Text>
-            </TouchableOpacity>
-        );
-    }
-}
+    return (
+        <TouchableOpacity
+            style = {styles.buttonStyle}
+            onPress = {() => navigation.navigate('SignUp')}
+        >
+            <Text style = {styles.buttonTitle}>
+                계정이 없으신가요?
+            </Text>
+        </TouchableOpacity>
+    );
+};
+
 export default ForgotButton;
