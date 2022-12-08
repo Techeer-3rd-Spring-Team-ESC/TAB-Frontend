@@ -2,8 +2,8 @@ import React from 'react';
 import {View, StyleSheet, Platform, Text, Image} from 'react-native';
 import LoginButton from '../../components/emailLogin/LoginButton';
 import ForgotButton from '../../components/emailLogin/ForgotButton';
-import InputboxID from '../../components/emailLogin/InputboxID';
-import InputboxPW from '../../components/emailLogin/InputboxPW';
+import IDInputbox from '../../components/emailLogin/IDInputbox';
+import PWInputbox from '../../components/emailLogin/PWInputbox';
 
 function EmailLoginScreen() {
 
@@ -70,10 +70,10 @@ function EmailLoginScreen() {
         로그인
       </Text>
       <View style = {styles.inputbox}>
-        <InputboxID/>
+        <IDInputbox/>
       </View>
       <View style = {styles.inputbox}>
-        <InputboxPW/>
+        <PWInputbox/>
       </View>
       <LoginButton/>
       <ForgotButton/>
