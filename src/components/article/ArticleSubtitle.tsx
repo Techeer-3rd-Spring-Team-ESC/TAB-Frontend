@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import styles from '../../styles/article/ArticleSubtitle';
 
 class ArticleSubtitle extends Component {
-    render() {
+    render () {
         return (
             <View style = {styles.subtitleContainer}>
                 <View style = {styles.verticleLine}/>

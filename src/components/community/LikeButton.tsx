@@ -4,7 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from '../../styles/community/EmojiButton';
 
 class LikeButton extends Component{
-    render() {
+    render () {
         return (
             <TouchableOpacity style = {styles.buttonStyle}>
                 <FontAwesome 

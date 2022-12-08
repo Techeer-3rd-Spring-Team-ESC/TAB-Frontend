@@ -9,7 +9,7 @@ import styles from '../../styles/community/PostButton';
 type CommunityScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
 class PostButton extends Component {
-    render(){
+    render () {
         const navigation = useNavigation<CommunityScreenProp>();
         return (
             <TouchableOpacity 

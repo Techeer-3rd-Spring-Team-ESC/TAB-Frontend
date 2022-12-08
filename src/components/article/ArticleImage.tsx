@@ -3,7 +3,7 @@ import {View, Text,  Image} from 'react-native';
 import styles from '../../styles/article/ArticleImage';
 
 class ArticleImage extends Component {
-    render() {
+    render () {
         return (
             <View style = {styles.titleContainer}>
                 <Image style = {styles.image}

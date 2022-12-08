@@ -8,7 +8,7 @@ import styles from '../../styles/emailLogin/LoginButton';
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 class LoginButton extends Component {
-    render(){
+    render () {
     const navigation = useNavigation<loginScreenProp>();
         return (
             <TouchableOpacity

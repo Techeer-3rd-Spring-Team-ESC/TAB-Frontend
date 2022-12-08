@@ -3,7 +3,7 @@ import {View, Text, Image} from 'react-native';
 import styles from '../../styles/article/WriterProfile';
 
 class WriterProfile extends Component{
-    render() {
+    render () {
         return (
             <View style = {styles.profileContainer}>
                 <Image style = {styles.profileImage}

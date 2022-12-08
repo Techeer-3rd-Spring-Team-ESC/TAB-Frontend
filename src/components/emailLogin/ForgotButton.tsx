@@ -8,7 +8,7 @@ import styles from '../../styles/emailLogin/ForgotButton';
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
 class ForgotButton extends Component {
-    render() {
+    render () {
     const navigation = useNavigation<loginScreenProp>();
         return (
             <TouchableOpacity

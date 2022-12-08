@@ -3,7 +3,7 @@ import {TextInput} from 'react-native';
 import styles from '../../styles/community/SearchBox';
 
 class SearchBox extends Component {
-    render(){
+    render () {
         return (
             <TextInput 
                 style = {styles.inputStyle}

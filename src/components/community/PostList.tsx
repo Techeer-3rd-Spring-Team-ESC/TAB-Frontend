@@ -8,7 +8,7 @@ import styles from '../../styles/community/PostList';
 type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
 class PostList extends Component {
-    render(){
+    render () {
         const navigation = useNavigation<SignUpScreenProp>();
         return (
             <TouchableOpacity

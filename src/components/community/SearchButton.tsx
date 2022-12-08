@@ -9,7 +9,7 @@ import styles from '../../styles/community/SearchButton';
 type CommunityScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
 class SearchButton extends Component {
-    render(){
+    render () {
         const navigation = useNavigation<CommunityScreenProp>();
         return (
             <TouchableOpacity

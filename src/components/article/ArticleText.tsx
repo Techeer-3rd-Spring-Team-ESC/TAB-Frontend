@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import styles from '../../styles/article/ArticleText';
 
 class ArticleText extends Component {
-    render() {
+    render () {
         return (
             <View style = {styles.titleContainer}>
                 <Text style = {styles.articleText}>

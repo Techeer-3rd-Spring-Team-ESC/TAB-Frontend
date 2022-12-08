@@ -3,7 +3,7 @@ import {TouchableOpacity, Text} from 'react-native';
 import styles from '../../styles/community/InformationTag';
 
 class InformationTag extends Component{
-    render() {
+    render () {
         return (
             <TouchableOpacity style = {styles.tagStyle}>
                 <Text style = {styles.tagTitle}>

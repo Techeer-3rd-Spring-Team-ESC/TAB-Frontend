@@ -3,7 +3,7 @@ import {View, Text, Image} from 'react-native';
 import styles from '../../styles/community/Profile';
 
 class Profile extends Component {
-    render(){
+    render () {
         return (
             <View style = {styles.profileContainer}>
                 <Text style = {styles.profileText}>
