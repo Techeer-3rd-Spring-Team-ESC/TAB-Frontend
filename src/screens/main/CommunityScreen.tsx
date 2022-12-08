@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Platform, Image} from 'react-native';
 import PostButton from '../../components/community/PostButton';
 import Searchbox from '../../components/community/Searchbox';
 import InformationTag from '../../components/community/InformationTag';
@@ -63,14 +63,15 @@ function CommunityScreen() {
     });
 
     return (
-        <View style={styles.container}>
-            <View style={styles.searchcontainer}>
+        <View style = {styles.container}>
+            <View style = {styles.searchcontainer}>
                 <View>                
-                    <Image style={styles.image}
-                    source={require('../../../assets/images/tab.png')}
+                    <Image 
+                    style = {styles.image}
+                    source = {require('../../../assets/images/tab.png')}
                     />
                 </View>
-                <View style={styles.search}>
+                <View style = {styles.search}>
                     <Searchbox/>
                     <SearchButton/>
                 </View>
@@ -78,7 +79,7 @@ function CommunityScreen() {
 
             <InformationTag/>
             <PostList/>
-            <View style={styles.postcontainer}> 
+            <View style = {styles.postcontainer}> 
                 <Profile/>
                 <BookmarkButton/>
                 <LikeButton/>
@@ -88,7 +89,7 @@ function CommunityScreen() {
 
             <QuestionTag/>
             <PostList/>
-            <View style={styles.postcontainer}> 
+            <View style = {styles.postcontainer}> 
                 <Profile/>
                 <BookmarkButton/>
                 <LikeButton/>
@@ -98,7 +99,7 @@ function CommunityScreen() {
             
             <InformationTag/>
             <PostList/>
-            <View style={styles.postcontainer}> 
+            <View style = {styles.postcontainer}> 
                 <Profile/>
                 <BookmarkButton/>
                 <LikeButton/>
@@ -108,7 +109,7 @@ function CommunityScreen() {
 
             <QuestionTag/>
             <PostList/>
-            <View style={styles.postcontainer}> 
+            <View style = {styles.postcontainer}> 
                 <Profile/>
                 <BookmarkButton/>
                 <LikeButton/>
@@ -116,7 +117,7 @@ function CommunityScreen() {
             </View>
             <View style = {styles.verticleLine}/> 
 
-            <View style={styles.post}>
+            <View style = {styles.post}>
                 <PostButton/>
             </View>
         </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, View, StyleSheet, ScrollView} from 'react-native';
+import {View, ScrollView, StyleSheet, Platform} from 'react-native';
 import WriterProfile from '../../components/article/WriterProfile';
 import InformationTag from '../../components/community/InformationTag';
 import BookmarkButton from '../../components/community/BookmarkButton';
@@ -9,7 +9,6 @@ import ArticleTitle from '../../components/article/ArticleTitle';
 import ArticleImage from '../../components/article/ArticleImage';
 import ArticleSubtitle from '../../components/article/ArticleSubtitle';
 import ArticleText from '../../components/article/ArticleText';
-
 
 function ArticleScreen() {
     const styles = StyleSheet.create({
@@ -37,13 +36,13 @@ function ArticleScreen() {
     });
 
     return (
-        <ScrollView style={styles.container}>
-            <View style={styles.profilecontainer}>
+        <ScrollView style = {styles.container}>
+            <View style = {styles.profilecontainer}>
                 <WriterProfile/>
             </View>
-            <View style={styles.postcontainer}> 
+            <View style = {styles.postcontainer}> 
                     <InformationTag/>
-                    <View style={styles.buttoncontainer}> 
+                    <View style = {styles.buttoncontainer}> 
                         <BookmarkButton/>
                         <LikeButton/>
                         <CommentButton/>

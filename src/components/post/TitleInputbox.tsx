@@ -1,18 +1,21 @@
-import React from "react";
-import {Platform, TextInput, Text} from "react-native";
+import React from 'react';
+import {TextInput, StyleSheet, Platform} from 'react-native';
 
 const TitleInputbox = () => {
-    
+    const styles = StyleSheet.create({
+        inputStyle: {
+            marginTop: Platform.OS == 'ios' ? 5 : 0,
+            marginLeft: 20,
+            marginBottom: Platform.OS == "ios" ? 5 : 0,
+            padding: 10
+        }
+    });
+
     return (
         <TextInput
-            style={{
-            marginTop: Platform.OS == "ios" ? 5 : 0,
-            marginBottom: Platform.OS == "ios" ? 5 : 0,
-            marginLeft: 20,
-            padding: 10,
-            }}
-            placeholder="제목"
-            placeholderTextColor={"#909090"}
+            style = {styles.inputStyle}
+            placeholder = '제목'
+            placeholderTextColor = {'#909090'}
         >
         </TextInput>
     );

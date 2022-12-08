@@ -1,17 +1,20 @@
-import React from "react";
-import { TextInput, Text} from "react-native";
+import React from 'react';
+import {TextInput, StyleSheet} from 'react-native';
 
 const Searchbox = () => {
-    
-    return (
-        <TextInput
-            style={{ 
+    const styles = StyleSheet.create({
+        inputStyle: {
             padding: 10,
             backgroundColor: 'white',
             borderColor: '#FFFFF',
-            borderRadius: 8,
-            }}
-            placeholder="사람, 태그, 키워드로 검색하기"
+            borderRadius: 8
+        }
+    });
+
+    return (
+        <TextInput 
+            style = {styles.inputStyle}
+            placeholder = '사람, 태그, 키워드로 검색하기'
         >
         </TextInput>
     );

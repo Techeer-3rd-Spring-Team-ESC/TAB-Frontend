@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Platform} from 'react-native';
+import {View, StyleSheet, Platform, Text, Image} from 'react-native';
 import LoginButton from '../../components/emailLogin/LoginButton';
 import ForgotButton from '../../components/emailLogin/ForgotButton';
 import InputboxID from '../../components/emailLogin/InputboxID';
@@ -22,57 +22,57 @@ function EmailLoginScreen() {
 
     logintext: {
       marginBottom: 20,
+      textAlign: 'center',
+      color: 'black',
       fontFamily: 'GmarketSansTTFBold',
       fontSize: 30,
-      textAlign: "center",
-      color: "black"
     },
 
     inputbox: {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      fontFamily: 'GmarketSansTTFLight',
-      fontSize: 10,
       paddingHorizontal: 10,
       borderRadius: 10,
       borderColor: 'gray',
-      borderWidth: 1
+      borderWidth: 1,
+      fontFamily: 'GmarketSansTTFLight',
+      fontSize: 10,
     },
 
     loginbox: {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      fontFamily: 'GmarketSansTTFLight',
       fontSize: 30,
+      fontFamily: 'GmarketSansTTFLight',
     },
 
     missing:{
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      alignItems : "center",
+      alignItems : 'center',
       fontSize: 30,
-      border: "none"
+      border: 'none'
     }
 
   });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.image}>
+    <View style = {styles.container}>
+      <View style = {styles.image}>
         <Image
-          source={require('../../../assets/images/tab.png')}
+          source = {require('../../../assets/images/tab.png')}
         />
       </View>
       <Text style = {styles.logintext}>
         로그인
       </Text>
-      <View style={styles.inputbox}>
+      <View style = {styles.inputbox}>
         <InputboxID/>
       </View>
-      <View style={styles.inputbox}>
+      <View style = {styles.inputbox}>
         <InputboxPW/>
       </View>
       <LoginButton/>

@@ -19,11 +19,11 @@ function PostScreen() {
         },
 
         anonymoustext:{
-            marginTop: Platform.OS == "ios" ? 80 : 20,
+            marginTop: Platform.OS == 'ios' ? 80 : 20,
             marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
-            fontSize: Platform.OS == "ios" ? 25 : 20,
-            color: "#CECECE"
+            fontSize: Platform.OS == 'ios' ? 25 : 20,
+            color:'#CECECE'
         },
 
         anonymous:{
@@ -32,15 +32,15 @@ function PostScreen() {
         },
 
         categorytext:{
-            marginTop: Platform.OS == "ios" ? 20 : 20,
+            marginTop: Platform.OS == 'ios' ? 20 : 20,
             marginLeft: 20,
             fontFamily: 'GmarketSansTTFMedium',
-            fontSize: Platform.OS == "ios" ? 25 : 20,
-            color: "#CECECE"
+            fontSize: Platform.OS == 'ios' ? 25 : 20,
+            color: '#CECECE'
         },
 
         category:{
-            marginLeft: Platform.OS == "ios" ? 5 : 10,
+            marginLeft: Platform.OS == 'ios' ? 5 : 10,
             flexDirection: 'row'
         },
 
@@ -67,7 +67,7 @@ function PostScreen() {
         },
 
         hashtag: {
-            marginTop: Platform.OS == "ios" ? 10 : 0,
+            marginTop: Platform.OS == 'ios' ? 10 : 0,
             marginLeft: 10,
             marginRight: 10,
         },

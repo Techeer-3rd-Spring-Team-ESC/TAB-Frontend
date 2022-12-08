@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Platform, Image} from 'react-native';
+import {View, StyleSheet, Platform, Text, Image} from 'react-native';
 import EmailLoginButton from '../../components/login/EmailLoginButton';
 import KakaoLoginButton from '../../components/login/KakaoLoginButton';
 import GoogleLoginButton from '../../components/login/GoogleLoginButton';
@@ -24,47 +24,47 @@ function LoginScreen() {
 
     logintext: {
       marginBottom: 20,
-      fontFamily: 'GmarketSansTTFBold',
+      textAlign: 'center',
+      color: 'black',
       fontSize: 30,
-      textAlign: "center",
-      color: "black"
+      fontFamily: 'GmarketSansTTFBold'
     },
 
     inputbox: {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      fontFamily: 'GmarketSansTTFLight',
-      fontSize: 10,
       paddingHorizontal: 10,
       borderRadius: 10,
       borderColor: 'gray',
-      borderWidth: 1
+      borderWidth: 1,
+      fontFamily: 'GmarketSansTTFLight',
+      fontSize: 10
     },
 
     loginbox: {
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      borderColor: "black"
+      borderColor: 'black'
     },
 
     missing:{
       marginTop: 10,
       marginLeft: 20,
       marginRight: 20,
-      alignItems : "center",
+      alignItems : 'center',
+      border: 'none',
       fontSize: 30,
-      border: "none"
     }
 
   });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.image}>
+    <View style = {styles.container}>
+      <View style = {styles.image}>
         <Image
-          source={require('../../../assets/images/tab.png')}
+          source = {require('../../../assets/images/tab.png')}
         />
       </View>
       <Text style = {styles.logintext}>

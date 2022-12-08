@@ -1,14 +1,14 @@
-import React from "react";
-import {View, Text, StyleSheet, Image, Platform} from "react-native";
+import React from 'react';
+import {View, StyleSheet, Platform, Text, Image} from 'react-native';
 
 const PostList = () => {
     const styles = StyleSheet.create({
-        profilecontainer: {
+        profileContainer: {
             backgroundColor: 'white',
             flexDirection: 'row',
         },
 
-        profiletext: {
+        profileText: {
             marginTop: Platform.OS == 'ios' ? 11 : 13,
             marginLeft: 20,
             color: 'black', 
@@ -16,7 +16,7 @@ const PostList = () => {
             fontFamily: 'GmarketSansTTFBold',
         },
 
-        profileimage: {
+        profileImage: {
             width: 30,
             height: 30,
             marginTop: 5,
@@ -31,12 +31,12 @@ const PostList = () => {
     });
 
     return (
-        <View style={styles.profilecontainer}>
-            <Text style={styles.profiletext}>
+        <View style = {styles.profileContainer}>
+            <Text style = {styles.profileText}>
                 loana Mircea
             </Text>
-            <Image style={styles.profileimage}
-                source={require('../../../assets/images/tab.png')}
+            <Image style = {styles.profileImage}
+                source = {require('../../../assets/images/tab.png')}
             />
         </View>
     );

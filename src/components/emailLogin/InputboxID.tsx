@@ -1,25 +1,22 @@
-import React from "react";
-import { TextInput, Text} from "react-native";
+import React from 'react';
+import {TextInput, StyleSheet} from 'react-native';
 
 const InputboxID = () => {
-    
-    return (
-        <TextInput
-            style={{ 
+    const styles = StyleSheet.create({
+        inputStyle: {
             marginRight: 20,
             padding: 10,
             backgroundColor: 'white',
             borderColor: '#FFFFF',
-            borderRadius: 8,
-            }}
-            placeholder="아이디"
+            borderRadius: 8
+        }
+    });
+
+    return (
+        <TextInput
+            style = {styles.inputStyle}
+            placeholder = '아이디'
         >
-            <Text style={{ 
-                color: 'gray', 
-                fontSize: 15,
-                fontFamily: 'GmarketSansTTFLight',
-                }}>
-            </Text>
         </TextInput>
     );
 };

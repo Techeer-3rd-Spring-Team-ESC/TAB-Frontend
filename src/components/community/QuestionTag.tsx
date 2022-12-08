@@ -1,12 +1,10 @@
-import React from "react";
-import {Platform, TouchableOpacity, Text} from "react-native";
+import React from 'react';
+import {TouchableOpacity, StyleSheet, Platform, Text} from 'react-native';
 
 const QuestionTag = () => {
-
-    return (
-        <TouchableOpacity
-            style={{
-            width: "20%",
+    const styles = StyleSheet.create({
+        tagStyle: {
+            width: '20%',
             height: Platform.OS == 'ios' ? 30 : 27,
             marginTop: Platform.OS == 'ios' ? 10 : 5,
             marginLeft: 20,
@@ -14,15 +12,21 @@ const QuestionTag = () => {
             backgroundColor: '#A3F4A1',
             borderRadius: 8,
             borderColor: 'black'
-            }}
-        >
-            <Text style={{ 
-                color: 'black', 
-                fontSize: Platform.OS == 'ios' ? 15 : 13,
-                fontFamily: 'GmarketSansTTFMedium',
-                textAlign: 'center'
-                }}>
-                질문
+        },
+
+        tagTitle: {
+            color: 'black', 
+            fontSize: Platform.OS == 'ios' ? 15 : 13,
+            fontFamily: 'GmarketSansTTFMedium',
+            textAlign: 'center'
+        }
+        
+    });
+
+    return (
+        <TouchableOpacity style = {styles.tagStyle}>
+            <Text style = {styles.tagTitle}>
+                정보
             </Text>
         </TouchableOpacity>
     );

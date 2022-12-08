@@ -14,33 +14,45 @@ function MainScreen() {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen 
-        name="Community" 
-        component={CommunityScreen} 
-        options={{
+        name = 'Community' 
+        component = {CommunityScreen} 
+        options = {{
           headerShown: false,
           tabBarIcon: () => (
-            <Icon name="comments" size={30} color="black" />
+            <Icon 
+              name = 'comments'
+              size = {30} 
+              color = 'black'
+            />
           ),
-          }}
+        }}
       />
       <BottomTab.Screen 
-        name="Home" 
-        component={HomeScreen} 
-        options={{
+        name = 'Home'
+        component = {HomeScreen} 
+        options = {{
           headerShown: false,
           tabBarIcon: () => (
-            <Icon name="home" size={30} color="black" />
+            <Icon 
+              name = 'home'
+              size = {30}
+              color = 'black'
+            />
           ),
-          }}
+        }}
       />
       <BottomTab.Screen 
         name="Information" 
         component={InformationScreen} 
         options={{headerShown: false,
           tabBarIcon: () => (
-          <Icon name="info" size={30} color="black" />
+          <Icon 
+            name = 'info' 
+            size = {30} 
+            color = 'black'
+          />
           ),
-          }}
+        }}
       />
     </BottomTab.Navigator>
   );
