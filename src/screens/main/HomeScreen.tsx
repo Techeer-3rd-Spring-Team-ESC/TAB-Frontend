@@ -1,6 +1,13 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
-import {View, Text, Button, StyleSheet, Image} from 'react-native';
+import React, {Component} from 'react';
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
@@ -8,16 +15,17 @@ import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {MainBottomTabParamList} from './MainBottomTabParams';
 import InputboxSearch from './InputboxSearch';
 import SafeAreaView from 'react-native-safe-area-view';
+import BoardMainPage from './BoardMainPage';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
   BottomTabNavigationProp<MainBottomTabParamList, 'Home'>
 >;
 
-function HomeScreen() {
-  const navigation = useNavigation<HomeScreenProp>();
+class HomeScreen extends Component {
+  navigation = useNavigation<HomeScreenProp>();
 
-  const styles = StyleSheet.create({
+  styles = StyleSheet.create({
     container: {
       height: 1000,
       backgroundColor: '#F8F9FA',
@@ -108,93 +116,99 @@ function HomeScreen() {
       borderRadius: 100,
     },
   });
-
-  return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+  render() {
+    return (
+      <SafeAreaView>
+        <View style={this.styles.container}>
+          <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+            <Image
+              style={this.styles.logoimage}
+              source={require('../../../assets/images/tab_logo.png')}
+            />
+            <View style={this.styles.inputbox}>
+              <InputboxSearch />
+            </View>
+          </View>
           <Image
-            style={styles.logoimage}
-            source={require('../../../assets/images/tab_logo.png')}
+            style={this.styles.carousel}
+            source={require('../../../assets/images/RN_Carousel.png')}
           />
-          <View style={styles.inputbox}>
-            <InputboxSearch />
-          </View>
-        </View>
-        <Image
-          style={styles.carousel}
-          source={require('../../../assets/images/RN_Carousel.png')}
-        />
-        <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-          <Text style={styles.maintext}>북마크 게시물</Text>
-          <Text style={styles.subtext}>더보기 {'>'}</Text>
-        </View>
-        <View style={styles.tablebox}>
-          <Text style={styles.tabletext1}>
-            Top 7 mistakes that React developers
-          </Text>
           <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-            <Image
-              style={styles.tableimage}
-              source={require('../../../assets/images/redreact.png')}
-            />
-            <Text style={styles.tabletext2}>
-              At the beginning of a carrer, each new bie has to overcome
-              troubles and obstacles. React developers are no exception here ...
-            </Text>
+            <Text style={this.styles.maintext}>북마크 게시물</Text>
+            <Button title="더보기 >" onPress={BoardMainPage} />
+            {/* <Text style={styles.subtext}>더보기 {'>'}</Text> */}
           </View>
-          <View style={styles.tagbox}>
-            <Text
-              style={{
-                marginLeft: 10,
-                marginTop: 7,
-                fontFamily: 'GmarketSansTTFBold',
-                fontSize: 12,
-              }}>
-              #AI Fellowship
+          <View style={this.styles.tablebox}>
+            <Text style={this.styles.tabletext1}>
+              Top 7 mistakes that React developers
             </Text>
-          </View>
-        </View>
-        <View style={styles.tablebox}>
-          <Text style={styles.tabletext1}>4 tips to code better in React</Text>
-          <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-            <Image
-              style={styles.tableimage}
-              source={require('../../../assets/images/bluereact.png')}
-            />
-            <Text style={styles.tabletext2}>
-              At the beginning of a career, each newbie has to overcome troubles
-              and obstacles. React developers are no exception here ...
-            </Text>
-          </View>
-          <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-            <View style={styles.tagbox}>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+              <Image
+                style={this.styles.tableimage}
+                source={require('../../../assets/images/redreact.png')}
+              />
+              <Text style={this.styles.tabletext2}>
+                At the beginning of a carrer, each new bie has to overcome
+                troubles and obstacles. React developers are no exception here
+                ...
+              </Text>
+            </View>
+            <View style={this.styles.tagbox}>
               <Text
                 style={{
-                  marginLeft: 33,
+                  marginLeft: 10,
                   marginTop: 7,
                   fontFamily: 'GmarketSansTTFBold',
                   fontSize: 12,
                 }}>
-                #React
-              </Text>
-            </View>
-            <View style={styles.tagbox}>
-              <Text
-                style={{
-                  marginLeft: 43,
-                  marginTop: 7,
-                  fontFamily: 'GmarketSansTTFBold',
-                  fontSize: 12,
-                }}>
-                #JS
+                #AI Fellowship
               </Text>
             </View>
           </View>
+          <View style={this.styles.tablebox}>
+            <Text style={this.styles.tabletext1}>
+              4 tips to code better in React
+            </Text>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+              <Image
+                style={this.styles.tableimage}
+                source={require('../../../assets/images/bluereact.png')}
+              />
+              <Text style={this.styles.tabletext2}>
+                At the beginning of a career, each newbie has to overcome
+                troubles and obstacles. React developers are no exception here
+                ...
+              </Text>
+            </View>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+              <View style={this.styles.tagbox}>
+                <Text
+                  style={{
+                    marginLeft: 33,
+                    marginTop: 7,
+                    fontFamily: 'GmarketSansTTFBold',
+                    fontSize: 12,
+                  }}>
+                  #React
+                </Text>
+              </View>
+              <View style={this.styles.tagbox}>
+                <Text
+                  style={{
+                    marginLeft: 43,
+                    marginTop: 7,
+                    fontFamily: 'GmarketSansTTFBold',
+                    fontSize: 12,
+                  }}>
+                  #JS
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
-  );
+      </SafeAreaView>
+    );
+  }
 }
 
 export default HomeScreen;
