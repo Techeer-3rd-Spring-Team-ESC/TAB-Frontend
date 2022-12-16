@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text} from 'react-native';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
@@ -16,7 +16,10 @@ function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center'}}>
       <Text>홈 화면</Text>
     </View>
   );

@@ -1,133 +1,57 @@
-import React from 'react';
- import {View, Text, StyleSheet} from 'react-native';
+import React, {Component} from "react";
+import {View, Text} from 'react-native';
+import IDInputbox from '../../components/signup/IDInputbox';
+import DomainInputbox from '../../components/signup/DomainInputbox';
+import EmailCheckButton from '../../components/signup/EmailCheckButton';
+import IDInputboxCheck from '../../components/signup/IDInputboxCheck';
+import PWInputbox from '../../components/signup/PWInputbox';
+import PWInputboxCheck from '../../components/signup/PWInputboxCheck';
+import NameInputbox from '../../components/signup/NameInputbox';
+import SignUpButton from '../../components/signup/SignUpButton';
+import styles from '../../styles/screens/Signup';
 
- import InputboxID from '../../components/signup/InputboxID';
- import InputboxDomain from '../../components/signup/InputboxDomain';
- import EmailCheckButton from '../../components/signup/EmailCheckButton';
- import InputboxIDcheck from '../../components/signup/InputboxIDcheck';
- import InputboxPW from '../../components/signup/InputboxPW';
- import InputboxPWcheck from '../../components/signup/InputboxPWcheck';
- import InputboxName from '../../components/signup/InputboxName';
- import SignUpButton from '../../components/signup/SignUpButton';
-
-
-
- function SignUpScreen() {
-
-  const styles = StyleSheet.create({
-  container: {
-    height: 1000,
-    backgroundColor: 'white',
-  },
-
-  signuptext: {
-    marginTop: 150,
-    marginBottom: 30,
-    fontFamily: 'GmarketSansTTFBold',
-    fontSize: 30,
-    textAlign: "center",
-    color: "black"
-  },
-
-  idcontainer: {
-    flexDirection: 'row',
-  },
-
-  inputIDbox: {
-    height: 50,
-    marginTop: 20,
-    marginLeft: 20,
-    fontFamily: 'GmarketSansTTFLight',
-    fontSize: 10,
-    padding: 4,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    borderColor: 'gray',
-    borderWidth: 1
-  },
-
-  domainbox: {
-    height: 50,
-    width: 100,
-    marginTop: 20,
-    marginLeft: 10,
-    fontFamily: 'GmarketSansTTFLight',
-    fontSize: 10,
-    padding: 4,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    borderColor: 'gray',
-    borderWidth: 1
-  },
-
-  emailcheckbox: {
-    marginTop: 16,
-    marginLeft: 8,
-    padding: 4,
-    paddingHorizontal: 10,
-  },
-
-  inputbox: {
-    height: 50,
-    marginTop: 10,
-    marginLeft: 20,
-    marginRight: 20,
-    fontFamily: 'GmarketSansTTFLight',
-    fontSize: 10,
-    padding: 4,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    borderColor: 'gray',
-    borderWidth: 1
-  },
-
-  signupbox: {
-    marginTop: 10,
-    marginLeft: 20,
-    marginRight: 20,
-    fontFamily: 'GmarketSansTTFLight',
-    fontSize: 30,
-  }
-  });
-
-
-  return (
-  <View style={styles.container}>
-    <Text style = {styles.signuptext}>
-      회원가입
-    </Text>
-    <View style={styles.idcontainer}>
-      <View style={styles.inputIDbox}>
-        <InputboxID/>
+class SignUpScreen extends Component {
+  render () {
+    return (
+      <View style = {styles.container}>
+        <Text style = {styles.signupText}>
+          회원가입
+        </Text>
+        <View style = {styles.idContainer}>
+          <View style = {styles.inputIDBox}>
+            <IDInputbox/>
+          </View>
+          <View style = {{
+            marginTop: 15, 
+            marginLeft: 10, 
+            justifyContent: 'center'}}>
+            <Text> @ </Text>
+          </View>
+          <View style = {styles.domainBox}>
+            <DomainInputbox/>
+          </View>
+          <View style = {styles.emailCheckbox}>
+            <EmailCheckButton/>
+          </View>
+        </View>
+        <View style = {styles.inputBox}>
+          <IDInputboxCheck/>
+        </View>
+        <View style = {styles.inputBox}>
+          <PWInputbox/>
+        </View>
+        <View style = {styles.inputBox}>
+          <PWInputboxCheck/>
+        </View>
+        <View style = {styles.inputBox}>
+          <NameInputbox/>
+        </View>
+        <View style = {styles.signupBox}>
+          <SignUpButton/>
+        </View>
       </View>
-      <View style={{
-        marginTop: 15, 
-        marginLeft: 10, 
-        justifyContent: 'center'}}>
-        <Text> @ </Text>
-      </View>
-      <View style={styles.domainbox}>
-        <InputboxDomain/>
-      </View>
-      <View style={styles.emailcheckbox}>
-        <EmailCheckButton/>
-      </View>
-    </View>
-    <View style={styles.inputbox}>
-      <InputboxIDcheck/>
-    </View>
-    <View style={styles.inputbox}>
-      <InputboxPW/>
-    </View>
-    <View style={styles.inputbox}>
-      <InputboxPWcheck/>
-    </View>
-    <View style={styles.inputbox}>
-      <InputboxName/>
-    </View>
-    <SignUpButton/>
-    </View>
-  );
- }
+    );
+  };
+}
 
- export default SignUpScreen;
+export default SignUpScreen;

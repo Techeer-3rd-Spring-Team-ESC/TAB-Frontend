@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TabFrontendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TabFrontendTests.m */; };
-		042E96D1292D53BE002EB59F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 042E96D0292D53BD002EB59F /* Fonts */; };
+		043A001C2935159A009F5507 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043A001B2935159A009F5507 /* GmarketSansTTFBold.ttf */; };
+		043A001E293515A6009F5507 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043A001D293515A6009F5507 /* GmarketSansTTFLight.ttf */; };
+		043A0020293515B1009F5507 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043A001F293515B1009F5507 /* GmarketSansTTFMedium.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-TabFrontend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TabFrontend.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -32,6 +34,9 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TabFrontendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabFrontendTests.m; sourceTree = "<group>"; };
 		042E96D0292D53BD002EB59F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		043A001B2935159A009F5507 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFBold.ttf; path = ../assets/fonts/GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		043A001D293515A6009F5507 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFLight.ttf; path = Fonts/GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		043A001F293515B1009F5507 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFMedium.ttf; path = Fonts/GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TabFrontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabFrontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TabFrontend/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TabFrontend/AppDelegate.mm; sourceTree = "<group>"; };
@@ -118,6 +123,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				043A001F293515B1009F5507 /* GmarketSansTTFMedium.ttf */,
+				043A001D293515A6009F5507 /* GmarketSansTTFLight.ttf */,
+				043A001B2935159A009F5507 /* GmarketSansTTFBold.ttf */,
 				042E96D0292D53BD002EB59F /* Fonts */,
 				13B07FAE1A68108700A75B9A /* TabFrontend */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -245,7 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042E96D1292D53BE002EB59F /* Fonts in Resources */,
+				043A0020293515B1009F5507 /* GmarketSansTTFMedium.ttf in Resources */,
+				043A001E293515A6009F5507 /* GmarketSansTTFLight.ttf in Resources */,
+				043A001C2935159A009F5507 /* GmarketSansTTFBold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
