@@ -25,6 +25,11 @@ import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
+import {useTranslation} from 'react-i18next';
+
+import i18n from "./src/lang/i18n";
+import Main from './src/screens/main';
+const initI18n = i18n;
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -62,10 +67,12 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  const {t, i18n} = useTranslation();
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Main screenProps={{t, i18n}} />
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>

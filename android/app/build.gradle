@@ -279,6 +279,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    
+    compile project(':react-native-i18n')
 }
 
 if (isNewArchitectureEnabled()) {

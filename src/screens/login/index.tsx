@@ -6,6 +6,7 @@ import GoogleLoginButton from '../../components/login/GoogleLoginButton';
 import GithubLoginButton from '../../components/login/GithubLoginButton';
 import ForgotButton from '../../components/login/ForgotButton';
 import styles from '../../styles/screens/Login';
+import '@lang/i18n';
 
 class LoginScreen extends Component {
   render () {
