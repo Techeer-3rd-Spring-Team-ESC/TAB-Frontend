@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import {MainBottomTabParamList} from './MainBottomTabParams';
 import CommunityScreen from './CommunityScreen';
-import InformationScreen from './InformationScreen';
+// import InformationScreen from './InformationScreen';
 
 const BottomTab = createBottomTabNavigator<MainBottomTabParamList>();
 
@@ -20,11 +20,11 @@ function MainScreen() {
         component={HomeScreen}
         options={{headerShown: false}}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Information"
         component={InformationScreen}
         options={{headerShown: false}}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "TAB LOGO.png",
+      "filename" : "TAB-removebg-preview.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "TAB-removebg-preview@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "TAB-removebg-preview@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
