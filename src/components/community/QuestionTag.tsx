@@ -6,7 +6,7 @@ function QuestionTag() {
     return (
         <TouchableOpacity style = {styles.tagStyle}>
             <Text style = {styles.tagTitle}>
-                정보
+                질문
             </Text>
         </TouchableOpacity>
     );

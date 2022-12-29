@@ -7,7 +7,7 @@ const styles = StyleSheet.create ({
     },
 
     listTitle: {
-        width: '90%', 
+        width: '77%', 
         marginTop: Platform.OS == 'ios' ? 20 : 10,
         marginLeft: 20,
         color: 'black', 

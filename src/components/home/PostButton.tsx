@@ -4,7 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import styles from '../../styles/community/PostButton';
+import styles from '../../styles/home/PostButton';
 
 type CommunityScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
@@ -17,7 +17,7 @@ function PostButton() {
         >
             <FontAwesome 
                 name = 'pencil' 
-                size = {Platform.OS == 'ios' ? 70 : 45} 
+                size = {Platform.OS == 'ios' ? 60 : 45} 
                 color = '#2BC63B' 
             />
         </TouchableOpacity>

@@ -7,7 +7,7 @@ function LikeButton() {
     return (
         <TouchableOpacity style = {styles.buttonStyle}>
             <FontAwesome 
-                name = 'comment'
+                name = 'heart'
                 size = {20} 
                 color = 'gray'
             />
