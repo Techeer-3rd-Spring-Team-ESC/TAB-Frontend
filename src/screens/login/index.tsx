@@ -6,6 +6,7 @@ import GoogleLoginButton from '../../components/login/GoogleLoginButton';
 import GithubLoginButton from '../../components/login/GithubLoginButton';
 import ForgotButton from '../../components/login/ForgotButton';
 import styles from '../../styles/screens/Login';
+import titleStyles from '../../styles/home/TitleText';
 
 class LoginScreen extends Component {
   render () {
@@ -16,7 +17,7 @@ class LoginScreen extends Component {
             source = {require('../../../assets/images/tab.png')}
           />
         </View>
-        <Text style = {styles.logintext}>
+        <Text style = {titleStyles.logintext}>
           로그인
         </Text>
         <KakaoLoginButton/>

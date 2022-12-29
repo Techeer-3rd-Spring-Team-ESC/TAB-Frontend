@@ -7,7 +7,7 @@ const styles = StyleSheet.create ({
     },
     
     searchcontainer: {
-        marginTop: Platform.OS == 'ios' ? 60 : 0,
+        marginTop: Platform.OS == 'ios' ? 0 : 0,
         flexDirection: 'row',
     },
 
