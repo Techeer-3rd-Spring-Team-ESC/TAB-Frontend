@@ -31,4 +31,4 @@ jobs:
       
     - name: Build typescript & run all tests
       run: |
-        npm run build && npm test --forceExit --detectOpenHandles
+        npm build && npm test --forceExit --detectOpenHandles
