@@ -1,0 +1,32 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use npm ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install node_modules
+      run: |
+        npm install
+        
+    - name: Run test
+      run: |
+        npm test-ci
