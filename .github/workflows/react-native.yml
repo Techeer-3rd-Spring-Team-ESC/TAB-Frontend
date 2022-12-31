@@ -26,6 +26,10 @@ jobs:
     - name: Install node_modules
       run: |
         npm install
+    
+    - name: install ci-test
+      run: |
+        npm install-ci-test
         
     - name: Run test
       run: |
