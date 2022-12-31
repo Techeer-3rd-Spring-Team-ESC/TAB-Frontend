@@ -28,6 +28,7 @@ jobs:
         
     - name: Install node_module
       run: npm install
-        
-    - name: Unit & Integration tests
-      run: npm test:ci
+      
+    - name: Build typescript & run all tests
+      run: |
+        yarn build && yarn test --forceExit --detectOpenHandles
