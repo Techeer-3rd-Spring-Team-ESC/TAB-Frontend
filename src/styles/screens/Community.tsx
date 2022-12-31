@@ -14,13 +14,13 @@ const styles = StyleSheet.create ({
     image: {
         width: 130,
         height: 60,
-        marginTop: Platform.OS == 'ios' ? 50 : 20,
+        marginTop: Platform.OS == 'ios' ? 30 : 13,
         resizeMode: 'contain',
     },
     
     search: {
         height: 60,
-        marginTop: Platform.OS == 'ios' ? 50 : 20,
+        marginTop: Platform.OS == 'ios' ? 30 : 10,
         marginRight: 50,
         fontFamily: 'GmarketSansTTFLight',
         fontSize: 10,

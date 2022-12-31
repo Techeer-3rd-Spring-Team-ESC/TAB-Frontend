@@ -7,20 +7,19 @@ const styles = StyleSheet.create ({
     },
     
     searchcontainer: {
-        marginTop: Platform.OS == 'ios' ? 0 : 0,
         flexDirection: 'row',
     },
 
     image: {
         width: 130,
         height: 60,
-        marginTop: Platform.OS == 'ios' ? 50 : 20,
+        marginTop: Platform.OS == 'ios' ? 30 : 13,
         resizeMode: 'contain',
     },
     
     search: {
         height: 60,
-        marginTop: Platform.OS == 'ios' ? 50 : 20,
+        marginTop: Platform.OS == 'ios' ? 30 : 10,
         marginRight: 50,
         fontFamily: 'GmarketSansTTFLight',
         fontSize: 10,
@@ -45,6 +44,10 @@ const styles = StyleSheet.create ({
 
     post: {
         marginLeft: Platform.OS == 'ios' ? 220 : 200,
+    },
+
+    page: {
+        flexDirection: 'row'
     }
 });
 
