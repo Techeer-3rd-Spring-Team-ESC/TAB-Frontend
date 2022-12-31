@@ -29,5 +29,5 @@ jobs:
     - name: Install node_module
       run: npm install
         
-    - name: Project start
-      run: npm start
+    - name: Unit & Integration tests
+      run: npm test
