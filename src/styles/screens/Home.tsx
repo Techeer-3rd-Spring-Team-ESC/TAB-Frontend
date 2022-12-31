@@ -1,12 +1,13 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const homeStyles = StyleSheet.create ({
     container: {
         height: 1000,
         backgroundColor: 'white'
     },
     
     searchcontainer: {
+        marginTop: Platform.OS == 'ios' ? 1 : 0,
         flexDirection: 'row',
     },
 
@@ -51,4 +52,4 @@ const styles = StyleSheet.create ({
     }
 });
 
-export default styles;
+export default homeStyles;

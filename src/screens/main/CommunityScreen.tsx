@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, ScrollView} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import SearchBox from '../../components/community/SearchBox';
 import InformationTag from '../../components/community/InformationTag';
 import QuestionTag from '../../components/community/QuestionTag';
@@ -10,6 +10,10 @@ import LikeButton from '../../components/community/LikeButton';
 import CommentButton from '../../components/community/CommentButton';
 import SearchButton from '../../components/community/SearchButton';
 import styles from '../../styles/screens/Community';
+import homeStyles from '../../styles/screens/Home';
+import titleStyles from '../../styles/home/TitleText';
+import LeftPageButton from '../../components/home/LeftPageButton';
+import RightPageButton from '../../components/home/RightPageButton';
 
 function CommunityScreen() {
     return (
@@ -26,7 +30,12 @@ function CommunityScreen() {
                     <SearchButton/>
                 </View>
             </View>
-            <ScrollView>
+
+            <Text style = {titleStyles.titletext}>
+                전체 게시물
+            </Text> 
+
+            <View style = {styles.listcontainer}>
                 <InformationTag/>
                 <PostList/>
                 <View style = {styles.postcontainer}> 
@@ -65,7 +74,15 @@ function CommunityScreen() {
                     <CommentButton/>
                 </View>
                 <View style = {styles.verticleLine}/> 
-            </ScrollView>
+            </View>
+
+            <View style = {homeStyles.page}>
+            <LeftPageButton/>
+                <Text style = {titleStyles.pagetext}>
+                1
+                </Text>
+            <RightPageButton/>
+        </View>
         </View>
     );
 };

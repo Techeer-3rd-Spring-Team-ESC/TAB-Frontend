@@ -16,7 +16,7 @@ import BookmarkButton from '../../components/community/BookmarkButton';
 import LikeButton from '../../components/community/LikeButton';
 import CommentButton from '../../components/community/CommentButton';
 import SearchButton from '../../components/community/SearchButton';
-import styles from '../../styles/screens/Home';
+import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
@@ -29,15 +29,15 @@ type HomeScreenProp = CompositeNavigationProp<
 function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
   return (
-    <SafeAreaView style = {styles.container}>
-      <View style = {styles.searchcontainer}>
+    <SafeAreaView style = {homeStyles.container}>
+      <View style = {homeStyles.searchcontainer}>
           <View>                
               <Image 
-                style = {styles.image}
+                style = {homeStyles.image}
                 source = {require('../../../assets/images/tab.png')}
               />
           </View>
-          <View style = {styles.search}>
+          <View style = {homeStyles.search}>
               <SearchBox/>
               <SearchButton/>
           </View>
@@ -49,49 +49,49 @@ function HomeScreen() {
 
       <InformationTag/>
       <PostList/>
-      <View style = {styles.postcontainer}> 
+      <View style = {homeStyles.postcontainer}> 
           <Profile/>
           <BookmarkButton/>
           <LikeButton/>
           <CommentButton/>
       </View>
-      <View style = {styles.verticleLine}/>
+      <View style = {homeStyles.verticleLine}/>
 
       <QuestionTag/>
       <PostList/>
-      <View style = {styles.postcontainer}> 
+      <View style = {homeStyles.postcontainer}> 
           <Profile/>
           <BookmarkButton/>
           <LikeButton/>
           <CommentButton/>
       </View>
-      <View style = {styles.verticleLine}/> 
+      <View style = {homeStyles.verticleLine}/> 
       
       <InformationTag/>
       <PostList/>
-      <View style = {styles.postcontainer}> 
+      <View style = {homeStyles.postcontainer}> 
           <Profile/>
           <BookmarkButton/>
           <LikeButton/>
           <CommentButton/>
       </View>
-      <View style = {styles.verticleLine}/>
+      <View style = {homeStyles.verticleLine}/>
 
       <QuestionTag/>
       <PostList/>
-      <View style = {styles.postcontainer}> 
+      <View style = {homeStyles.postcontainer}> 
           <Profile/>
           <BookmarkButton/>
           <LikeButton/>
           <CommentButton/>
       </View>
-      <View style = {styles.verticleLine}/> 
+      <View style = {homeStyles.verticleLine}/> 
 
-      <View style = {styles.post}>
+      <View style = {homeStyles.post}>
           <PostButton/>
       </View>
 
-      <View style = {styles.page}>
+      <View style = {homeStyles.page}>
           <LeftPageButton/>
             <Text style = {titleStyles.pagetext}>
               1

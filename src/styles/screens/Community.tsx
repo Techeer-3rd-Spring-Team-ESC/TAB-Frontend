@@ -31,6 +31,9 @@ const styles = StyleSheet.create ({
         flexDirection: 'row',
     },
 
+    listcontainer: {
+    },
+
     postcontainer:{
         flexDirection: 'row',
     },
