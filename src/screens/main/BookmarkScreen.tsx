@@ -14,20 +14,11 @@ import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
-import SideDrawer from '../../components/community/SideDrawer'
-import HomeScreen from "./HomeScreen";
 
-function CommunityScreen() {
+function BookmarkScreen() {
     return (
         <View style = {styles.container}>
             <View style = {styles.searchcontainer}>
-                {/* <Image 
-                    style = {homeStyles.image}
-                    source = {require('../../../assets/images/tab.png')}
-                /> */}
-                <View style = {homeStyles.image}>
-                    <SideDrawer navigation={HomeScreen}/>
-                </View>
                 <View style = {styles.search}>
                     <SearchBox/>
                     <SearchButton/>
@@ -35,7 +26,7 @@ function CommunityScreen() {
             </View>
 
             <Text style = {titleStyles.titletext}>
-                전체 게시물
+                북마크 게시물
             </Text> 
 
             <View style = {styles.listcontainer}>
@@ -90,4 +81,4 @@ function CommunityScreen() {
     );
 };
 
-export default CommunityScreen;
+export default BookmarkScreen;

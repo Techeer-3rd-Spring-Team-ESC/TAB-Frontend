@@ -8,16 +8,17 @@
  * @format
  */
 
- import {NavigationContainer} from '@react-navigation/native';
- import {createStackNavigator} from '@react-navigation/stack';
- import LoginScreen from './src/screens/login';
- import EmailLoginScreen from './src/screens/emailLogin';
- import SignUpScreen from './src/screens/signup';
- import PostScreen from './src/screens/main/PostScreen';
- import ArticleScreen from './src/screens/main/ArticleScreen';
- import MainScreen from './src/screens/main';
- import {RootStackParamList} from './src/screens/RootStackParams';
-const Stack = createStackNavigator<RootStackParamList>();
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import LoginScreen from './src/screens/login';
+import EmailLoginScreen from './src/screens/emailLogin';
+import SignUpScreen from './src/screens/signup';
+import PostScreen from './src/screens/main/PostScreen';
+import ArticleScreen from './src/screens/main/ArticleScreen';
+import MainScreen from './src/screens/main';
+import {RootStackParamList} from './src/screens/RootStackParams';
+
+  const Stack = createStackNavigator<RootStackParamList>();
 
 
 import React, {type PropsWithChildren} from 'react';
