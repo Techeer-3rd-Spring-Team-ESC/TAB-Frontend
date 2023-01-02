@@ -26,6 +26,15 @@ const titleStyles = StyleSheet.create ({
         fontSize: Platform.OS == 'ios' ? 20 : 15,
         fontFamily: 'GmarketSansTTFMedium'
     },
+
+    bookmarktext: {
+        marginTop: Platform.OS == 'ios' ? 15 : 20,
+        marginLeft: 20,
+        marginBottom: Platform.OS == 'ios' ? 20 : 15,
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 35 : 30,
+        fontFamily: 'GmarketSansTTFBold'
+    }
 });
 
 export default titleStyles;

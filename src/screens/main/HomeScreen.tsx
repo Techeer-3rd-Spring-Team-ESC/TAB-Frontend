@@ -20,6 +20,7 @@ import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
+import LogoButton from '../../components/community/LogoButton';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -31,12 +32,7 @@ function HomeScreen() {
   return (
     <SafeAreaView style = {homeStyles.container}>
       <View style = {homeStyles.searchcontainer}>
-          <View>                
-              <Image 
-                style = {homeStyles.image}
-                source = {require('../../../assets/images/tab.png')}
-              />
-          </View>
+          <LogoButton/>
           <View style = {homeStyles.search}>
               <SearchBox/>
               <SearchButton/>

@@ -2,13 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create ({
     buttonStyle: {
-        marginLeft: 5,
+        marginLeft: 10,
         padding: 10
-    },
-
-    commentButtonStyle: {
-        marginLeft: 5,
-        padding: 8
     }
 });
 

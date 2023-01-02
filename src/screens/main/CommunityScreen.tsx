@@ -14,20 +14,15 @@ import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
-import SideDrawer from '../../components/community/SideDrawer'
+import SideDrawer from '../../components/community/LogoButton'
 import HomeScreen from "./HomeScreen";
+import LogoButton from "../../components/community/LogoButton";
 
 function CommunityScreen() {
     return (
         <View style = {styles.container}>
             <View style = {styles.searchcontainer}>
-                {/* <Image 
-                    style = {homeStyles.image}
-                    source = {require('../../../assets/images/tab.png')}
-                /> */}
-                <View style = {homeStyles.image}>
-                    <SideDrawer navigation={HomeScreen}/>
-                </View>
+                <LogoButton/>
                 <View style = {styles.search}>
                     <SearchBox/>
                     <SearchButton/>
