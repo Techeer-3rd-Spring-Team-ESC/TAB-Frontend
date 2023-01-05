@@ -8,16 +8,18 @@
  * @format
  */
 
- import {NavigationContainer} from '@react-navigation/native';
- import {createStackNavigator} from '@react-navigation/stack';
- import LoginScreen from './src/screens/login';
- import EmailLoginScreen from './src/screens/emailLogin';
- import SignUpScreen from './src/screens/signup';
- import PostScreen from './src/screens/main/PostScreen';
- import ArticleScreen from './src/screens/main/ArticleScreen';
- import MainScreen from './src/screens/main';
- import {RootStackParamList} from './src/screens/RootStackParams';
-const Stack = createStackNavigator<RootStackParamList>();
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import LoginScreen from './src/screens/login';
+import EmailLoginScreen from './src/screens/emailLogin';
+import SignUpScreen from './src/screens/signup';
+import PostScreen from './src/screens/main/PostScreen';
+import ArticleScreen from './src/screens/main/ArticleScreen';
+import MainScreen from './src/screens/main';
+import BookmarkScreen from './src/screens/bookmark/BookmarkScreen';
+import {RootStackParamList} from './src/screens/RootStackParams';
+
+  const Stack = createStackNavigator<RootStackParamList>();
 
 
 import React, {type PropsWithChildren} from 'react';
@@ -71,6 +73,7 @@ const App = () => {
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Post" component={PostScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Article" component={ArticleScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="Bookmark" component={BookmarkScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false,}}/>
       </Stack.Navigator>
     </NavigationContainer>
