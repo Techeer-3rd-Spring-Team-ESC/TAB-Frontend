@@ -28,7 +28,7 @@ const titleStyles = StyleSheet.create ({
     },
 
     bookmarktext: {
-        marginTop: Platform.OS == 'ios' ? 15 : 20,
+        marginTop: Platform.OS == 'ios' ? 125 : 67,
         marginLeft: 20,
         marginBottom: Platform.OS == 'ios' ? 20 : 15,
         color: 'black',
