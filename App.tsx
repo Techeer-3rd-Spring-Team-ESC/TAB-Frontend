@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from './src/screens/login';
@@ -22,7 +22,7 @@ import {RootStackParamList} from './src/screens/RootStackParams';
   const Stack = createStackNavigator<RootStackParamList>();
 
 
-import React, {type PropsWithChildren} from 'react';
+import React, {useEffect, type PropsWithChildren} from 'react';
 import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -59,6 +59,11 @@ const Section: React.FC<
 };
 
 const App = () => {
+
+  // useEffect(() => {
+  //   SplashScreen.hide();
+  // }, []);
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

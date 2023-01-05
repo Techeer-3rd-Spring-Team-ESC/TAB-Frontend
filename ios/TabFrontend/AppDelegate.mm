@@ -15,6 +15,7 @@
 #import <ReactCommon/RCTTurboModuleManager.h>
 
 #import <react/config/ReactNativeConfig.h>
+#import "RNSplashScreen.h"
 
 static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
