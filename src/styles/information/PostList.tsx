@@ -8,8 +8,8 @@ const styles = StyleSheet.create ({
 
     listTitle: {
         width: Platform.OS == 'ios' ? '25%' : '30%',
-        marginTop: Platform.OS == 'ios' ? 10 : 0,
-        marginLeft: Platform.OS == 'ios' ? 80 : 80,
+        marginTop: Platform.OS == 'ios' ? 10 : 5,
+        marginLeft: Platform.OS == 'ios' ? 20 : 10,
         color: 'black', 
         fontSize: Platform.OS == 'ios' ? 15 : 12,
         fontFamily: 'GmarketSansTTFMedium',

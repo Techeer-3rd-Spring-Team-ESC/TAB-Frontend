@@ -20,97 +20,97 @@ function InformationScreen() {
 
             <View style = {styles.listcontainer}>
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>
 
                 <View style = {styles.crollingpost}>
-                    <View style = {styles.image}>
-                        
-                    </View>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
                     <PostList/>
                 </View>
                 <View style = {styles.verticleLine}/>

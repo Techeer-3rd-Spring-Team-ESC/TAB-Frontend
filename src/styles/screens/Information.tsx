@@ -7,9 +7,10 @@ const styles = StyleSheet.create ({
     },
 
     image: {
-        width: 30,
-        height: 30,
-        marginTop: Platform.OS == 'ios' ? 30 : 13,
+        width: 90,
+        height: Platform.OS == 'ios' ? 70 : 60,
+        marginTop: Platform.OS == 'ios' ? 10 : 0,
+        marginLeft: Platform.OS == 'ios' ? 20 : 10,
     },
 
     listcontainer: {
@@ -22,16 +23,13 @@ const styles = StyleSheet.create ({
     },
 
     verticleLine: {
-        marginTop: Platform.OS == 'ios' ? 10 : 10,
+        marginTop: Platform.OS == 'ios' ? 5 : 0,
         width: '91%',
         height: 2,
         marginLeft: 20,
         backgroundColor: '#909090',
     },
 
-    post: {
-        marginLeft: Platform.OS == 'ios' ? 220 : 200,
-    }
 });
 
 export default styles;
