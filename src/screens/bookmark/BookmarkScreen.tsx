@@ -19,9 +19,6 @@ import BookmarkLogo from "../../components/bookmark/BookmarkLogo";
 function BookmarkScreen() {
     return (
         <View style = {styles.container}>
-            <View style = {bookmarkStyles.returnbutton}>
-                <LogoReturnButton/>
-            </View>
             <View style = {bookmarkStyles.bookmarkcontainer}>
                 <Text style = {titleStyles.bookmarktext}>
                     북마크 게시물

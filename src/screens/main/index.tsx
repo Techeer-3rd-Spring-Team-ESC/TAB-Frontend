@@ -7,12 +7,27 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen';
 import CommunityScreen from './CommunityScreen';
 import InformationScreen from './InformationScreen'
+import BookmarkScreen from '../bookmark/BookmarkScreen';
 
 const BottomTab = createBottomTabNavigator<MainBottomTabParamList>();
 
 function MainScreen() {
   return (
     <BottomTab.Navigator>
+      <BottomTab.Screen 
+        name = 'Home'
+        component = {HomeScreen} 
+        options = {{
+          headerShown: false,
+          tabBarIcon: () => (
+            <Icon 
+              name = 'home'
+              size = {30}
+              color = 'black'
+            />
+          ),
+        }}
+      />
       <BottomTab.Screen 
         name = 'Community' 
         component = {CommunityScreen} 
@@ -28,13 +43,13 @@ function MainScreen() {
         }}
       />
       <BottomTab.Screen 
-        name = 'Home'
-        component = {HomeScreen} 
+        name = 'Bookmark'
+        component = {BookmarkScreen} 
         options = {{
           headerShown: false,
           tabBarIcon: () => (
             <Icon 
-              name = 'home'
+              name = 'bookmark'
               size = {30}
               color = 'black'
             />

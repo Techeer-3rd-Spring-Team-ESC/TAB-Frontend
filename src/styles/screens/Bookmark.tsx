@@ -7,17 +7,8 @@ const bookmarkStyles = StyleSheet.create ({
     },
 
     logo: {
-        marginTop: Platform.OS == 'ios' ? 0 : 10,
+        marginTop: Platform.OS == 'ios' ? 110 : 55,
     },
-
-    returnbutton:{
-        width: Platform.OS == 'ios' ? 180 : 150,
-        height: Platform.OS == 'ios' ? 100 : 80,
-        marginTop: Platform.OS == 'ios' ? 30 : 10,
-        marginLeft: -5,
-        resizeMode: 'contain',
-    }
-
 });
 
 export default bookmarkStyles;

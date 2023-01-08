@@ -10,9 +10,7 @@ type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Bookmark'>;
 function LogoButton() {
     const navigation = useNavigation<BookmarkScreenProp>();
     return (
-        <TouchableOpacity 
-            onPress = {() => navigation.navigate('Bookmark')}
-        >
+        <TouchableOpacity>
             <Image 
                 style = {homeStyles.image}
                 source = {require('../../../assets/images/tab.png')}

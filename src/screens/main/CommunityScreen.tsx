@@ -14,8 +14,6 @@ import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
-import SideDrawer from '../../components/community/LogoButton'
-import HomeScreen from "./HomeScreen";
 import LogoButton from "../../components/community/LogoButton";
 
 function CommunityScreen() {
@@ -75,12 +73,12 @@ function CommunityScreen() {
             </View>
 
             <View style = {homeStyles.page}>
-            <LeftPageButton/>
-                <Text style = {titleStyles.pagetext}>
-                1
-                </Text>
-            <RightPageButton/>
-        </View>
+                <LeftPageButton/>
+                    <Text style = {titleStyles.pagetext}>
+                    1
+                    </Text>
+                <RightPageButton/>
+            </View>
         </View>
     );
 };

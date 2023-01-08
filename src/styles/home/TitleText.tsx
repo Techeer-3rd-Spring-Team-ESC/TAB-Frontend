@@ -28,13 +28,22 @@ const titleStyles = StyleSheet.create ({
     },
 
     bookmarktext: {
-        marginTop: Platform.OS == 'ios' ? 15 : 20,
+        marginTop: Platform.OS == 'ios' ? 125 : 67,
         marginLeft: 20,
         marginBottom: Platform.OS == 'ios' ? 20 : 15,
         color: 'black',
         fontSize: Platform.OS == 'ios' ? 35 : 30,
         fontFamily: 'GmarketSansTTFBold'
-    }
+    },
+
+    infotext: {
+        marginTop: Platform.OS == 'ios' ? 100 : 30,
+        marginLeft: 20,
+        marginBottom: Platform.OS == 'ios' ? 10 : 5,
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 25,
+        fontFamily: 'GmarketSansTTFBold'
+    },
 });
 
 export default titleStyles;

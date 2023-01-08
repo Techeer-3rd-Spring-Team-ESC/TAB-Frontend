@@ -83,16 +83,13 @@ function HomeScreen() {
       </View>
       <View style = {homeStyles.verticleLine}/> 
 
-      <View style = {homeStyles.post}>
-          <PostButton/>
-      </View>
-
       <View style = {homeStyles.page}>
           <LeftPageButton/>
             <Text style = {titleStyles.pagetext}>
               1
             </Text>
           <RightPageButton/>
+          <PostButton/>
       </View>
     </SafeAreaView>
   );
