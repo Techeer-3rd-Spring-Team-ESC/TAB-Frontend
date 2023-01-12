@@ -28,7 +28,7 @@ function MainScreen() {
           ),
         }}
       />
-      <BottomTab.Screen 
+      {/* <BottomTab.Screen 
         name = 'Community' 
         component = {CommunityScreen} 
         options = {{
@@ -68,7 +68,7 @@ function MainScreen() {
           />
           ),
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }

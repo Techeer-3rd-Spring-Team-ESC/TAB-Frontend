@@ -4,7 +4,7 @@ import PostList from '../../components/information/PostList';
 import styles from '../../styles/screens/Information';
 import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LeftPageButton from '../../components/home/LeftPageButton';
+import LeftPageButton from '../../components/community/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
 
 function InformationScreen() {
