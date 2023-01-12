@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Platform} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import styles from '../../styles/home/RightPageButton';
+import styles from '../../styles/community/RightPageButton';
 
 function RightPageButton() {
     return (

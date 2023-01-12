@@ -9,6 +9,11 @@ import {MainBottomTabParamList} from './MainBottomTabParams';
 import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
 import LogoButton from '../../components/community/LogoButton';
+import CommunityButton from '../../components/home/CommunityNavigater';
+import InformationNavigater from '../../components/home/InformationNavigater';
+import CommunityNavigater from '../../components/home/CommunityNavigater';
+import BookmarkNavigater from '../../components/home/BookmarkNavigater';
+import mainMenuStyles from '../../styles/home/MainMenu';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -18,17 +23,33 @@ type HomeScreenProp = CompositeNavigationProp<
 function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
   return (
-    <SafeAreaView style = {homeStyles.container}>
-      <View style = {homeStyles.searchcontainer}>
-          <LogoButton/>
-      </View>
-
+    <SafeAreaView style = {mainMenuStyles.mainContainer}>
+      <LogoButton/>
       <Text style = {titleStyles.titletext}>
         어서 오세요, 홍길동님!
-      </Text> 
-
-
-
+      </Text>
+      <View style = {mainMenuStyles.menuContainer}>
+        <View style = {mainMenuStyles.communityMenu}>
+          <Text style= {mainMenuStyles.communityText}>
+            게시글을 {'\n'}
+            모아보세요!
+          </Text>
+          <CommunityNavigater/>
+        </View>
+        <View style = {mainMenuStyles.bookmarkMenu}>
+          <Text style= {mainMenuStyles.communityText}>
+            북마크를 {'\n'}
+            모아보세요!
+          </Text>
+          <BookmarkNavigater/>
+        </View>
+      </View> 
+      <View style = {mainMenuStyles.informationMenu}>
+          <Text style= {mainMenuStyles.communityText}>
+            정보를 모아보세요!
+          </Text>
+          <InformationNavigater/>
+      </View>
     </SafeAreaView>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Platform} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import styles from '../../styles/home/LeftPageButton';
+import styles from '../../styles/community/LeftPageButton';
 
 function LeftPageButton() {
     return (

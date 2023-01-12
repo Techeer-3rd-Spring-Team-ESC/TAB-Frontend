@@ -4,7 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import styles from '../../styles/home/PostButton';
+import styles from '../../styles/community/PostButton';
 
 type CommunityScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 

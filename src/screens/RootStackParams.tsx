@@ -7,4 +7,5 @@ export type RootStackParamList = {
     Community: undefined;
     Article: undefined;
     Bookmark: undefined;
+    Information: undefined;
 };
