@@ -115,14 +115,6 @@ function InformationScreen() {
                 </View>
                 <View style = {styles.verticleLine}/>
             </View>
-
-            {/* <View style = {homeStyles.page}>
-                <LeftPageButton/>
-                    <Text style = {titleStyles.pagetext}>
-                    1
-                    </Text>
-                <RightPageButton/>
-            </View> */}
         </ScrollView>
     );
 }

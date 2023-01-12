@@ -15,6 +15,7 @@ import titleStyles from '../../styles/home/TitleText';
 import LeftPageButton from '../../components/home/LeftPageButton';
 import RightPageButton from '../../components/home/RightPageButton';
 import LogoButton from "../../components/community/LogoButton";
+import PostButton from "../../components/home/PostButton";
 
 function CommunityScreen() {
     return (
@@ -78,6 +79,7 @@ function CommunityScreen() {
                     1
                     </Text>
                 <RightPageButton/>
+                <PostButton/>
             </View>
         </View>
     );
