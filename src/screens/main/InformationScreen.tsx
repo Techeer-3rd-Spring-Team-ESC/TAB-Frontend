@@ -3,14 +3,16 @@ import {View, Image, Text, ScrollView} from 'react-native';
 import PostList from '../../components/information/PostList';
 import styles from '../../styles/screens/Information';
 import titleStyles from '../../styles/home/TitleText';
+import MainReturnButton from '../../components/community/MainReturnButton';
 
 function InformationScreen() {
     return (
         <ScrollView 
         style = {styles.container} 
-        stickyHeaderIndices={[1]}
+        // stickyHeaderIndices={[0]}
         showsVerticalScrollIndicator={true}
         >
+            <MainReturnButton/>
             <Text style = {titleStyles.infotext}>
                 정보 공유
             </Text> 

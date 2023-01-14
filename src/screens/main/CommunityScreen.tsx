@@ -16,10 +16,12 @@ import LeftPageButton from '../../components/community/LeftPageButton';
 import RightPageButton from '../../components/community/RightPageButton';
 import LogoButton from "../../components/community/LogoButton";
 import PostButton from "../../components/community/PostButton";
+import MainReturnButton from "../../components/community/MainReturnButton";
 
 function CommunityScreen() {
     return (
         <View style = {styles.container}>
+            <MainReturnButton/>
             <View style = {styles.searchcontainer}>
                 <LogoButton/>
                 <View style = {styles.search}>

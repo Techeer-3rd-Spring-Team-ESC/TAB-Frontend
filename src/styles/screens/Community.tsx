@@ -5,9 +5,21 @@ const styles = StyleSheet.create ({
         height: 1000,
         backgroundColor: 'white'
     },
-    
+
+    homeButton: {
+        marginTop: Platform.OS == 'ios' ? 60 : 10,
+        marginLeft: Platform.OS == 'ios' ? 310 : 320,
+    },
+
+    buttonText:{
+        marginTop: 5,
+        marginBottom: 5,
+        fontSize: Platform.OS == 'ios' ? 25 : 20,
+        fontFamily: 'GmarketSansTTFMedium',
+        color: 'gray'
+    },
+
     searchcontainer: {
-        marginTop: Platform.OS == 'ios' ? 60 : 0,
         flexDirection: 'row',
     },
 

@@ -14,10 +14,12 @@ import RightPageButton from '../../components/community/RightPageButton';
 import bookmarkStyles from '../../styles/screens/Bookmark';
 import ActivatedBookmarkButton from "../../components/bookmark/ActivatedBookmarkButton";
 import BookmarkLogo from "../../components/bookmark/BookmarkLogo";
+import MainReturnButton from "../../components/community/MainReturnButton";
 
 function BookmarkScreen() {
     return (
         <View style = {styles.container}>
+            <MainReturnButton/>
             <View style = {bookmarkStyles.bookmarkcontainer}>
                 <Text style = {titleStyles.bookmarktext}>
                     북마크 게시물

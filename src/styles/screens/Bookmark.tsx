@@ -2,7 +2,7 @@ import {StyleSheet, Platform} from 'react-native';
 
 const bookmarkStyles = StyleSheet.create ({
     bookmarkcontainer: {
-        marginTop: Platform.OS == 'ios' ? 30 : 0,
+        marginTop: Platform.OS == 'ios' ? -50 : -30,
         flexDirection: 'row'
     },
 
