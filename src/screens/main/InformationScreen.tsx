@@ -9,7 +9,6 @@ function InformationScreen() {
     return (
         <ScrollView 
         style = {styles.container} 
-        // stickyHeaderIndices={[0]}
         showsVerticalScrollIndicator={true}
         >
             <MainReturnButton/>

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {View, Text} from 'react-native';
 import IDInputbox from '../../components/signup/IDInputbox';
 import DomainInputbox from '../../components/signup/DomainInputbox';
@@ -10,48 +10,46 @@ import NameInputbox from '../../components/signup/NameInputbox';
 import SignUpButton from '../../components/signup/SignUpButton';
 import styles from '../../styles/screens/Signup';
 
-class SignUpScreen extends Component {
-  render () {
-    return (
-      <View style = {styles.container}>
-        <Text style = {styles.signupText}>
-          회원가입
-        </Text>
-        <View style = {styles.idContainer}>
-          <View style = {styles.inputIDBox}>
-            <IDInputbox/>
-          </View>
-          <View style = {{
-            marginTop: 15, 
-            marginLeft: 10, 
-            justifyContent: 'center'}}>
-            <Text> @ </Text>
-          </View>
-          <View style = {styles.domainBox}>
-            <DomainInputbox/>
-          </View>
-          <View style = {styles.emailCheckbox}>
-            <EmailCheckButton/>
-          </View>
+function SignUpScreen() {
+  return (
+    <View style = {styles.container}>
+      <Text style = {styles.signupText}>
+        회원가입
+      </Text>
+      <View style = {styles.idContainer}>
+        <View style = {styles.inputIDBox}>
+          <IDInputbox/>
         </View>
-        <View style = {styles.inputBox}>
-          <IDInputboxCheck/>
+        <View style = {{
+          marginTop: 15, 
+          marginLeft: 10, 
+          justifyContent: 'center'}}>
+          <Text> @ </Text>
         </View>
-        <View style = {styles.inputBox}>
-          <PWInputbox/>
+        <View style = {styles.domainBox}>
+          <DomainInputbox/>
         </View>
-        <View style = {styles.inputBox}>
-          <PWInputboxCheck/>
-        </View>
-        <View style = {styles.inputBox}>
-          <NameInputbox/>
-        </View>
-        <View style = {styles.signupBox}>
-          <SignUpButton/>
+        <View style = {styles.emailCheckbox}>
+          <EmailCheckButton/>
         </View>
       </View>
-    );
-  };
+      <View style = {styles.inputBox}>
+        <IDInputboxCheck/>
+      </View>
+      <View style = {styles.inputBox}>
+        <PWInputbox/>
+      </View>
+      <View style = {styles.inputBox}>
+        <PWInputboxCheck/>
+      </View>
+      <View style = {styles.inputBox}>
+        <NameInputbox/>
+      </View>
+      <View style = {styles.signupBox}>
+        <SignUpButton/>
+      </View>
+    </View>
+  );
 }
 
 export default SignUpScreen;
