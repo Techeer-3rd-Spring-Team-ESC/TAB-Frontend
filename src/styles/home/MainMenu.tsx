@@ -75,7 +75,7 @@ const mainMenuStyles = StyleSheet.create ({
     },
 
     communityIconStyle: {
-        marginTop: Platform.OS == 'ios' ? 40 : 10,
+        marginTop: Platform.OS == 'ios' ? 40 : 30,
         marginLeft: 60,
     },
 
