@@ -1,5 +1,4 @@
 import {StyleSheet, Platform} from 'react-native';
-import { white } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 
 const mainMenuStyles = StyleSheet.create ({
     
@@ -9,6 +8,7 @@ const mainMenuStyles = StyleSheet.create ({
     },
 
     menuContainer: {
+        marginTop: Platform.OS == 'ios' ? 40 : -10,
         flexDirection: 'row',
         alignSelf: 'center'
     },
@@ -17,7 +17,7 @@ const mainMenuStyles = StyleSheet.create ({
         marginTop: 20,
         width: '43%',
         height: '100%',
-        backgroundColor: '#FFB65E',
+        backgroundColor: '#83BD67',
         borderRadius: 30,
     },
 
@@ -30,18 +30,18 @@ const mainMenuStyles = StyleSheet.create ({
     },
 
     buttonStyle: {
-        marginTop: 160,
+        marginTop: Platform.OS == 'ios' ? 40 : 30,
         marginLeft: 40,
         marginRight: 20,
         backgroundColor: 'white',
         borderRadius: 8,
-        padding: 8
+        padding: 12
     },
 
     buttonText: {
         textAlign: 'center',
         color: 'black',
-        fontSize: 15,
+        fontSize: 17,
         fontFamily: 'GmarketSansTTFBold'
     },
 
@@ -56,22 +56,42 @@ const mainMenuStyles = StyleSheet.create ({
 
     informationMenu: {
         width: '90%',
-        height: '15%',
+        height: Platform.OS == 'ios' ? '20%' : '14%',
         marginTop: '10%',
         marginLeft: '5%',
-        backgroundColor: '#66B6FF',
+        backgroundColor: '#83BD67',
         borderRadius: 30,
     },
 
     infoButtonStyle: {
-        marginTop: 50,
-        marginLeft: 240,
+        marginTop: Platform.OS == 'ios' ? 80 : 30,
+        marginLeft: Platform.OS == 'ios' ? 100 : 130,
         marginRight: 20,
+        marginBottom: 20,
         color: 'black',
         backgroundColor: 'white',
         borderRadius: 8,
-        padding: 8
+        padding: 15
     },
+
+    communityIconStyle: {
+        marginTop: Platform.OS == 'ios' ? 40 : 10,
+        marginLeft: 60,
+    },
+
+    bookmarkIconStyle: {
+        marginTop: Platform.OS == 'ios' ? 40 : 10,
+        marginLeft: Platform.OS == 'ios' ? 100 : 100,
+    },
+
+    informationIconStyle: {
+        marginTop: Platform.OS == 'ios' ? 20 : 10,
+        marginLeft: Platform.OS == 'ios' ? 30 : 20,
+    },
+
+    informationContainer: {
+        flexDirection: 'row'
+    }
 });
 
 export default mainMenuStyles;

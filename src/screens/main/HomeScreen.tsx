@@ -14,6 +14,10 @@ import InformationNavigater from '../../components/home/InformationNavigater';
 import CommunityNavigater from '../../components/home/CommunityNavigater';
 import BookmarkNavigater from '../../components/home/BookmarkNavigater';
 import mainMenuStyles from '../../styles/home/MainMenu';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import BookmarkIcon from '../../components/home/BookmarkIcon';
+import InformationIcon from '../../components/home/InformationIcon';
+import CommunityIcon from '../../components/home/CommunityIcon';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -34,6 +38,7 @@ function HomeScreen() {
             게시글을 {'\n'}
             모아보세요!
           </Text>
+          <CommunityIcon/>
           <CommunityNavigater/>
         </View>
         <View style = {mainMenuStyles.bookmarkMenu}>
@@ -41,6 +46,7 @@ function HomeScreen() {
             북마크를 {'\n'}
             모아보세요!
           </Text>
+          <BookmarkIcon/>
           <BookmarkNavigater/>
         </View>
       </View> 
@@ -48,10 +54,18 @@ function HomeScreen() {
           <Text style= {mainMenuStyles.communityText}>
             정보를 모아보세요!
           </Text>
-          <InformationNavigater/>
+          <View style = {mainMenuStyles.informationContainer}>
+            <InformationIcon/>
+            <InformationNavigater/>
+          </View>
       </View>
     </SafeAreaView>
   );
 }
 
 export default HomeScreen;
+
+// ios 화면 조정
+// ios 내리고 (안드 조정) 위에 뒤로가기 버튼 추가
+// 메뉴 색 통일 + 아이콘으로 각인
+// 
