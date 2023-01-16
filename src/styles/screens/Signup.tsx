@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const signStyles = StyleSheet.create ({
     container: {
       height: 1000,
       backgroundColor: 'white'
@@ -76,4 +76,4 @@ const styles = StyleSheet.create ({
   });
 
 
-export default styles;
+export default signStyles;
