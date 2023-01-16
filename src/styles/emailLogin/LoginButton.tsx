@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create ({
+const emailStyles = StyleSheet.create ({
     buttonStyle: {
         marginTop: 20,
         marginLeft: 20,
@@ -19,4 +19,4 @@ const styles = StyleSheet.create ({
 });
 
 
-export default styles;
+export default emailStyles;
