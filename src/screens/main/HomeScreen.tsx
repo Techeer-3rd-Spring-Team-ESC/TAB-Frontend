@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, View, Text, Image} from 'react-native';
+import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
@@ -33,31 +33,56 @@ function HomeScreen() {
         어서 오세요, 홍길동님!
       </Text>
       <View style = {mainMenuStyles.menuContainer}>
+      
         <View style = {mainMenuStyles.communityMenu}>
-          <Text style= {mainMenuStyles.communityText}>
-            게시글을 {'\n'}
-            모아보세요!
-          </Text>
-          <CommunityIcon/>
-          <CommunityNavigater/>
+          <TouchableOpacity
+            onPress = {() => navigation.navigate('Bookmark')}
+          >
+            <Text style= {mainMenuStyles.communityText}>
+              게시글을 {'\n'}
+              모아보세요!
+            </Text>
+            <CommunityIcon/>
+            <View style = {mainMenuStyles.buttonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                  게시글모음
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style = {mainMenuStyles.bookmarkMenu}>
-          <Text style= {mainMenuStyles.communityText}>
-            북마크를 {'\n'}
-            모아보세요!
-          </Text>
-          <BookmarkIcon/>
-          <BookmarkNavigater/>
+          <TouchableOpacity
+            onPress = {() => navigation.navigate('Bookmark')}
+          >
+            <Text style= {mainMenuStyles.communityText}>
+              북마크를 {'\n'}
+              모아보세요!
+            </Text>
+            <BookmarkIcon/>
+            <View style = {mainMenuStyles.buttonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                  북마크모음
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View> 
       <View style = {mainMenuStyles.informationMenu}>
+        <TouchableOpacity
+          onPress = {() => navigation.navigate('Information')}
+        > 
           <Text style= {mainMenuStyles.communityText}>
             정보를 모아보세요!
           </Text>
           <View style = {mainMenuStyles.informationContainer}>
             <InformationIcon/>
-            <InformationNavigater/>
+              <View style = {mainMenuStyles.infoButtonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                정보글모음
+              </Text>
+              </View>
           </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

@@ -11,7 +11,6 @@ import TextInputbox from '../../components/post/TextInputbox';
 import ImageButton from '../../components/post/ImageButton';
 import LinkButton from '../../components/post/LinkButton';
 import CancelButton from '../../components/post/CancelButton';
-import UploadButton from '../../components/post/UploadButton';
 import postStyles from '../../styles/screens/Post';
 import styles from '../../styles/post/UploadButton';
 
@@ -40,7 +39,7 @@ function PostScreen() {
             </Text>
             <View style = {postStyles.anonymous}>
                 <AnonymousCheck
-                    setAnonymousChecked={setAnonymousChecked}
+                    setChecked={setAnonymousChecked}
                 />
             </View>
             <View style = {postStyles.verticleLine}>
@@ -66,7 +65,9 @@ function PostScreen() {
                 />
             </View>
             <View style = {postStyles.hashtag}>
-                <HashtagInputbox/>
+                <HashtagInputbox
+                    setHashtag={setHashtag}
+                />
             </View>
             <View style = {postStyles.verticleLine}/>
             <View style= {postStyles.buttoncontainer}>

@@ -8,7 +8,7 @@ interface Props {
 }
 
 function AnonymousCheck({setAnonymousChecked}: Props) {
-  const [checked, setChecked] = React.useState('first');
+  const [checked, setChecked] = React.useState({setAnonymousChecked});
   return (
     <View style = {styles.checkboxContainer}>
       <Text style = {styles.anonymoustitle}>
@@ -16,9 +16,9 @@ function AnonymousCheck({setAnonymousChecked}: Props) {
       </Text>
       <View style = {styles.radio}>
         <RadioButton
-          value = 'first'
+          value = {'first'}
           status = { checked === 'first' ? 'checked' : 'unchecked' }
-          onPress = {() => setAnonymousChecked('first')}
+          onPress = {() => setChecked('first')}
           color = {'#909090'}
           uncheckedColor = {'#CECECE'}
         />
@@ -30,7 +30,7 @@ function AnonymousCheck({setAnonymousChecked}: Props) {
         <RadioButton
           value = 'second'
           status = { checked === 'second' ? 'checked' : 'unchecked' }
-          onPress = {() => setAnonymousChecked('second')}
+          onPress = {() => setChecked('second')}
           color = {'#909090'}
           uncheckedColor = {'#CECECE'}
         />
