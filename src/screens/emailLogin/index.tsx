@@ -10,11 +10,6 @@ import styles from '../../styles/screens/EmailLogin';
 import titleStyles from '../../styles/home/TitleText';
 import emailStyles from '../../styles/emailLogin/LoginButton';
 
-interface Props {
-  setId: React.Dispatch<React.SetStateAction<string>>;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
-}
-
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 function EmailLoginScreen() {

@@ -1,9 +1,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {RadioButton} from 'react-native-paper';
+import {CheckboxItemProps, CheckboxProps, RadioButton} from 'react-native-paper';
 import styles from '../../styles/post/AnonymousCheck';
 
-function AnonymousCheck() {
+interface Props {
+  setAnonymousChecked: React.Dispatch<React.SetStateAction<String>>;
+}
+
+function AnonymousCheck({setAnonymousChecked}: Props) {
   const [checked, setChecked] = React.useState('first');
   return (
     <View style = {styles.checkboxContainer}>
@@ -14,7 +18,7 @@ function AnonymousCheck() {
         <RadioButton
           value = 'first'
           status = { checked === 'first' ? 'checked' : 'unchecked' }
-          onPress = {() => setChecked('first')}
+          onPress = {() => setAnonymousChecked('first')}
           color = {'#909090'}
           uncheckedColor = {'#CECECE'}
         />
@@ -26,7 +30,7 @@ function AnonymousCheck() {
         <RadioButton
           value = 'second'
           status = { checked === 'second' ? 'checked' : 'unchecked' }
-          onPress = {() => setChecked('second')}
+          onPress = {() => setAnonymousChecked('second')}
           color = {'#909090'}
           uncheckedColor = {'#CECECE'}
         />
