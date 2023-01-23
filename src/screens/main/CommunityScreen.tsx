@@ -12,13 +12,16 @@ import SearchButton from '../../components/community/SearchButton';
 import styles from '../../styles/screens/Community';
 import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LeftPageButton from '../../components/home/LeftPageButton';
-import RightPageButton from '../../components/home/RightPageButton';
+import LeftPageButton from '../../components/community/LeftPageButton';
+import RightPageButton from '../../components/community/RightPageButton';
 import LogoButton from "../../components/community/LogoButton";
+import PostButton from "../../components/community/PostButton";
+import MainReturnButton from "../../components/community/MainReturnButton";
 
 function CommunityScreen() {
     return (
         <View style = {styles.container}>
+            <MainReturnButton/>
             <View style = {styles.searchcontainer}>
                 <LogoButton/>
                 <View style = {styles.search}>
@@ -78,6 +81,7 @@ function CommunityScreen() {
                     1
                     </Text>
                 <RightPageButton/>
+                <PostButton/>
             </View>
         </View>
     );

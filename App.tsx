@@ -26,6 +26,8 @@ import React, {type PropsWithChildren} from 'react';
 import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import InformationScreen from './src/screens/main/InformationScreen';
+import CommunityScreen from './src/screens/main/CommunityScreen';
 
 
 const Section: React.FC<
@@ -71,9 +73,11 @@ const App = () => {
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="Community" component={CommunityScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Post" component={PostScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Article" component={ArticleScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Bookmark" component={BookmarkScreen} options={{headerShown: false,}}/>
+        <Stack.Screen name="Information" component={InformationScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false,}}/>
       </Stack.Navigator>
     </NavigationContainer>

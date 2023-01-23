@@ -1,16 +1,18 @@
 import React from "react";
-import {TextInput, Text} from 'react-native';
+import {TextInput} from 'react-native';
 import styles from '../../styles/signup/IDInputbox';
 
-function IDInputbox() {
+interface Props {
+    setId: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function IDInputbox({setId}: Props) {
     return (
         <TextInput
             style = {styles.inputStyle}
             placeholder = "이메일"
-        >
-            <Text style = {styles.inputText}>
-            </Text>
-        </TextInput>
+            onChangeText={(id) => {setId(id)}}
+        />
     );
 };
 

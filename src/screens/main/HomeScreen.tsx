@@ -1,26 +1,23 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, View, Text, Image} from 'react-native';
+import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {MainBottomTabParamList} from './MainBottomTabParams';
-import PostButton from '../../components/home/PostButton';
-import SearchBox from '../../components/community/SearchBox';
-import InformationTag from '../../components/community/InformationTag';
-import QuestionTag from '../../components/community/QuestionTag';
-import PostList from '../../components/community/PostList';
-import Profile from '../../components/community/Profile';
-import BookmarkButton from '../../components/community/BookmarkButton';
-import LikeButton from '../../components/community/LikeButton';
-import CommentButton from '../../components/community/CommentButton';
-import SearchButton from '../../components/community/SearchButton';
 import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LeftPageButton from '../../components/home/LeftPageButton';
-import RightPageButton from '../../components/home/RightPageButton';
 import LogoButton from '../../components/community/LogoButton';
+import CommunityButton from '../../components/home/CommunityNavigater';
+import InformationNavigater from '../../components/home/InformationNavigater';
+import CommunityNavigater from '../../components/home/CommunityNavigater';
+import BookmarkNavigater from '../../components/home/BookmarkNavigater';
+import mainMenuStyles from '../../styles/home/MainMenu';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import BookmarkIcon from '../../components/home/BookmarkIcon';
+import InformationIcon from '../../components/home/InformationIcon';
+import CommunityIcon from '../../components/home/CommunityIcon';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -30,69 +27,70 @@ type HomeScreenProp = CompositeNavigationProp<
 function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
   return (
-    <SafeAreaView style = {homeStyles.container}>
-      <View style = {homeStyles.searchcontainer}>
-          <LogoButton/>
-          <View style = {homeStyles.search}>
-              <SearchBox/>
-              <SearchButton/>
-          </View>
-      </View>
-
+    <SafeAreaView style = {mainMenuStyles.mainContainer}>
+      <LogoButton/>
       <Text style = {titleStyles.titletext}>
-        인기 게시물
-      </Text> 
-
-      <InformationTag/>
-      <PostList/>
-      <View style = {homeStyles.postcontainer}> 
-          <Profile/>
-          <BookmarkButton/>
-          <LikeButton/>
-          <CommentButton/>
-      </View>
-      <View style = {homeStyles.verticleLine}/>
-
-      <QuestionTag/>
-      <PostList/>
-      <View style = {homeStyles.postcontainer}> 
-          <Profile/>
-          <BookmarkButton/>
-          <LikeButton/>
-          <CommentButton/>
-      </View>
-      <View style = {homeStyles.verticleLine}/> 
+        어서 오세요, 홍길동님!
+      </Text>
+      <View style = {mainMenuStyles.menuContainer}>
       
-      <InformationTag/>
-      <PostList/>
-      <View style = {homeStyles.postcontainer}> 
-          <Profile/>
-          <BookmarkButton/>
-          <LikeButton/>
-          <CommentButton/>
-      </View>
-      <View style = {homeStyles.verticleLine}/>
-
-      <QuestionTag/>
-      <PostList/>
-      <View style = {homeStyles.postcontainer}> 
-          <Profile/>
-          <BookmarkButton/>
-          <LikeButton/>
-          <CommentButton/>
-      </View>
-      <View style = {homeStyles.verticleLine}/> 
-
-      <View style = {homeStyles.page}>
-          <LeftPageButton/>
-            <Text style = {titleStyles.pagetext}>
-              1
+        <View style = {mainMenuStyles.communityMenu}>
+          <TouchableOpacity
+            onPress = {() => navigation.navigate('Bookmark')}
+          >
+            <Text style= {mainMenuStyles.communityText}>
+              게시글을 {'\n'}
+              모아보세요!
             </Text>
-          <RightPageButton/>
-          <PostButton/>
+            <CommunityIcon/>
+            <View style = {mainMenuStyles.buttonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                  게시글모음
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style = {mainMenuStyles.bookmarkMenu}>
+          <TouchableOpacity
+            onPress = {() => navigation.navigate('Bookmark')}
+          >
+            <Text style= {mainMenuStyles.communityText}>
+              북마크를 {'\n'}
+              모아보세요!
+            </Text>
+            <BookmarkIcon/>
+            <View style = {mainMenuStyles.buttonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                  북마크모음
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View> 
+      <View style = {mainMenuStyles.informationMenu}>
+        <TouchableOpacity
+          onPress = {() => navigation.navigate('Information')}
+        > 
+          <Text style= {mainMenuStyles.communityText}>
+            정보를 모아보세요!
+          </Text>
+          <View style = {mainMenuStyles.informationContainer}>
+            <InformationIcon/>
+              <View style = {mainMenuStyles.infoButtonStyle}>
+              <Text style = {mainMenuStyles.buttonText}>
+                정보글모음
+              </Text>
+              </View>
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 }
 
 export default HomeScreen;
+
+// ios 화면 조정
+// ios 내리고 (안드 조정) 위에 뒤로가기 버튼 추가
+// 메뉴 색 통일 + 아이콘으로 각인
+// 

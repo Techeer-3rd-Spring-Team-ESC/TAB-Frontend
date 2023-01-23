@@ -1,20 +1,22 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const emailStyles = StyleSheet.create ({
     buttonStyle: {
-        marginLeft: 27,
-        padding: 14,
-        backgroundColor: '#2BC63B',
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        padding: 10,
+        backgroundColor: '#51b05b',
         borderRadius: 8
     },
 
     buttonTitle: {
-        marginTop: 4,
         textAlign: 'center',
         color: 'white', 
-        fontSize: 15,
+        fontSize: 20,
         fontFamily: 'GmarketSansTTFMedium'
     }
 });
 
-export default styles;
+
+export default emailStyles;

@@ -9,16 +9,17 @@ import CommentButton from '../../components/community/CommentButton';
 import styles from '../../styles/screens/Community';
 import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LeftPageButton from '../../components/home/LeftPageButton';
-import RightPageButton from '../../components/home/RightPageButton';
+import LeftPageButton from '../../components/community/LeftPageButton';
+import RightPageButton from '../../components/community/RightPageButton';
 import bookmarkStyles from '../../styles/screens/Bookmark';
 import ActivatedBookmarkButton from "../../components/bookmark/ActivatedBookmarkButton";
-import LogoReturnButton from "../../components/bookmark/LogoReturnButton";
 import BookmarkLogo from "../../components/bookmark/BookmarkLogo";
+import MainReturnButton from "../../components/community/MainReturnButton";
 
 function BookmarkScreen() {
     return (
         <View style = {styles.container}>
+            <MainReturnButton/>
             <View style = {bookmarkStyles.bookmarkcontainer}>
                 <Text style = {titleStyles.bookmarktext}>
                     북마크 게시물

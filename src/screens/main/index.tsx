@@ -28,47 +28,6 @@ function MainScreen() {
           ),
         }}
       />
-      <BottomTab.Screen 
-        name = 'Community' 
-        component = {CommunityScreen} 
-        options = {{
-          headerShown: false,
-          tabBarIcon: () => (
-            <Icon 
-              name = 'comments'
-              size = {30} 
-              color = 'black'
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen 
-        name = 'Bookmark'
-        component = {BookmarkScreen} 
-        options = {{
-          headerShown: false,
-          tabBarIcon: () => (
-            <Icon 
-              name = 'bookmark'
-              size = {30}
-              color = 'black'
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen 
-        name="Information" 
-        component={InformationScreen} 
-        options={{headerShown: false,
-          tabBarIcon: () => (
-          <Icon 
-            name = 'info' 
-            size = {30} 
-            color = 'black'
-          />
-          ),
-        }}
-      />
     </BottomTab.Navigator>
   );
 }

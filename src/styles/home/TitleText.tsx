@@ -14,7 +14,7 @@ const titleStyles = StyleSheet.create ({
         marginLeft: 20,
         marginBottom: Platform.OS == 'ios' ? 10 : 5,
         color: 'black',
-        fontSize: Platform.OS == 'ios' ? 30 : 25,
+        fontSize: Platform.OS == 'ios' ? 30 : 20,
         fontFamily: 'GmarketSansTTFBold'
     },
 
@@ -37,7 +37,7 @@ const titleStyles = StyleSheet.create ({
     },
 
     infotext: {
-        marginTop: Platform.OS == 'ios' ? 100 : 30,
+        marginTop: Platform.OS == 'ios' ? 30 : 10,
         marginLeft: 20,
         marginBottom: Platform.OS == 'ios' ? 10 : 5,
         color: 'black',

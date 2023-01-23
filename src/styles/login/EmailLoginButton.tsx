@@ -1,19 +1,19 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     buttonStyle: {
-        marginTop: 30,
-        marginLeft: 3,
-        marginRight: 3,
-        padding: 15,
-        backgroundColor: '#2BC63B',
+        marginTop: 10,
+        marginLeft: 20,
+        marginRight: 20,
+        padding: 12,
+        backgroundColor: '#51b05b',
         borderRadius: 8
     },
 
     buttonTitle: {
-        color: 'white',
         textAlign: 'center',
-        fontSize: 20,
+        color: 'white', 
+        fontSize: 15,
         fontFamily: 'GmarketSansTTFMedium'
     }
 });

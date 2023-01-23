@@ -2,18 +2,16 @@ import React from 'react';
 import {View, Image, Text, ScrollView} from 'react-native';
 import PostList from '../../components/information/PostList';
 import styles from '../../styles/screens/Information';
-import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LeftPageButton from '../../components/home/LeftPageButton';
-import RightPageButton from '../../components/home/RightPageButton';
+import MainReturnButton from '../../components/community/MainReturnButton';
 
 function InformationScreen() {
     return (
         <ScrollView 
         style = {styles.container} 
-        stickyHeaderIndices={[1]}
         showsVerticalScrollIndicator={true}
         >
+            <MainReturnButton/>
             <Text style = {titleStyles.infotext}>
                 정보 공유
             </Text> 
@@ -115,14 +113,6 @@ function InformationScreen() {
                 </View>
                 <View style = {styles.verticleLine}/>
             </View>
-
-            {/* <View style = {homeStyles.page}>
-                <LeftPageButton/>
-                    <Text style = {titleStyles.pagetext}>
-                    1
-                    </Text>
-                <RightPageButton/>
-            </View> */}
         </ScrollView>
     );
 }
