@@ -11,17 +11,14 @@ import titleStyles from '../../styles/home/TitleText';
 function LoginScreen() {
   return (
     <View style = {styles.container}>
-      <View style = {styles.image}>
-        <Image
-          source = {require('../../../assets/images/tab.png')}
-        />
-      </View>
-      <Text style = {titleStyles.logintext}>
+      <Image
+        style = {styles.image}
+        source = {require('../../../assets/images/tab.png')}
+      />
+      {/* <Text style = {titleStyles.logintext}>
         로그인
-      </Text>
+      </Text> */}
       <KakaoLoginButton/>
-      <GoogleLoginButton/>
-      <GithubLoginButton/>
       <EmailLoginButton/>
       <ForgotButton/>
     </View>

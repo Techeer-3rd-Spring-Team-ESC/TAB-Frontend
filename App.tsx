@@ -10,7 +10,6 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import LoginScreen from './src/screens/login';
 import EmailLoginScreen from './src/screens/emailLogin';
 import SignUpScreen from './src/screens/signup';
 import PostScreen from './src/screens/main/PostScreen';
@@ -70,7 +69,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="EmailLogin" component={EmailLoginScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false,}}/>
         <Stack.Screen name="Community" component={CommunityScreen} options={{headerShown: false,}}/>

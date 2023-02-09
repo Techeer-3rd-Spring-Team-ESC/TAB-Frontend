@@ -10,11 +10,11 @@ const titleStyles = StyleSheet.create ({
     },
 
     titletext: {
-        marginTop: Platform.OS == 'ios' ? 20 : 10,
+        marginTop: Platform.OS == 'ios' ? "20%" : "20%",
         marginLeft: 20,
-        marginBottom: Platform.OS == 'ios' ? 10 : 5,
+        marginBottom: Platform.OS == 'ios' ? 10 : "5%",
         color: 'black',
-        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontSize: Platform.OS == 'ios' ? 30 : 25,
         fontFamily: 'GmarketSansTTFBold'
     },
 

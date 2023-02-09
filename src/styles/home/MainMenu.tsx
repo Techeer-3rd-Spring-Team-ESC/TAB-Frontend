@@ -8,7 +8,7 @@ const mainMenuStyles = StyleSheet.create ({
     },
 
     menuContainer: {
-        marginTop: Platform.OS == 'ios' ? 40 : -10,
+        marginTop: Platform.OS == 'ios' ? 40 : 0,
         flexDirection: 'row',
         alignSelf: 'center'
     },
@@ -16,7 +16,7 @@ const mainMenuStyles = StyleSheet.create ({
     communityMenu: {
         marginTop: 20,
         width: '43%',
-        height: '100%',
+        height: '120%',
         backgroundColor: '#83BD67',
         borderRadius: 30,
     },
@@ -49,7 +49,7 @@ const mainMenuStyles = StyleSheet.create ({
         marginTop: 20,
         marginLeft: 20,
         width: '43%',
-        height: '100%',
+        height: '120%',
         backgroundColor: '#83BD67',
         borderRadius: 30,
     },
@@ -57,7 +57,7 @@ const mainMenuStyles = StyleSheet.create ({
     informationMenu: {
         width: '90%',
         height: Platform.OS == 'ios' ? '20%' : '14%',
-        marginTop: '10%',
+        marginTop: '20%',
         marginLeft: '5%',
         backgroundColor: '#83BD67',
         borderRadius: 30,

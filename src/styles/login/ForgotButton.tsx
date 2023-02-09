@@ -14,7 +14,7 @@ const styles = StyleSheet.create ({
         textAlign: 'center',
         color: 'green', 
         fontSize: 15,
-        fontFamily: 'GmarketSansTTFLight'
+        fontFamily: 'GmarketSansTTFBold'
     }
 });
 

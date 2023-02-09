@@ -9,6 +9,7 @@ import PWInputbox from '../../components/emailLogin/PWInputbox';
 import styles from '../../styles/screens/EmailLogin';
 import titleStyles from '../../styles/home/TitleText';
 import emailStyles from '../../styles/emailLogin/LoginButton';
+import KakaoLoginButton from "../../components/login/KakaoLoginButton";
 
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -18,21 +19,11 @@ function EmailLoginScreen() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
-  function userLogin() {
-    console.log("아이디: " + id)
-    console.log("비밀번호: " + password)
-  }
-
   return (
     <View style = {styles.container}>
-      <View style = {styles.image}>
-        <Image
-          source = {require('../../../assets/images/tab.png')}
-        />
-      </View>
-      <Text style = {titleStyles.logintext}>
-        로그인
-      </Text>
+      <Image style = {styles.image}
+        source = {require('../../../assets/images/tab.png')}
+      />
       <View style = {styles.inputbox}>
         <IDInputbox
           setId={setId}
@@ -47,7 +38,6 @@ function EmailLoginScreen() {
         style = {emailStyles.buttonStyle}
         onPress = {() => {
           navigation.navigate('Main')
-          userLogin()
         }}
       >
         <Text style = {emailStyles.buttonTitle}>

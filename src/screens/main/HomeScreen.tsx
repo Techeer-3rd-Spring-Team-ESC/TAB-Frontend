@@ -6,15 +6,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../RootStackParams';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {MainBottomTabParamList} from './MainBottomTabParams';
-import homeStyles from '../../styles/screens/Home';
 import titleStyles from '../../styles/home/TitleText';
-import LogoButton from '../../components/community/LogoButton';
-import CommunityButton from '../../components/home/CommunityNavigater';
-import InformationNavigater from '../../components/home/InformationNavigater';
-import CommunityNavigater from '../../components/home/CommunityNavigater';
-import BookmarkNavigater from '../../components/home/BookmarkNavigater';
 import mainMenuStyles from '../../styles/home/MainMenu';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import BookmarkIcon from '../../components/home/BookmarkIcon';
 import InformationIcon from '../../components/home/InformationIcon';
 import CommunityIcon from '../../components/home/CommunityIcon';
@@ -28,30 +21,22 @@ function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
   return (
     <SafeAreaView style = {mainMenuStyles.mainContainer}>
-      <LogoButton/>
       <Text style = {titleStyles.titletext}>
         어서 오세요, 홍길동님!
       </Text>
       <View style = {mainMenuStyles.menuContainer}>
-      
-        <View style = {mainMenuStyles.communityMenu}>
           <TouchableOpacity
-            onPress = {() => navigation.navigate('Bookmark')}
+            style = {mainMenuStyles.communityMenu}
+            onPress = {() => navigation.navigate('Community')}
           >
             <Text style= {mainMenuStyles.communityText}>
               게시글을 {'\n'}
               모아보세요!
             </Text>
             <CommunityIcon/>
-            <View style = {mainMenuStyles.buttonStyle}>
-              <Text style = {mainMenuStyles.buttonText}>
-                  게시글모음
-              </Text>
-            </View>
           </TouchableOpacity>
-        </View>
-        <View style = {mainMenuStyles.bookmarkMenu}>
           <TouchableOpacity
+            style = {mainMenuStyles.bookmarkMenu}
             onPress = {() => navigation.navigate('Bookmark')}
           >
             <Text style= {mainMenuStyles.communityText}>
@@ -59,16 +44,10 @@ function HomeScreen() {
               모아보세요!
             </Text>
             <BookmarkIcon/>
-            <View style = {mainMenuStyles.buttonStyle}>
-              <Text style = {mainMenuStyles.buttonText}>
-                  북마크모음
-              </Text>
-            </View>
           </TouchableOpacity>
-        </View>
       </View> 
-      <View style = {mainMenuStyles.informationMenu}>
         <TouchableOpacity
+          style = {mainMenuStyles.informationMenu}
           onPress = {() => navigation.navigate('Information')}
         > 
           <Text style= {mainMenuStyles.communityText}>
@@ -76,14 +55,8 @@ function HomeScreen() {
           </Text>
           <View style = {mainMenuStyles.informationContainer}>
             <InformationIcon/>
-              <View style = {mainMenuStyles.infoButtonStyle}>
-              <Text style = {mainMenuStyles.buttonText}>
-                정보글모음
-              </Text>
-              </View>
           </View>
         </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 }

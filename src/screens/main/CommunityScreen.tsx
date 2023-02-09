@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, Text} from 'react-native';
+import {View, ScrollView, Text} from 'react-native';
 import SearchBox from '../../components/community/SearchBox';
 import InformationTag from '../../components/community/InformationTag';
 import QuestionTag from '../../components/community/QuestionTag';
@@ -29,60 +29,156 @@ function CommunityScreen() {
                     <SearchButton/>
                 </View>
             </View>
-
-            <Text style = {titleStyles.titletext}>
-                전체 게시물
-            </Text> 
-
-            <View style = {styles.listcontainer}>
-                <InformationTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <BookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
+            <ScrollView stickyHeaderIndices={[4]} style = {styles.listcontainer}>
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
                 </View>
-                <View style = {styles.verticleLine}/>
-
-                <QuestionTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <BookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
                 </View>
-                <View style = {styles.verticleLine}/> 
-                <InformationTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <BookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
+                
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
                 </View>
-                <View style = {styles.verticleLine}/>
-
-                <QuestionTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <BookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
                 </View>
-                <View style = {styles.verticleLine}/> 
-            </View>
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
+                </View>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
+                </View>
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
+                </View>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
+                </View>
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
+                </View>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
+                </View>
 
+                <View>
+                    <InformationTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/>
+                </View>
+                
+                <View>
+                    <QuestionTag/>
+                    <PostList/>
+                    <View style = {styles.postcontainer}> 
+                        <Profile/>
+                        <BookmarkButton/>
+                        <LikeButton/>
+                        <CommentButton/>
+                    </View>
+                    <View style = {styles.verticleLine}/> 
+                </View>
+            </ScrollView>
             <View style = {homeStyles.page}>
-                <LeftPageButton/>
-                    <Text style = {titleStyles.pagetext}>
-                    1
-                    </Text>
-                <RightPageButton/>
-                <PostButton/>
-            </View>
+                    <LeftPageButton/>
+                        <Text style = {titleStyles.pagetext}>
+                        1
+                        </Text>
+                    <RightPageButton/>
+                    <PostButton/>
+                </View>
         </View>
     );
 };
