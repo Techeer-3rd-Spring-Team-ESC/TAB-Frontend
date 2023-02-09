@@ -5,6 +5,7 @@ export type RootStackParamList = {
     Main: undefined;
     Post: undefined;
     Community: undefined;
+    Search: undefined;
     Article: undefined;
     Bookmark: undefined;
     Information: undefined;

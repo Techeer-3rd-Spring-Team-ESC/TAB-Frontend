@@ -16,6 +16,11 @@ const styles = StyleSheet.create ({
         flexDirection: 'row',
     },
 
+    articleContainer:{
+        marginTop: Platform.OS == 'ios' ? 0 : 5,
+        flexDirection: 'row',
+    },
+
     buttoncontainer:{
         marginLeft: 160,
         marginTop: Platform.OS == 'ios' ? 3 : 0,

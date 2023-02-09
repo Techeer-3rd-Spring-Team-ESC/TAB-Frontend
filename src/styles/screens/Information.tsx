@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const informationStyles = StyleSheet.create ({
     container: {
         height: 1000,
         backgroundColor: 'white'
@@ -32,4 +32,4 @@ const styles = StyleSheet.create ({
 
 });
 
-export default styles;
+export default informationStyles;

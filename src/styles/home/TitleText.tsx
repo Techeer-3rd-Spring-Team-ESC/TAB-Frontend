@@ -18,6 +18,22 @@ const titleStyles = StyleSheet.create ({
         fontFamily: 'GmarketSansTTFBold'
     },
 
+    communityTitletext: {
+        marginTop: "1%",
+        marginLeft: "30%",
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontFamily: 'GmarketSansTTFBold'
+    },
+
+    searchTitletext: {
+        marginTop: "1%",
+        marginLeft: "35%",
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontFamily: 'GmarketSansTTFBold'
+    },
+
     pagetext: {
         marginTop: Platform.OS == 'ios' ? 30 : 17,
         marginLeft: Platform.OS == 'ios' ? 26 : 15,

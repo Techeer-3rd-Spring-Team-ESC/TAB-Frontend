@@ -5,10 +5,10 @@ import styles from '../../styles/community/EmojiButton';
 
 function BookmarkLogo() {
     return (
-        <TouchableOpacity style = {styles.buttonStyle}>
+        <TouchableOpacity style = {styles.titleButtonStyle}>
             <FontAwesome 
                 name = 'bookmark'
-                size = {Platform.OS == 'ios' ? 50 : 40} 
+                size = {Platform.OS == 'ios' ? 30 : 30} 
                 color = 'green'
             />
         </TouchableOpacity>

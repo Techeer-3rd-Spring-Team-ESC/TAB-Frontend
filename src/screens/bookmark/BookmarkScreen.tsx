@@ -1,5 +1,8 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../screens/RootStackParams';
 import InformationTag from '../../components/community/InformationTag';
 import QuestionTag from '../../components/community/QuestionTag';
 import PostList from '../../components/community/PostList';
@@ -15,20 +18,32 @@ import bookmarkStyles from '../../styles/screens/Bookmark';
 import ActivatedBookmarkButton from "../../components/bookmark/ActivatedBookmarkButton";
 import BookmarkLogo from "../../components/bookmark/BookmarkLogo";
 import MainReturnButton from "../../components/community/MainReturnButton";
+import backButtonStyles from "../../styles/community/BackButton";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+
+type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Bookmark'>;
 
 function BookmarkScreen() {
+    const navigation = useNavigation<BookmarkScreenProp>();
+
     return (
         <View style = {styles.container}>
-            <MainReturnButton/>
-            <View style = {bookmarkStyles.bookmarkcontainer}>
-                <Text style = {titleStyles.bookmarktext}>
-                    북마크 게시물
+            <View style = {styles.titleContainer}>
+                <TouchableOpacity
+                    style = {backButtonStyles.communityBackButton}
+                    onPress = {() => navigation.navigate('Main')}
+                >
+                    <FontAwesome 
+                        name = 'chevron-left' 
+                        size = {20} 
+                        color = 'gray'
+                    />
+                </TouchableOpacity>
+                <Text style = {titleStyles.searchTitletext}>
+                    북마크
                 </Text>
-                <View style = {bookmarkStyles.logo}>
-                    <BookmarkLogo/>
-                </View>
+                <BookmarkLogo/>
             </View>
-            
             <View style = {styles.listcontainer}>
                 <InformationTag/>
                 <PostList/>
@@ -38,45 +53,14 @@ function BookmarkScreen() {
                     <LikeButton/>
                     <CommentButton/>
                 </View>
-                <View style = {styles.verticleLine}/>
-
-                <QuestionTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <ActivatedBookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
-                </View>
-                <View style = {styles.verticleLine}/> 
-                <InformationTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <ActivatedBookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
-                </View>
-                <View style = {styles.verticleLine}/>
-
-                <QuestionTag/>
-                <PostList/>
-                <View style = {styles.postcontainer}> 
-                    <Profile/>
-                    <ActivatedBookmarkButton/>
-                    <LikeButton/>
-                    <CommentButton/>
-                </View>
-                <View style = {styles.verticleLine}/> 
             </View>
-
             <View style = {homeStyles.page}>
-            <LeftPageButton/>
-                <Text style = {titleStyles.pagetext}>
-                1
-                </Text>
-            <RightPageButton/>
-        </View>
+                <LeftPageButton/>
+                    <Text style = {titleStyles.pagetext}>
+                    1
+                    </Text>
+                <RightPageButton/>
+            </View>
         </View>
     );
 };

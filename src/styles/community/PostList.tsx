@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const postListStyles = StyleSheet.create ({
     buttonStyle: {
         backgroundColor: 'white',
         borderRadius: 8
@@ -18,4 +18,4 @@ const styles = StyleSheet.create ({
     
 });
 
-export default styles;
+export default postListStyles;
