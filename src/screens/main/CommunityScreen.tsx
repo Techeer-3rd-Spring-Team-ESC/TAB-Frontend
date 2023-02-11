@@ -20,6 +20,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
 import communityStyles from "../../styles/screens/Community";
 import postListStyles from "../../styles/community/PostList";
+import emojiButtonStyles from "../../styles/community/EmojiButton";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
@@ -34,41 +35,10 @@ function CommunityScreen() {
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
             likeCount: 1,
-            commentCount: 1,
         },
-
-        {
-            category: '질문',
-            title: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 3,
-            commentCount: 4,
-        }
-    ]
+    ];
 
     useEffect(() => {
-        // async function mapData() {
-        //     try {
-        //         const response = await axios.post(
-        //             'http://15.164.28.246:8000/api/v1/stores/search/',
-        //             {
-        //                 token: await AsyncStorage.getItem('FCMToken'),
-        //                 latitude: myLocation.latitude, 
-        //                 longitude: myLocation.longitude
-        //             },
-        //             { headers : {Authorization: await AsyncStorage.getItem('accessToken')}},)
-        //     .then(function (response) {
-        //         setStoreList(response.data);
-        //         setMyStoreList(storeList["data"])
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error)
-        //     });
-        //     } catch (error) {
-        //         console.log(error);
-        //     }
-        // }
     }, []);
 
     return (
@@ -99,47 +69,37 @@ function CommunityScreen() {
                 </TouchableOpacity>
             </View>
             <ScrollView 
-            stickyHeaderIndices={[-1]} 
-            style = {communityStyles.listcontainer}
+                stickyHeaderIndices={[-1]} 
+                style = {communityStyles.listcontainer}
             >
-                
                 {list?.map((e) =>
-                    <View>
+                    <TouchableOpacity
+                        key = {e.category}
+                        onPress = {() => navigation.navigate('Article')}
+                    >
                         <Text style = {profileStyles.profileText}>
                             {e.category}
                         </Text>
-                        <TouchableOpacity
-                            style = {postListStyles.buttonStyle}
-                            onPress = {() => navigation.navigate('Article')}
-                        >
+                        <View style = {postListStyles.buttonStyle}>
                             <Text
                                 style = {postListStyles.listTitle}
                                 numberOfLines={2} 
                             >
                                 {e.title}
                             </Text>
-                        </TouchableOpacity>
-                        <View style = {profileStyles.profileContainer}>
+                        </View>
+                        <View style = {communityStyles.postcontainer}> 
                             <Text style = {profileStyles.profileText}>
                                 {e.author}
                             </Text>
-                            <Image style = {profileStyles.profileImage}
-                                source = {require('../../../assets/images/tab.png')}
-                            />
-                        </View>
-                        <View style = {communityStyles.postcontainer}> 
                             <LikeButton/>
-                            <Text>
+                            <Text style = {emojiButtonStyles.likeCountStyle}>
                                 {e.likeCount}
                             </Text>
                             <CommentButton/>
-                            <Text>
-                                {e.commentCount}
-                            </Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )}
-            </ScrollView>
             <View style = {homeStyles.page}>
                     <LeftPageButton/>
                         <Text style = {titleStyles.pagetext}>
@@ -148,6 +108,7 @@ function CommunityScreen() {
                     <RightPageButton/>
                     <PostButton/>
             </View>
+            </ScrollView>
         </View>
     );
 };

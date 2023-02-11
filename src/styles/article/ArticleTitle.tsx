@@ -21,6 +21,20 @@ const articleTitleStyles = StyleSheet.create ({
         color: 'gray',
         fontSize: Platform.OS == 'ios' ? 15 : 12,
         fontFamily: 'GmarketSansTTFMedium'
+    },
+
+    commentContainer: {
+        marginTop: 20
+    },
+
+    comment2Container: {
+        marginLeft: 20
+    },
+
+    commentButton: {
+        marginTop: 10,
+        marginLeft: 20
     }
+
 });
 export default articleTitleStyles;

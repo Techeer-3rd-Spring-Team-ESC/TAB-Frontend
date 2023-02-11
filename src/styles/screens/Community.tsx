@@ -64,7 +64,6 @@ const communityStyles = StyleSheet.create ({
     },
 
     postcontainer:{
-        marginLeft: "2%",
         flexDirection: 'row',
     },
 

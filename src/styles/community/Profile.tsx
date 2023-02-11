@@ -7,7 +7,7 @@ const profileStyles = StyleSheet.create ({
     },
 
     profileText: {
-        marginTop: Platform.OS == 'ios' ? 11 : 13,
+        marginTop: Platform.OS == 'ios' ? 11 : 10,
         marginLeft: 20,
         color: 'black', 
         fontSize: Platform.OS == 'ios' ? 15 : 12,
