@@ -14,6 +14,14 @@ const communityStyles = StyleSheet.create ({
         flexDirection: 'row'
     },
 
+    articleContainer: {
+        marginTop: Platform.OS == 'ios' ? "12%" : "3%",
+        height: '5%',
+        padding: 10,
+        backgroundColor: 'white',
+        flexDirection: 'row'
+    },
+
     searchContainer: {
         marginTop: Platform.OS == 'ios' ? "12%" : 0,
         height: '9%',

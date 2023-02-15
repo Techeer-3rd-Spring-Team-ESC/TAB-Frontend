@@ -6,6 +6,11 @@ const backButtonStyles = StyleSheet.create ({
         marginLeft: "5%"
     },
 
+    articleBackButton: {
+        marginTop: "10%",
+        marginLeft: "5%"
+    },
+
     searchBackButton: {
         marginTop: "7%",
         marginLeft: "5%"

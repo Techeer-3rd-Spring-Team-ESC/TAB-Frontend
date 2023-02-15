@@ -100,7 +100,7 @@ function ArticleScreen() {
 
     return (
         <ScrollView style = {styles.container}>
-            <View style = {communityStyles.postContainer}>
+            <View style = {communityStyles.articleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
                     onPress = {() => navigation.navigate('Community')}
