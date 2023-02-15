@@ -1,18 +1,16 @@
 import React, {useState} from "react";
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import AnonymousCheck from '../../components/post/AnonymousCheck';
-import CategoryCheck from '../../components/post/CategoryCheck';
-import HashtagInputbox from '../../components/post/HashtagInputbox';
-import TitleInputbox from '../../components/post/TitleInputbox';
-import TextInputbox from '../../components/post/TextInputbox';
-import ImageButton from '../../components/post/ImageButton';
-import LinkButton from '../../components/post/LinkButton';
-import CancelButton from '../../components/post/CancelButton';
 import postStyles from '../../styles/screens/Post';
-import styles from '../../styles/post/UploadButton';
+import communityStyles from "../../styles/screens/Community";
+import backButtonStyles from "../../styles/community/BackButton";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import titleStyles from "../../styles/home/TitleText";
+import searchButtonStyles from "../../styles/community/SearchButton";
+import { TextInput } from "react-native-gesture-handler";
+import articleTextStyles from "../../styles/article/ArticleText";
 
 type PostScreenProp = StackNavigationProp <RootStackParamList, 'Post'>;
 
@@ -24,64 +22,47 @@ function PostScreen() {
     const [text, setText] = useState('');
     const [hashtag, setHashtag] = useState('');
 
-    function userPost() {
-        console.log("익명여부: " + anonymousChecked)
-        console.log("카테고리: " + categoryChecked)
-        console.log("제목: " + title)
-        console.log("내용: " + text)
-        console.log("해쉬태그: " + hashtag)
-      }
-
     return (
         <View style={postStyles.container}>
-            <Text style = {postStyles.anonymoustext}>
-                공개여부
-            </Text>
-            <View style = {postStyles.anonymous}>
-                <AnonymousCheck
-                    setChecked={setAnonymousChecked}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>
-            <Text style = {postStyles.categorytext}>
-                카테고리
-            </Text>
-            <View style = {postStyles.category}>
-                <CategoryCheck/>
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>
-            <View style = {postStyles.title}>
-                <TitleInputbox
-                    setTitle={setTitle}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>    
-            <View style = {postStyles.textbox}>
-                <TextInputbox
-                    setText={setText}
-                />
-            </View>
-            <View style = {postStyles.hashtag}>
-                <HashtagInputbox
-                    setHashtag={setHashtag}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}/>
-            <View style= {postStyles.buttoncontainer}>
-                <ImageButton/>
-                <LinkButton/>
-                <CancelButton/>
+            <View style = {communityStyles.titleContainer}>
                 <TouchableOpacity
-                    style = {styles.buttonStyle}
-                    onPress={() => navigation.navigate('Main')}
+                    style = {backButtonStyles.communityBackButton}
+                    onPress = {() => navigation.navigate('Community')}
                 >
-                    <Text style = {styles.buttonTitle}>
+                    <FontAwesome 
+                        name = 'chevron-left' 
+                        size = {20} 
+                        color = 'gray'
+                    />
+                </TouchableOpacity>
+                <Text style = {titleStyles.communityTitletext}>
+                    커뮤니티
+                </Text>
+                <TouchableOpacity
+                    style = {searchButtonStyles.screenButtonStyle}
+                    onPress = {() => navigation.navigate('Community')}
+                >
+                    <Text style = {titleStyles.postText}>
                         등록
                     </Text>
                 </TouchableOpacity>
+            </View>
+            <View>
+                <TextInput
+                    style = {postStyles.title}
+                    placeholder="제목"
+                    onChangeText={(text) => {setTitle(text)}}
+                />
+                <View style = {articleTextStyles.verticleLine}/>
+                <View style = {postStyles.textbox}>
+                    <TextInput
+                        style = {postStyles.inputStyle}
+                        placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
+                        placeholderTextColor={'#D9D9D9'}
+                        multiline = {true} // 아이폰 텍스트 상단정렬
+                        onChangeText={(text) => {setText(text)}}
+                    />
+                </View>
             </View>
         </View>
     );

@@ -32,7 +32,6 @@ const articleTitleStyles = StyleSheet.create ({
     },
 
     commentButton: {
-        marginTop: 10,
         marginLeft: 20
     }
 

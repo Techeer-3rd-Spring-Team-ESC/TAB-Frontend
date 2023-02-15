@@ -10,8 +10,15 @@ const profileStyles = StyleSheet.create ({
         marginTop: Platform.OS == 'ios' ? 11 : 10,
         marginLeft: 20,
         color: 'black', 
-        fontSize: Platform.OS == 'ios' ? 15 : 12,
-        fontFamily: 'GmarketSansTTFBold',
+        fontSize: Platform.OS == 'ios' ? 15 : 15,
+        fontFamily: 'GmarketSansTTFMedium',
+    },
+
+    creactedText: {
+        marginTop: Platform.OS == 'ios' ? 11 : 10,
+        marginLeft: 10,
+        color: 'black', 
+        fontSize: Platform.OS == 'ios' ? 15 : 13,
     },
 
     profileImage: {

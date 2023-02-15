@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {View, ScrollView, TouchableOpacity, Text, Image} from 'react-native';
+import {View, ScrollView, TouchableOpacity, Text, Image, KeyboardAvoidingView, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -18,6 +18,8 @@ import articleTitleStyles from "../../styles/article/ArticleTitle";
 import articleTextStyles from "../../styles/article/ArticleText";
 import emojiButtonStyles from "../../styles/community/EmojiButton";
 import postListStyles from "../../styles/community/PostList";
+import { TextInput } from "react-native-gesture-handler";
+import articleStyles from "../../styles/screens/Article";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Article'>;
 
@@ -32,8 +34,9 @@ function ArticleScreen() {
     const [file, setFile] = useState('');
     const [image, setImage] = useState('');
     const [hashtags, setHashtags] = useState('');
-    const [likeNumbers, setLikeNumbers] = useState(1);
-    const [views, setViews] = useState('');
+    const [likeNumbers, setLikeNumbers] = useState(10);
+    const [views, setViews] = useState(3000);
+    const [creacted, setCreated] = useState(Date);
     const [anonymous, setAnonymous] = useState(true);
     const [postId, setPostId] = useState(0);
     const [postName, setPostName] = useState('');
@@ -41,9 +44,15 @@ function ArticleScreen() {
     const [layer, setLayer] = useState(0);
     const [commentAnonymous, setCommentAnonymous] = useState(true);
 
+    new Intl.DateTimeFormat('kr').format(new Date());
+    const TIME_ZONE = 3240 * 10000;
+    const d = new Date();
+    const date = new Date(+d + TIME_ZONE).toISOString().split('T')[0];
+    const time = d.toTimeString().split(' ')[0];
+
     const commentList = [
         {
-            postName: '안녕',
+            postName: '철수',
             commentContent: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
@@ -51,28 +60,47 @@ function ArticleScreen() {
         },
 
         {
-            postName: '하이',
+            postName: '영희',
             commentContent: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
             likeCount: 1,
         },
 
+        {
+            postName: '미음',
+            commentContent: 'ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
     ];
 
     const comment2List = [
         {
-            postName: '안녕',
+            postName: '덧글',
             commentContent: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
             likeCount: 1,
+        },
+    ];
+
+    const hashtagList = [
+        {
+            hashtag: '#안녕하세요'
+        },
+        {
+            hashtag: '#반갑습니다'
+        },
+        {
+            hashtag: '#잘부탁해요'
         },
     ];
 
     return (
         <ScrollView style = {styles.container}>
-            <View style = {communityStyles.titleContainer}>
+            <View style = {communityStyles.postContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
                     onPress = {() => navigation.navigate('Community')}
@@ -99,11 +127,30 @@ function ArticleScreen() {
                     <Text style = {profileStyles.profileText}>
                         {memberName}
                     </Text>
-                    <LikeButton/>
-                    <Text style = {emojiButtonStyles.articleLikeCountStyle}>
-                        {likeNumbers}
+                    <Text style = {profileStyles.creactedText}>
+                        {date + ' ' + time}
                     </Text>
-                    <CommentButton/>
+                    <TouchableOpacity style = {emojiButtonStyles.articleButtonStyle}>
+                        <FontAwesome 
+                            name = 'eye'
+                            size = {20} 
+                            color = 'gray'
+                        />
+                    </TouchableOpacity>
+                    <Text style = {emojiButtonStyles.articleLikeCountStyle}>
+                        {views}
+                    </Text>
+                </View>
+                <View style = {styles.articleContainer}>
+                    {hashtagList?.map((e) =>
+                        <View key = {e.hashtag}>
+                            <View style={articleStyles.hashtag}>
+                                <Text style={articleTextStyles.hashtagText}>
+                                    {e.hashtag}
+                                </Text>
+                            </View>
+                        </View>
+                    )}
                 </View>
             </View>
             <ArticleImage/>
@@ -112,9 +159,31 @@ function ArticleScreen() {
                     {content}
                 </Text>
             </View>
+            
+            <View style = {articleStyles.newButtoncontainer}>
+                <TouchableOpacity style = {articleStyles.heartButton}>
+                    <FontAwesome 
+                        name = 'heart'
+                        size = {30} 
+                        color = '#DD4A4A'
+                    />
+                    <Text style = {articleTextStyles.likeText}>
+                        {likeNumbers}
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style = {articleStyles.bookmarkButton}>
+                    <FontAwesome 
+                        name = 'bookmark'
+                        size = {30} 
+                        color = 'green'
+                    />
+                </TouchableOpacity>
+            </View>
+
             <View style = {articleTitleStyles.commentContainer}>
                 {commentList?.map((e) =>
                     <View key = {e.postName}>
+                        <View style = {articleTextStyles.verticleLine}/>
                         <Text style = {profileStyles.profileText}>
                             {e.postName}
                         </Text>
@@ -127,41 +196,49 @@ function ArticleScreen() {
                             </Text>
                         </View>
                         <View style = {communityStyles.postcontainer}> 
-                            <TouchableOpacity style = {articleTitleStyles.commentButton}>
-                                <Text>
-                                    답글
-                                </Text>
-                            </TouchableOpacity>
+                            {/* <TextInput
+                                style = {articleTitleStyles.commentButton}
+                                placeholder="답글"
+                            /> */}
                         </View>
-                        <View style = {articleTextStyles.verticleLine}/>
                         <View style = {articleTitleStyles.comment2Container}>
-                        {comment2List?.map((e) =>
-                            <View key = {e.postName}>
-                                <Text style = {profileStyles.profileText}>
-                                    {e.postName}
-                                </Text>
-                                <View style = {postListStyles.buttonStyle}>
-                                    <Text
-                                        style = {postListStyles.listTitle}
-                                        numberOfLines={5} 
-                                    >
-                                        {e.commentContent}
+                            {comment2List?.map((e) =>
+                                <View key = {e.postName}>
+                                    <View style = {articleTextStyles.commentVerticleLine}/>
+                                    <Text style = {profileStyles.profileText}>
+                                        {e.postName}
                                     </Text>
-                                </View>
-                                <View style = {communityStyles.postcontainer}> 
-                                    <TouchableOpacity style = {articleTitleStyles.commentButton}>
-                                        <Text>
-                                            답글
+                                    <View style = {postListStyles.buttonStyle}>
+                                        <Text
+                                            style = {postListStyles.listTitle}
+                                            numberOfLines={5} 
+                                        >
+                                            {e.commentContent}
                                         </Text>
-                                    </TouchableOpacity>
+                                    </View>
+                                    <View style = {communityStyles.postcontainer}> 
+                                    </View>
                                 </View>
-                                <View style = {articleTextStyles.verticleLine}/>
-                            </View>
-                )}
-            </View>
+                            )}
+                        </View>
                     </View>
                 )}
             </View>
+            <View style = {articleTextStyles.postVerticleLine}/>
+                <View style = {articleStyles.commentContainer}>
+                    <TextInput style = {articleTextStyles.commentText}
+                        placeholder="댓글을 입력하세요"
+                    />
+                    <TouchableOpacity 
+                        style = {articleStyles.commentButton}
+                    >
+                        <FontAwesome 
+                            name = 'send'
+                            size = {20} 
+                            color = 'green'
+                        />
+                    </TouchableOpacity>
+                </View>
         </ScrollView>
     );
 };

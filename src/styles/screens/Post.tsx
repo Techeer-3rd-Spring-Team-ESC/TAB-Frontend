@@ -15,7 +15,6 @@ const postStyles = StyleSheet.create ({
     },
 
     anonymous:{
-        marginLeft: 5,
         flexDirection: 'row'
     },
 
@@ -28,7 +27,6 @@ const postStyles = StyleSheet.create ({
     },
 
     category:{
-        marginLeft: Platform.OS == 'ios' ? 5 : 10,
         flexDirection: 'row'
     },
 
@@ -41,17 +39,24 @@ const postStyles = StyleSheet.create ({
     },
 
     title: {
-        marginLeft: 10,
-        marginRight: 10,
+        marginLeft: '6%',
+        marginRight: '5%',
+        fontFamily: 'GmarketSansTTFMedium',
+        fontSize: 20
     },
 
     textbox: {
-        marginTop: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        borderRadius: 8,
-        borderWidth: 2, 
-        borderColor: '#909090',
+        marginLeft: '5%',
+        marginRight: '5%',
+        width: '90%',
+    },
+
+    inputStyle: {
+        height: Platform.OS == "ios" ? 370 : 230,
+        marginTop: Platform.OS == "ios" ? 10 : 10,
+        padding: 8,
+        textAlignVertical: "top", // 안드로이드 텍스트 상단정렬
+        fontFamily: 'GmarketSansTTFMedium',
     },
 
     hashtag: {

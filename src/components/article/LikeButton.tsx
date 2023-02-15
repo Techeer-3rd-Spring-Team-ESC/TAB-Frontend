@@ -5,7 +5,7 @@ import styles from '../../styles/community/EmojiButton';
 
 function LikeButton() {
     return (
-        <TouchableOpacity style = {styles.articleButtonStyle}>
+        <TouchableOpacity style = {styles.articleLikeButtonStyle}>
             <FontAwesome 
                 name = 'heart'
                 size = {20} 

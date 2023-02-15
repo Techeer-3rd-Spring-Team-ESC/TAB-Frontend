@@ -60,6 +60,13 @@ const titleStyles = StyleSheet.create ({
         fontSize: Platform.OS == 'ios' ? 30 : 25,
         fontFamily: 'GmarketSansTTFBold'
     },
+
+    postText: {
+        marginLeft: "8%",
+        color: 'green',
+        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontFamily: 'GmarketSansTTFMedium',
+    },
 });
 
 export default titleStyles;

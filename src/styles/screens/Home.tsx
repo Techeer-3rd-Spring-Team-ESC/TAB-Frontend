@@ -48,6 +48,7 @@ const homeStyles = StyleSheet.create ({
     },
 
     page: {
+        marginTop: '5%',
         flexDirection: 'row'
     }
 });

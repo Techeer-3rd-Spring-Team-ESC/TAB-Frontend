@@ -2,13 +2,15 @@ import {StyleSheet} from 'react-native';
 
 const emojiButtonStyles = StyleSheet.create ({
     buttonStyle: {
-        marginLeft: '45%',
+        marginTop: '-1%',
+        marginLeft: '35%',
         padding: 10
     },
 
     articleButtonStyle: {
-        marginTop: '-1%',
-        marginLeft: '45%',
+        marginTop: '-0.5%',
+        marginLeft: '15%',
+        width: '10%',
         padding: 10
     },
 
@@ -17,7 +19,7 @@ const emojiButtonStyles = StyleSheet.create ({
     },
 
     articleLikeCountStyle: {
-        marginTop: '1%'
+        marginTop: '2%'
     },
 
     commentButtonStyle: {
@@ -25,8 +27,14 @@ const emojiButtonStyles = StyleSheet.create ({
         padding: 8
     },
 
-    articleCommentButtonStyle: {
+    articleLikeButtonStyle: {
         marginTop: '-1%',
+        marginLeft: 10,
+        padding: 8
+    },
+
+    articleCommentButtonStyle: {
+        marginTop: '-1.5%',
         marginLeft: 10,
         padding: 8
     },

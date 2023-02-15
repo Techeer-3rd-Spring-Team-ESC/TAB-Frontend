@@ -8,7 +8,7 @@ interface Props {
 }
 
 function AnonymousCheck({setAnonymousChecked}: Props) {
-  const [checked, setChecked] = React.useState({setAnonymousChecked});
+  const [checked, setChecked] = React.useState('');
   return (
     <View style = {styles.checkboxContainer}>
       <Text style = {styles.anonymoustitle}>

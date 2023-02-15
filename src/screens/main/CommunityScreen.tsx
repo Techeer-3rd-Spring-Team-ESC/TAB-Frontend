@@ -31,7 +31,77 @@ function CommunityScreen() {
     const list = [
         {
             category: '정보',
-            title: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
+            title: 'Hello',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕1',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕2',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕3',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕4',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕5',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕6',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕7',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕8',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕9',
+            author: 'loana Mircea',
+            image: '../../../assets/images/tab.png',
+            likeCount: 1,
+        },
+        {
+            category: '정보',
+            title: '안녕10',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
             likeCount: 1,
@@ -42,7 +112,10 @@ function CommunityScreen() {
     }, []);
 
     return (
-        <View style = {communityStyles.container}>
+        <ScrollView 
+            stickyHeaderIndices={[1]}  
+            style = {communityStyles.container}
+        >
             <View style = {communityStyles.titleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
@@ -68,13 +141,12 @@ function CommunityScreen() {
                     />
                 </TouchableOpacity>
             </View>
-            <ScrollView 
-                stickyHeaderIndices={[-1]} 
+            <View 
                 style = {communityStyles.listcontainer}
             >
                 {list?.map((e) =>
                     <TouchableOpacity
-                        key = {e.category}
+                        key = {e.title}
                         onPress = {() => navigation.navigate('Article')}
                     >
                         <Text style = {profileStyles.profileText}>
@@ -92,6 +164,16 @@ function CommunityScreen() {
                             <Text style = {profileStyles.profileText}>
                                 {e.author}
                             </Text>
+                            <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
+                                <FontAwesome 
+                                    name = 'eye'
+                                    size = {20} 
+                                    color = 'gray'
+                                />
+                            </TouchableOpacity>
+                            <Text style = {emojiButtonStyles.likeCountStyle}>
+                                {e.likeCount}
+                            </Text>
                             <LikeButton/>
                             <Text style = {emojiButtonStyles.likeCountStyle}>
                                 {e.likeCount}
@@ -108,8 +190,8 @@ function CommunityScreen() {
                     <RightPageButton/>
                     <PostButton/>
             </View>
-            </ScrollView>
-        </View>
+            </View>
+        </ScrollView>
     );
 };
 
