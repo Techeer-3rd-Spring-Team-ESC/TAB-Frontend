@@ -24,9 +24,16 @@ const articleTextStyles = StyleSheet.create ({
 
     likeText: {
         marginTop: '30%',
-        marginLeft: '40%',
+        marginLeft: '20%',
         color: 'red',
-        fontSize: Platform.OS == 'ios' ? 15 : 13,
+        fontSize: Platform.OS == 'ios' ? 15 : 15,
+        fontFamily: 'GmarketSansTTFBold',
+    },
+
+    bookmarkText: {
+        marginTop: '5%',
+        color: 'green',
+        fontSize: Platform.OS == 'ios' ? 15 : 14,
         fontFamily: 'GmarketSansTTFBold',
     },
 

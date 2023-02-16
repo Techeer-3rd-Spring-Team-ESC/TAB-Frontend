@@ -43,31 +43,38 @@ const articleStyles = StyleSheet.create ({
         flexDirection: 'row'
     },
 
+    comment2Container:{
+        marginLeft: '5%',
+        flexDirection: 'row'
+    },
+
+
     heartButton: {
         marginTop: '5%',
         marginLeft: '5%',
         width: '20%',
         height: '80%',
-        borderColor: '#DD4A4A',
         padding: 10,
-        borderWidth: 3,
-        borderRadius: 8
     },
 
     bookmarkButton: {
-        marginTop: '5%',
+        marginTop: '3%',
         marginLeft: '5%',
-        width: '20%',
+        width: '40%',
         height: '80%',
-        borderColor: 'green',
         padding: 15,
-        borderWidth: 3,
-        borderRadius: 8
     },
 
     commentButton: {
         marginTop: '2%',
         marginLeft: '15%',
+        width: '10%',
+        height: '50%',
+    },
+
+    comment2Button: {
+        marginTop: '2%',
+        marginLeft: '10%',
         width: '10%',
         height: '50%',
     }

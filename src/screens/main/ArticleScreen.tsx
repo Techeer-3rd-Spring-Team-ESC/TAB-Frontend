@@ -44,6 +44,8 @@ function ArticleScreen() {
     const [layer, setLayer] = useState(0);
     const [commentAnonymous, setCommentAnonymous] = useState(true);
 
+    const [modal, setModal] = useState(false);
+
     new Intl.DateTimeFormat('kr').format(new Date());
     const TIME_ZONE = 3240 * 10000;
     const d = new Date();
@@ -78,7 +80,7 @@ function ArticleScreen() {
 
     const comment2List = [
         {
-            postName: '덧글',
+            postName: '내 덧글',
             commentContent: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
@@ -115,7 +117,7 @@ function ArticleScreen() {
                     게시글
                 </Text>
             </View>
-        
+
             <Text style = {profileStyles.profileText}>
                     {category}
             </Text>
@@ -174,33 +176,55 @@ function ArticleScreen() {
                 <TouchableOpacity style = {articleStyles.bookmarkButton}>
                     <FontAwesome 
                         name = 'bookmark'
-                        size = {30} 
+                        size = {40} 
                         color = 'green'
                     />
+                    <Text style = {articleTextStyles.bookmarkText}>
+                        저장
+                    </Text>
                 </TouchableOpacity>
             </View>
 
             <View style = {articleTitleStyles.commentContainer}>
                 {commentList?.map((e) =>
-                    <View key = {e.postName}>
-                        <View style = {articleTextStyles.verticleLine}/>
-                        <Text style = {profileStyles.profileText}>
-                            {e.postName}
-                        </Text>
-                        <View style = {postListStyles.buttonStyle}>
-                            <Text
-                                style = {postListStyles.listTitle}
-                                numberOfLines={5} 
-                            >
-                                {e.commentContent}
+                    <View>
+                        <TouchableOpacity 
+                            key = {e.postName}
+                            onPress={() => {setModal(!modal)}}>
+                            <View style = {articleTextStyles.verticleLine}/>
+                            <Text style = {profileStyles.profileText}>
+                                {e.postName}
                             </Text>
-                        </View>
-                        <View style = {communityStyles.postcontainer}> 
-                            {/* <TextInput
-                                style = {articleTitleStyles.commentButton}
-                                placeholder="답글"
-                            /> */}
-                        </View>
+                            <View style = {postListStyles.buttonStyle}>
+                                <Text
+                                    style = {postListStyles.listTitle}
+                                    numberOfLines={5} 
+                                >
+                                    {e.commentContent}
+                                </Text>
+                            </View>
+                            {modal === true ? 
+                            <View>
+                                <View style = {articleTextStyles.verticleLine}/>
+                                <Text style = {profileStyles.profileText}>
+                                    ┗ {e.postName}
+                                </Text>
+                                <View style = {articleStyles.comment2Container}>
+                                    <TextInput style = {articleTextStyles.commentText}
+                                        placeholder="덧글을 입력하세요"
+                                    />
+                                    <TouchableOpacity 
+                                        style = {articleStyles.comment2Button}
+                                    >
+                                        <FontAwesome 
+                                            name = 'send'
+                                            size = {20} 
+                                            color = 'green'
+                                        />
+                                    </TouchableOpacity>
+                                </View>
+                            </View>: null}
+                        </TouchableOpacity>
                         <View style = {articleTitleStyles.comment2Container}>
                             {comment2List?.map((e) =>
                                 <View key = {e.postName}>
@@ -225,20 +249,20 @@ function ArticleScreen() {
                 )}
             </View>
             <View style = {articleTextStyles.postVerticleLine}/>
-                <View style = {articleStyles.commentContainer}>
-                    <TextInput style = {articleTextStyles.commentText}
-                        placeholder="댓글을 입력하세요"
+            <View style = {articleStyles.commentContainer}>
+                <TextInput style = {articleTextStyles.commentText}
+                    placeholder="댓글을 입력하세요"
+                />
+                <TouchableOpacity 
+                    style = {articleStyles.commentButton}
+                >
+                    <FontAwesome 
+                        name = 'send'
+                        size = {20} 
+                        color = 'green'
                     />
-                    <TouchableOpacity 
-                        style = {articleStyles.commentButton}
-                    >
-                        <FontAwesome 
-                            name = 'send'
-                            size = {20} 
-                            color = 'green'
-                        />
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
+            </View>
         </ScrollView>
     );
 };
