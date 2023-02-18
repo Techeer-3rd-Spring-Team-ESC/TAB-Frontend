@@ -64,7 +64,7 @@ const articleTextStyles = StyleSheet.create ({
     },
     
     postVerticleLine: {
-        marginTop: '1%',
+        marginTop: '5%',
         marginBottom: '2%',
         width: '100%',
         height: 2,

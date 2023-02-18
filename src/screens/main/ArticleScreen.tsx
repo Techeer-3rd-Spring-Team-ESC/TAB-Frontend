@@ -101,7 +101,10 @@ function ArticleScreen() {
     ];
 
     return (
-        <ScrollView style = {styles.container}>
+        <ScrollView 
+            stickyHeaderIndices={[0]}  
+            style = {styles.container}
+        >
             <View style = {communityStyles.articleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}

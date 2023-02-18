@@ -17,7 +17,11 @@ function InformationScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
 
     return (
-        <View style = {styles.container}>
+        <ScrollView
+            stickyHeaderIndices={[0]}  
+            showsVerticalScrollIndicator={true}
+            style = {styles.container}
+        >
             <View style = {styles.titleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
@@ -30,15 +34,77 @@ function InformationScreen() {
                     />
                 </TouchableOpacity>
                 <Text style = {titleStyles.searchTitletext}>
-                    검색
+                    정보
                 </Text>
 
             </View>
-        <ScrollView 
-            showsVerticalScrollIndicator={true}
-        >
-
             <View style = {styles.listcontainer}>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
+                <View style = {informationStyles.crollingpost}>
+                    <Image style = {styles.image}
+                        source = {require('../../../assets/images/tab.png')}
+                    />
+                    <PostList/>
+                </View>
                 <View style = {informationStyles.crollingpost}>
                     <Image style = {styles.image}
                         source = {require('../../../assets/images/tab.png')}
@@ -47,8 +113,6 @@ function InformationScreen() {
                 </View>
             </View>
         </ScrollView>
-        </View>
-        
     );
 }
 export default InformationScreen;

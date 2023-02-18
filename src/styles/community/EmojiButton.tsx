@@ -40,7 +40,8 @@ const emojiButtonStyles = StyleSheet.create ({
     },
 
     titleButtonStyle: {
-        marginLeft: 5,
+        marginTop: "-7%",
+        marginLeft: '60%',
     },
 });
 

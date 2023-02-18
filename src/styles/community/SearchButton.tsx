@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const searchButtonStyles = StyleSheet.create ({
     screenButtonStyle: {
-        marginTop: "1%",
-        marginLeft: "30%"
+        marginTop: "-6%",
+        marginLeft: "90%"
     },
 
     buttonStyle: {

@@ -63,8 +63,8 @@ function EmailLoginScreen() {
       <TouchableOpacity
         style = {emailStyles.buttonStyle}
         onPress = {() => {
-          loginAPI()
-          // navigation.navigate('Main')
+          // loginAPI()
+          navigation.navigate('Main')
         }}
       >
         <Text style = {emailStyles.buttonTitle}>

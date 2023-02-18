@@ -33,13 +33,6 @@ function CommunityScreen() {
     const list = [
         {
             category: '정보',
-            title: 'Hello',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
             title: '안녕1',
             author: 'loana Mircea',
             image: '../../../assets/images/tab.png',
@@ -115,7 +108,7 @@ function CommunityScreen() {
 
     return (
         <ScrollView 
-            stickyHeaderIndices={[10]}  
+            stickyHeaderIndices={[0]}  
             style = {communityStyles.container}
         >
             <SafeAreaView style = {communityStyles.titleContainer}>
@@ -185,14 +178,14 @@ function CommunityScreen() {
                         <View style = {articleTextStyles.communityVerticleLine}/>
                     </View>
                 )}
-            <View style = {homeStyles.page}>
-                    <LeftPageButton/>
-                        <Text style = {titleStyles.pagetext}>
-                        1
-                        </Text>
-                    <RightPageButton/>
-                    <PostButton/>
-            </View>
+                <View style = {homeStyles.page}>
+                        <LeftPageButton/>
+                            <Text style = {titleStyles.pagetext}>
+                            1
+                            </Text>
+                        <RightPageButton/>
+                        <PostButton/>
+                </View>
             </View>
         </ScrollView>
     );
