@@ -24,7 +24,7 @@ function EmailLoginScreen() {
   async function loginAPI() {
     try {
       const response = await axios.patch(
-      'http://10.0.2.2:8000/api/v1/member/login',
+      'http://10.0.2.2:8080/api/v1/member/login',
         {
           email: id,
           password: password
@@ -63,8 +63,8 @@ function EmailLoginScreen() {
       <TouchableOpacity
         style = {emailStyles.buttonStyle}
         onPress = {() => {
-          // loginAPI()
-          navigation.navigate('Main')
+          loginAPI()
+          // navigation.navigate('Main')
         }}
       >
         <Text style = {emailStyles.buttonTitle}>
