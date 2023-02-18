@@ -6,16 +6,8 @@ const postStyles = StyleSheet.create ({
         backgroundColor: 'white'
     },
 
-    anonymoustext:{
-        marginTop: Platform.OS == 'ios' ? 80 : 20,
-        marginLeft: 20,
-        fontFamily: 'GmarketSansTTFMedium',
-        fontSize: Platform.OS == 'ios' ? 25 : 20,
-        color:'#CECECE'
-    },
-
-    anonymous:{
-        flexDirection: 'row'
+    bottomContainer: {
+        marginTop: '7%'
     },
 
     categorytext:{
@@ -31,14 +23,16 @@ const postStyles = StyleSheet.create ({
     },
 
     verticleLine: {
-        width: '91%',
-        height: 3,
-        marginLeft: 20,
-        borderRadius: 50,
-        backgroundColor: '#CECECE',
+        marginTop: '3%',
+        marginLeft: '5%',
+        marginBottom: '2%',
+        width: '90%',
+        height: 1,
+        backgroundColor: "#CCCCCC"
     },
 
     title: {
+        marginTop: '3%',
         marginLeft: '6%',
         marginRight: '5%',
         fontFamily: 'GmarketSansTTFMedium',
@@ -49,6 +43,7 @@ const postStyles = StyleSheet.create ({
         marginLeft: '5%',
         marginRight: '5%',
         width: '90%',
+        height: '35%'
     },
 
     inputStyle: {
@@ -60,14 +55,35 @@ const postStyles = StyleSheet.create ({
     },
 
     hashtag: {
-        marginTop: Platform.OS == 'ios' ? 10 : 0,
-        marginLeft: 10,
-        marginRight: 10,
+        marginTop: '-1%',
+        marginLeft: '1%',
+        marginRight: '5%',
+        width: '70%',
+        color: 'green',
+        padding: 10,
+        fontSize: Platform.OS == 'ios' ? 15 : 13,
+        fontFamily: 'GmarketSansTTFMedium',
+        lineHeight: 20,
     },
   
     buttoncontainer: {
         flexDirection: 'row'
-    }
+    },
+
+    postButton: {
+        marginTop: '2%',
+        marginLeft: '5%',
+        width: '10%',
+    },
+
+    anonymousButton: {
+        marginTop: '4%',
+        marginLeft: '3%',
+        width: '10%',
+        height: '50%',
+    },
+
+    
 });
 
 export default postStyles;

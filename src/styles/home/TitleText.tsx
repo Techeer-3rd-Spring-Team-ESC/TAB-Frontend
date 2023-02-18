@@ -26,6 +26,14 @@ const titleStyles = StyleSheet.create ({
         fontFamily: 'GmarketSansTTFBold'
     },
 
+    postTitletext: {
+        marginTop: "1%",
+        marginLeft: "35%",
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontFamily: 'GmarketSansTTFBold'
+    },
+
     searchTitletext: {
         marginTop: "1%",
         marginLeft: "35%",
@@ -62,11 +70,19 @@ const titleStyles = StyleSheet.create ({
     },
 
     postText: {
-        marginLeft: "8%",
+        marginLeft: '8%',
         color: 'green',
         fontSize: Platform.OS == 'ios' ? 30 : 20,
         fontFamily: 'GmarketSansTTFMedium',
     },
+
+    anonymousText: {
+        marginTop: '4%',
+        marginLeft: '50%',
+        color: 'green',
+        fontSize: 17,
+        fontFamily: 'GmarketSansTTFBold'
+    }
 });
 
 export default titleStyles;

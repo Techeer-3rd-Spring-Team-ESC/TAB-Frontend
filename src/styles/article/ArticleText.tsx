@@ -47,7 +47,7 @@ const articleTextStyles = StyleSheet.create ({
     },
 
     communityVerticleLine: {
-        marginTop: '5%',
+        marginTop: '2%',
         marginLeft: '3%',
         marginBottom: '2%',
         width: '95%',
@@ -64,7 +64,7 @@ const articleTextStyles = StyleSheet.create ({
     },
     
     postVerticleLine: {
-        marginTop: '5%',
+        marginTop: '1%',
         marginBottom: '2%',
         width: '100%',
         height: 2,

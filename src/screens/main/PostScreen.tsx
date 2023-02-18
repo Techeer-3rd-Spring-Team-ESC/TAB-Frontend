@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {View, Text, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView} from 'react-native';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -11,6 +12,8 @@ import titleStyles from "../../styles/home/TitleText";
 import searchButtonStyles from "../../styles/community/SearchButton";
 import { TextInput } from "react-native-gesture-handler";
 import articleTextStyles from "../../styles/article/ArticleText";
+import articleStyles from "../../styles/screens/Article";
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 
 type PostScreenProp = StackNavigationProp <RootStackParamList, 'Post'>;
 
@@ -21,50 +24,99 @@ function PostScreen() {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [hashtag, setHashtag] = useState('');
+    const [isChecked, setisChecked] = useState(false);
 
     return (
-        <View style={postStyles.container}>
-            <View style = {communityStyles.titleContainer}>
-                <TouchableOpacity
-                    style = {backButtonStyles.communityBackButton}
-                    onPress = {() => navigation.navigate('Community')}
-                >
-                    <FontAwesome 
-                        name = 'chevron-left' 
-                        size = {20} 
-                        color = 'gray'
-                    />
-                </TouchableOpacity>
-                <Text style = {titleStyles.communityTitletext}>
-                    커뮤니티
-                </Text>
-                <TouchableOpacity
-                    style = {searchButtonStyles.screenButtonStyle}
-                    onPress = {() => navigation.navigate('Community')}
-                >
-                    <Text style = {titleStyles.postText}>
-                        등록
+        <KeyboardAwareScrollView
+            contentContainerStyle={{ flex: 1}}
+            extraScrollHeight={20}
+        >
+            <View style={postStyles.container}>
+                <View style = {communityStyles.titleContainer}>
+                    <TouchableOpacity
+                        style = {backButtonStyles.communityBackButton}
+                        onPress = {() => navigation.navigate('Community')}
+                    >
+                        <FontAwesome 
+                            name = 'chevron-left' 
+                            size = {20} 
+                            color = 'gray'
+                        />
+                    </TouchableOpacity>
+                    <Text style = {titleStyles.postTitletext}>
+                        게시글
                     </Text>
-                </TouchableOpacity>
-            </View>
-            <View>
-                <TextInput
-                    style = {postStyles.title}
-                    placeholder="제목"
-                    onChangeText={(text) => {setTitle(text)}}
-                />
-                <View style = {articleTextStyles.verticleLine}/>
-                <View style = {postStyles.textbox}>
-                    <TextInput
-                        style = {postStyles.inputStyle}
-                        placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
-                        placeholderTextColor={'#D9D9D9'}
-                        multiline = {true} // 아이폰 텍스트 상단정렬
-                        onChangeText={(text) => {setText(text)}}
-                    />
+                    <TouchableOpacity
+                        style = {searchButtonStyles.screenButtonStyle}
+                        onPress = {() => navigation.navigate('Community')}
+                    >
+                        <Text style = {titleStyles.postText}>
+                            등록
+                        </Text>
+                    </TouchableOpacity>
                 </View>
+                <View>
+                    <TextInput
+                        style = {postStyles.title}
+                        placeholder="제목"
+                        onChangeText={(text) => {setTitle(text)}}
+                    />
+                    <View style = {postStyles.verticleLine}/>
+                        <View style = {postStyles.textbox}>
+                            <TextInput
+                                style = {postStyles.inputStyle}
+                                placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
+                                placeholderTextColor={'#D9D9D9'}
+                                multiline = {true} // 아이폰 텍스트 상단정렬
+                                onChangeText={(text) => {setText(text)}}
+                                // onSubmitEditing={onPress}
+                                returnKeyType="done"
+                            />
+                        </View>
+                </View>
+                <KeyboardAvoidingView style = {postStyles.bottomContainer}>
+                    <View style = {articleTextStyles.postVerticleLine}/>
+                    <View style = {articleStyles.commentContainer}>
+                        <TextInput 
+                        style = {postStyles.hashtag}
+                            placeholder="해쉬태그를 입력하세요"
+                            onChangeText={(text) => {setHashtag(text)}}
+                        />
+                    </View>
+                    <View style = {articleTextStyles.postVerticleLine}/>
+                    <View style = {articleStyles.commentContainer}>
+                        <TouchableOpacity 
+                            style = {postStyles.postButton}
+                        >
+                            <FontAwesome 
+                                name = 'image'
+                                size = {30} 
+                                color = 'green'
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity 
+                            style = {postStyles.postButton}
+                        >
+                            <FontAwesome 
+                                name = 'link'
+                                size = {30} 
+                                color = 'green'
+                            />
+                        </TouchableOpacity>
+                        <Text style = {titleStyles.anonymousText}>
+                            익명
+                        </Text>
+                        <BouncyCheckbox
+                            style = {postStyles.anonymousButton}
+                            size={25}
+                            fillColor="green"
+                            unfillColor="white"
+                            onPress={(isChecked: boolean) => {}}
+                        />
+                    </View>
+                </KeyboardAvoidingView>
             </View>
-        </View>
+        </KeyboardAwareScrollView>
     );
 }
 export default PostScreen;

@@ -69,7 +69,6 @@ const articleStyles = StyleSheet.create ({
         marginTop: '2%',
         marginLeft: '15%',
         width: '10%',
-        height: '50%',
     },
 
     comment2Button: {

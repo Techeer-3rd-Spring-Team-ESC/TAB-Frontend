@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const emojiButtonStyles = StyleSheet.create ({
     buttonStyle: {
         marginTop: '-1%',
-        marginLeft: '35%',
+        marginLeft: '33%',
         padding: 10
     },
 
