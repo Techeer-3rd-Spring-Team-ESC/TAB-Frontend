@@ -14,6 +14,14 @@ const profileStyles = StyleSheet.create ({
         fontFamily: 'GmarketSansTTFMedium',
     },
 
+    commentProfileText: {
+        marginTop: Platform.OS == 'ios' ? 11 : 10,
+        marginLeft: 0,
+        color: 'black', 
+        fontSize: Platform.OS == 'ios' ? 15 : 15,
+        fontFamily: 'GmarketSansTTFMedium',
+    },
+
     creactedText: {
         marginTop: Platform.OS == 'ios' ? 11 : 10,
         marginLeft: 10,

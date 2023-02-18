@@ -213,7 +213,7 @@ function ArticleScreen() {
                                     <TextInput style = {articleTextStyles.commentText}
                                         placeholder="덧글을 입력하세요"
                                     />
-                                    <TouchableOpacity 
+                                    <TouchableOpacity
                                         style = {articleStyles.comment2Button}
                                     >
                                         <FontAwesome 
@@ -229,8 +229,8 @@ function ArticleScreen() {
                             {comment2List?.map((e) =>
                                 <View key = {e.postName}>
                                     <View style = {articleTextStyles.commentVerticleLine}/>
-                                    <Text style = {profileStyles.profileText}>
-                                        {e.postName}
+                                    <Text style = {profileStyles.commentProfileText}>
+                                        ┗ {e.postName}
                                     </Text>
                                     <View style = {postListStyles.buttonStyle}>
                                         <Text

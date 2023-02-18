@@ -7,8 +7,7 @@ const communityStyles = StyleSheet.create ({
     },
 
     titleContainer: {
-        marginTop: Platform.OS == 'ios' ? "12%" : "3%",
-        height: '5%',
+        marginTop: Platform.OS == 'ios' ? "12%" : "5%",
         padding: 10,
         backgroundColor: 'white',
         flexDirection: 'row'
@@ -68,7 +67,7 @@ const communityStyles = StyleSheet.create ({
     },
 
     listcontainer: {
-        marginTop: Platform.OS == 'ios' ? 30 : 10,
+        marginTop: Platform.OS == 'ios' ? 30 : 0,
     },
 
     postcontainer:{

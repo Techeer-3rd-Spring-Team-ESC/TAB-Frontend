@@ -46,6 +46,15 @@ const articleTextStyles = StyleSheet.create ({
         backgroundColor: "#CCCCCC"
     },
 
+    communityVerticleLine: {
+        marginTop: '5%',
+        marginLeft: '3%',
+        marginBottom: '2%',
+        width: '95%',
+        height: 1,
+        backgroundColor: "#CCCCCC"
+    },
+
     commentVerticleLine:{
         marginTop: '5%',
         marginBottom: '2%',

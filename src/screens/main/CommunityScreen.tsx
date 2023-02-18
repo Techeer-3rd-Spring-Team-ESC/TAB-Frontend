@@ -21,6 +21,8 @@ import AsyncStorage from "@react-native-community/async-storage";
 import communityStyles from "../../styles/screens/Community";
 import postListStyles from "../../styles/community/PostList";
 import emojiButtonStyles from "../../styles/community/EmojiButton";
+import articleTextStyles from "../../styles/article/ArticleText";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
@@ -113,10 +115,10 @@ function CommunityScreen() {
 
     return (
         <ScrollView 
-            stickyHeaderIndices={[1]}  
+            stickyHeaderIndices={[10]}  
             style = {communityStyles.container}
         >
-            <View style = {communityStyles.titleContainer}>
+            <SafeAreaView style = {communityStyles.titleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
                     onPress = {() => navigation.navigate('Main')}
@@ -140,47 +142,48 @@ function CommunityScreen() {
                         color = 'gray'
                     />
                 </TouchableOpacity>
-            </View>
-            <View 
-                style = {communityStyles.listcontainer}
-            >
+            </SafeAreaView>
+            <View style = {communityStyles.listcontainer}>
                 {list?.map((e) =>
-                    <TouchableOpacity
-                        key = {e.title}
-                        onPress = {() => navigation.navigate('Article')}
-                    >
-                        <Text style = {profileStyles.profileText}>
-                            {e.category}
-                        </Text>
-                        <View style = {postListStyles.buttonStyle}>
-                            <Text
-                                style = {postListStyles.listTitle}
-                                numberOfLines={2} 
-                            >
-                                {e.title}
-                            </Text>
-                        </View>
-                        <View style = {communityStyles.postcontainer}> 
+                    <View>
+                        <TouchableOpacity
+                            key = {e.title}
+                            onPress = {() => navigation.navigate('Article')}
+                        >
                             <Text style = {profileStyles.profileText}>
-                                {e.author}
+                                {e.category}
                             </Text>
-                            <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
-                                <FontAwesome 
-                                    name = 'eye'
-                                    size = {20} 
-                                    color = 'gray'
-                                />
-                            </TouchableOpacity>
-                            <Text style = {emojiButtonStyles.likeCountStyle}>
-                                {e.likeCount}
-                            </Text>
-                            <LikeButton/>
-                            <Text style = {emojiButtonStyles.likeCountStyle}>
-                                {e.likeCount}
-                            </Text>
-                            <CommentButton/>
-                        </View>
-                    </TouchableOpacity>
+                            <View style = {postListStyles.buttonStyle}>
+                                <Text
+                                    style = {postListStyles.listTitle}
+                                    numberOfLines={2} 
+                                >
+                                    {e.title}
+                                </Text>
+                            </View>
+                            <View style = {communityStyles.postcontainer}> 
+                                <Text style = {profileStyles.profileText}>
+                                    {e.author}
+                                </Text>
+                                <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
+                                    <FontAwesome 
+                                        name = 'eye'
+                                        size = {20} 
+                                        color = 'gray'
+                                    />
+                                </TouchableOpacity>
+                                <Text style = {emojiButtonStyles.likeCountStyle}>
+                                    {e.likeCount}
+                                </Text>
+                                <LikeButton/>
+                                <Text style = {emojiButtonStyles.likeCountStyle}>
+                                    {e.likeCount}
+                                </Text>
+                                <CommentButton/>
+                            </View>
+                        </TouchableOpacity>
+                        <View style = {articleTextStyles.communityVerticleLine}/>
+                    </View>
                 )}
             <View style = {homeStyles.page}>
                     <LeftPageButton/>
