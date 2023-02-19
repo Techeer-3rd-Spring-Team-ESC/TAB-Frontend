@@ -79,7 +79,7 @@ const titleStyles = StyleSheet.create ({
     anonymousText: {
         marginTop: '4%',
         marginLeft: '50%',
-        color: 'green',
+        color: 'gray',
         fontSize: 17,
         fontFamily: 'GmarketSansTTFBold'
     }

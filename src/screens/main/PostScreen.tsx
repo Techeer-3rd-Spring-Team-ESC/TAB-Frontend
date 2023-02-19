@@ -91,7 +91,7 @@ function PostScreen() {
                             <FontAwesome 
                                 name = 'image'
                                 size = {30} 
-                                color = 'green'
+                                color = 'gray'
                             />
                         </TouchableOpacity>
                         <TouchableOpacity 
@@ -100,7 +100,7 @@ function PostScreen() {
                             <FontAwesome 
                                 name = 'link'
                                 size = {30} 
-                                color = 'green'
+                                color = 'gray'
                             />
                         </TouchableOpacity>
                         <Text style = {titleStyles.anonymousText}>
