@@ -44,7 +44,6 @@ const articleStyles = StyleSheet.create ({
     },
 
     comment2Container:{
-        marginLeft: '5%',
         flexDirection: 'row'
     },
 

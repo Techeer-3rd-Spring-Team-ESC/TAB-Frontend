@@ -47,7 +47,7 @@ function PostScreen() {
                         게시글
                     </Text>
                     <TouchableOpacity
-                        style = {searchButtonStyles.screenButtonStyle}
+                        style = {postStyles.postButtonStyle}
                         onPress = {() => navigation.navigate('Community')}
                     >
                         <Text style = {titleStyles.postText}>
@@ -67,24 +67,21 @@ function PostScreen() {
                                 style = {postStyles.inputStyle}
                                 placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
                                 placeholderTextColor={'#D9D9D9'}
-                                // multiline = {true} // 아이폰 텍스트 상단정렬
+                                multiline = {true} // 아이폰 텍스트 상단정렬
                                 onChangeText={(text) => {setText(text)}}
                                 // onSubmitEditing={onPress}
                                 returnKeyType="done"
                             />
                         </View>
                 </View>
-                <KeyboardAvoidingView style = {postStyles.bottomContainer}>
-                    <View style = {articleTextStyles.postVerticleLine}/>
-                    <View style = {articleStyles.commentContainer}>
-                        <TextInput 
-                        style = {postStyles.hashtag}
-                            placeholder="해쉬태그를 입력하세요"
-                            onChangeText={(text) => {setHashtag(text)}}
-                        />
-                    </View>
-                    <View style = {articleTextStyles.postVerticleLine}/>
-                    <View style = {articleStyles.commentContainer}>
+                <KeyboardAvoidingView 
+                    style = {postStyles.bottomContainer}
+                    behavior="position" enabled
+                >
+                    <View style = {postStyles.postVerticleLine}/>
+                    <View
+                        style = {articleStyles.comment2Container}
+                    >
                         <TouchableOpacity 
                             style = {postStyles.postButton}
                         >
@@ -111,7 +108,15 @@ function PostScreen() {
                             size={25}
                             fillColor="green"
                             unfillColor="white"
-                            onPress={(isChecked: boolean) => {}}
+                            onPress={() => {isChecked}}
+                        />
+                    </View>
+                    <View style = {postStyles.postVerticleLine}/>
+                    <View style = {articleStyles.commentContainer}>
+                        <TextInput 
+                        style = {postStyles.hashtag}
+                            placeholder="해쉬태그를 입력하세요"
+                            onChangeText={(text) => {setHashtag(text)}}
                         />
                     </View>
                 </KeyboardAvoidingView>

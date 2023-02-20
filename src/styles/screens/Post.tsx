@@ -10,16 +10,9 @@ const postStyles = StyleSheet.create ({
         marginTop: '7%'
     },
 
-    categorytext:{
-        marginTop: Platform.OS == 'ios' ? 20 : 20,
-        marginLeft: 20,
-        fontFamily: 'GmarketSansTTFMedium',
-        fontSize: Platform.OS == 'ios' ? 25 : 20,
-        color: '#CECECE'
-    },
-
-    category:{
-        flexDirection: 'row'
+    postButtonStyle: {
+        marginTop: "1%",
+        marginLeft: "27%"
     },
 
     verticleLine: {
@@ -66,6 +59,14 @@ const postStyles = StyleSheet.create ({
         lineHeight: 20,
     },
   
+    postVerticleLine: {
+        marginTop: '2%',
+        marginBottom: '2%',
+        width: '100%',
+        height: 2,
+        backgroundColor: "#AAAAAA"
+    },
+
     buttoncontainer: {
         flexDirection: 'row'
     },
