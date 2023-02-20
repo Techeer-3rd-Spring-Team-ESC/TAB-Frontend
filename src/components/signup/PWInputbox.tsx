@@ -13,7 +13,6 @@ function PWInputbox({setPassword}: Props) {
             placeholder = '비밀번호'
             onChangeText={(password) => {setPassword(password)}}
         >
-            <Text style = {styles.inputText}/>
         </TextInput>
     );
 };
