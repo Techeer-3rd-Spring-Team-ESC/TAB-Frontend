@@ -23,7 +23,7 @@ function EmailLoginScreen() {
 
   async function loginAPI() {
     try {
-      const response = await axios.patch(
+      const response = await axios.post(
       'http://10.0.2.2:8080/api/v1/member/login',
         {
           email: id,
@@ -31,11 +31,12 @@ function EmailLoginScreen() {
         },
       )
         .then(function (response) {
-            var str1 = 'Bearer '
-            var res = str1.concat(response.data.access)
-            AsyncStorage.setItem('accessToken', res);
+            // var str1 = 'Bearer '
+            // var res = str1.concat(response.data.access)
+            // AsyncStorage.setItem('accessToken', res);
+            // console.log('[access] ' + res)
+            console.log(response)
             navigation.navigate('Main')
-            console.log('[access] ' + res)
         })
         .catch(function (error) {
             console.log(error);

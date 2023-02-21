@@ -12,6 +12,8 @@ import PWInputboxCheck from '../../components/signup/PWInputboxCheck';
 import NameInputbox from '../../components/signup/NameInputbox';
 import signStyles from '../../styles/screens/Signup';
 import styles from '../../styles/signup/SignUpButton';
+import axios from "axios";
+import AsyncStorage from "@react-native-community/async-storage";
 
 type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
@@ -25,13 +27,27 @@ function SignUpScreen() {
   const [pwCheck, setPwCheck] = useState('');
   const [name, setName] = useState('');
 
-  function userSignup() {
-    console.log("아이디: " + email)
-    console.log("이메일인증번호: " + idCheck)
-    console.log("비밀번호: " + password)
-    console.log("비밀번호확인: " + pwCheck)
-    console.log("이름: " + name)
-}
+  async function signupAPI() {
+    try {
+      const response = await axios.post(
+      'http://10.0.2.2:8080/api/v1/member/signup',
+        {
+          email: email,
+          password: password,
+          name: name
+        },
+      )
+        .then(function (response) {
+            // console.log(response)
+            navigation.navigate('EmailLogin')
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+  };
 
   return (
     <View style = {signStyles.container}>
@@ -78,8 +94,7 @@ function SignUpScreen() {
         <TouchableOpacity
             style = {styles.buttonStyle}
             onPress={() => {
-              userSignup()
-              navigation.navigate('EmailLogin')
+              signupAPI()
             }}
         >
             <Text style = {styles.buttonTitle}>

@@ -82,7 +82,7 @@ function PostScreen() {
                     <View
                         style = {articleStyles.comment2Container}
                     >
-                        <TouchableOpacity 
+                        <TouchableOpacity
                             style = {postStyles.postButton}
                         >
                             <FontAwesome 
