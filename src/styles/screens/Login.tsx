@@ -7,10 +7,10 @@ const styles = StyleSheet.create ({
   },
 
   image: {
-    width: 500,
-    height: 200,
-    marginTop: Platform.OS == 'ios' ? 200 : 60,
-    marginLeft: 10
+    width: "50%",
+    height: 100,
+    marginTop: Platform.OS == 'ios' ? 200 : 100,
+    marginLeft: "25%"
   },
 
   logintext: {
@@ -35,8 +35,8 @@ const styles = StyleSheet.create ({
 
   loginbox: {
     marginTop: 10,
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: 40,
+    marginRight: 40,
     borderColor: 'black'
   },
 

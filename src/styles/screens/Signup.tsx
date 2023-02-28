@@ -6,6 +6,14 @@ const signStyles = StyleSheet.create ({
       backgroundColor: 'white'
     },
 
+    image: {
+      width: "50%",
+      height: 100,
+      marginTop: Platform.OS == 'ios' ? 200 : 50,
+      marginLeft: "25%",
+      marginBottom: "10%"
+    },
+
     signupText: {
       marginTop: Platform.OS == 'ios' ? 200 : 100,
       marginBottom: 30,
@@ -19,10 +27,18 @@ const signStyles = StyleSheet.create ({
       flexDirection: 'row'
     },
 
+    idInputStyle: {
+      marginTop: 4, 
+      padding: 8,
+      backgroundColor: 'white',
+      borderRadius: 8
+    },
+
     inputIDBox: {
       height: 50,
       marginTop: 20,
       marginLeft: 20,
+      width: '64%',
       fontSize: 10,
       fontFamily: 'GmarketSansTTFLight',
       padding: 4,
@@ -32,18 +48,13 @@ const signStyles = StyleSheet.create ({
       borderWidth: 1
     },
 
-    domainBox: {
-      height: 50,
-      width: Platform.OS == 'ios' ? 150 : 128,
-      marginTop: 20,
-      marginLeft: 10,
-      fontSize: 10,
-      fontFamily: 'GmarketSansTTFLight',
-      padding: 4,
-      paddingHorizontal: 10,
-      borderRadius: 10,
-      borderColor: 'gray',
-      borderWidth: 1
+    inputStyle: {
+      marginTop: 4,
+      marginRight: 20,
+      padding: 8,
+      backgroundColor: 'white',
+      borderColor: '#FFFFF',
+      borderRadius: 8
     },
 
     emailCheckbox: {

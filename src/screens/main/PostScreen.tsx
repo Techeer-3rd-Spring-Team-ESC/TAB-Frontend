@@ -1,18 +1,19 @@
 import React, {useState} from "react";
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import AnonymousCheck from '../../components/post/AnonymousCheck';
-import CategoryCheck from '../../components/post/CategoryCheck';
-import HashtagInputbox from '../../components/post/HashtagInputbox';
-import TitleInputbox from '../../components/post/TitleInputbox';
-import TextInputbox from '../../components/post/TextInputbox';
-import ImageButton from '../../components/post/ImageButton';
-import LinkButton from '../../components/post/LinkButton';
-import CancelButton from '../../components/post/CancelButton';
 import postStyles from '../../styles/screens/Post';
-import styles from '../../styles/post/UploadButton';
+import communityStyles from "../../styles/screens/Community";
+import backButtonStyles from "../../styles/community/BackButton";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import titleStyles from "../../styles/home/TitleText";
+import searchButtonStyles from "../../styles/community/SearchButton";
+import { TextInput } from "react-native-gesture-handler";
+import articleTextStyles from "../../styles/article/ArticleText";
+import articleStyles from "../../styles/screens/Article";
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 
 type PostScreenProp = StackNavigationProp <RootStackParamList, 'Post'>;
 
@@ -23,67 +24,104 @@ function PostScreen() {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [hashtag, setHashtag] = useState('');
-
-    function userPost() {
-        console.log("익명여부: " + anonymousChecked)
-        console.log("카테고리: " + categoryChecked)
-        console.log("제목: " + title)
-        console.log("내용: " + text)
-        console.log("해쉬태그: " + hashtag)
-      }
+    const [isChecked, setisChecked] = useState(false);
 
     return (
-        <View style={postStyles.container}>
-            <Text style = {postStyles.anonymoustext}>
-                공개여부
-            </Text>
-            <View style = {postStyles.anonymous}>
-                <AnonymousCheck
-                    setChecked={setAnonymousChecked}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>
-            <Text style = {postStyles.categorytext}>
-                카테고리
-            </Text>
-            <View style = {postStyles.category}>
-                <CategoryCheck/>
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>
-            <View style = {postStyles.title}>
-                <TitleInputbox
-                    setTitle={setTitle}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}>
-            </View>    
-            <View style = {postStyles.textbox}>
-                <TextInputbox
-                    setText={setText}
-                />
-            </View>
-            <View style = {postStyles.hashtag}>
-                <HashtagInputbox
-                    setHashtag={setHashtag}
-                />
-            </View>
-            <View style = {postStyles.verticleLine}/>
-            <View style= {postStyles.buttoncontainer}>
-                <ImageButton/>
-                <LinkButton/>
-                <CancelButton/>
-                <TouchableOpacity
-                    style = {styles.buttonStyle}
-                    onPress={() => navigation.navigate('Main')}
-                >
-                    <Text style = {styles.buttonTitle}>
-                        등록
+        <KeyboardAwareScrollView
+            contentContainerStyle={{ flex: 1}}
+            extraScrollHeight={20}
+        >
+            <View style={postStyles.container}>
+                <View style = {communityStyles.titleContainer}>
+                    <TouchableOpacity
+                        style = {backButtonStyles.communityBackButton}
+                        onPress = {() => navigation.navigate('Community')}
+                    >
+                        <FontAwesome 
+                            name = 'chevron-left' 
+                            size = {Platform.OS == 'ios' ? 25 : 20} 
+                            color = 'gray'
+                        />
+                    </TouchableOpacity>
+                    <Text style = {titleStyles.postTitletext}>
+                        글쓰기
                     </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style = {postStyles.postButtonStyle}
+                        onPress = {() => navigation.navigate('Community')}
+                    >
+                        <Text style = {titleStyles.postText}>
+                            등록
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TextInput
+                        style = {postStyles.title}
+                        placeholder="제목"
+                        onChangeText={(text) => {setTitle(text)}}
+                    />
+                    <View style = {postStyles.verticleLine}/>
+                        <View style = {postStyles.textbox}>
+                            <TextInput
+                                style = {postStyles.inputStyle}
+                                placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
+                                placeholderTextColor={'#D9D9D9'}
+                                multiline = {true} // 아이폰 텍스트 상단정렬
+                                onChangeText={(text) => {setText(text)}}
+                                // onSubmitEditing={onPress}
+                                returnKeyType="done"
+                            />
+                        </View>
+                </View>
+                <KeyboardAvoidingView 
+                    style = {postStyles.bottomContainer}
+                    behavior="position" enabled
+                >
+                    <View style = {postStyles.postVerticleLine}/>
+                    <View
+                        style = {articleStyles.comment2Container}
+                    >
+                        <TouchableOpacity
+                            style = {postStyles.postButton}
+                        >
+                            <FontAwesome 
+                                name = 'image'
+                                size = {30} 
+                                color = 'gray'
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity 
+                            style = {postStyles.postButton}
+                        >
+                            <FontAwesome 
+                                name = 'link'
+                                size = {30} 
+                                color = 'gray'
+                            />
+                        </TouchableOpacity>
+                        <Text style = {titleStyles.anonymousText}>
+                            익명
+                        </Text>
+                        <BouncyCheckbox
+                            style = {postStyles.anonymousButton}
+                            size={25}
+                            fillColor="green"
+                            unfillColor="white"
+                            onPress={() => {isChecked}}
+                        />
+                    </View>
+                    <View style = {postStyles.postVerticleLine}/>
+                    <View style = {articleStyles.commentContainer}>
+                        <TextInput 
+                        style = {postStyles.hashtag}
+                            placeholder="해쉬태그를 입력하세요"
+                            onChangeText={(text) => {setHashtag(text)}}
+                        />
+                    </View>
+                </KeyboardAvoidingView>
             </View>
-        </View>
+        </KeyboardAwareScrollView>
     );
 }
 export default PostScreen;

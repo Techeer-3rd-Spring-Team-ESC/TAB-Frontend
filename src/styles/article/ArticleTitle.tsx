@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const articleTitleStyles = StyleSheet.create ({
     titleContainer: {
         backgroundColor: 'white'
     },
@@ -21,6 +21,19 @@ const styles = StyleSheet.create ({
         color: 'gray',
         fontSize: Platform.OS == 'ios' ? 15 : 12,
         fontFamily: 'GmarketSansTTFMedium'
+    },
+
+    commentContainer: {
+        marginTop: 20
+    },
+
+    comment2Container: {
+        marginLeft: 20
+    },
+
+    commentButton: {
+        marginLeft: 20
     }
+
 });
-export default styles;
+export default articleTitleStyles;

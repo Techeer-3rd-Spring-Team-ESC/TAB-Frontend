@@ -3,19 +3,19 @@ import {TouchableOpacity, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import styles from '../../styles/community/PostList';
+import postListStyles from '../../styles/community/PostList';
 
-type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
 function PostList() {
     const navigation = useNavigation<SignUpScreenProp>();
     return (
         <TouchableOpacity
-            style = {styles.buttonStyle}
+            style = {postListStyles.buttonStyle}
             onPress = {() => navigation.navigate('Article')}
         >
             <Text
-                style = {styles.listTitle}
+                style = {postListStyles.listTitle}
                 numberOfLines={2} 
             >
                 A Step-by-Step Guid -- Are you looking for a new, creative project? 

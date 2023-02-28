@@ -6,63 +6,85 @@ const postStyles = StyleSheet.create ({
         backgroundColor: 'white'
     },
 
-    anonymoustext:{
-        marginTop: Platform.OS == 'ios' ? 80 : 20,
-        marginLeft: 20,
-        fontFamily: 'GmarketSansTTFMedium',
-        fontSize: Platform.OS == 'ios' ? 25 : 20,
-        color:'#CECECE'
+    bottomContainer: {
+        marginTop: Platform.OS == 'ios' ? "57%" : "7%"
     },
 
-    anonymous:{
-        marginLeft: 5,
-        flexDirection: 'row'
-    },
-
-    categorytext:{
-        marginTop: Platform.OS == 'ios' ? 20 : 20,
-        marginLeft: 20,
-        fontFamily: 'GmarketSansTTFMedium',
-        fontSize: Platform.OS == 'ios' ? 25 : 20,
-        color: '#CECECE'
-    },
-
-    category:{
-        marginLeft: Platform.OS == 'ios' ? 5 : 10,
-        flexDirection: 'row'
+    postButtonStyle: {
+        marginTop: "1%",
+        marginLeft: "27%"
     },
 
     verticleLine: {
-        width: '91%',
-        height: 3,
-        marginLeft: 20,
-        borderRadius: 50,
-        backgroundColor: '#CECECE',
+        marginTop: '3%',
+        marginLeft: '5%',
+        marginBottom: '2%',
+        width: '90%',
+        height: 1,
+        backgroundColor: "#CCCCCC"
     },
 
     title: {
-        marginLeft: 10,
-        marginRight: 10,
+        marginTop: '3%',
+        marginLeft: '6%',
+        marginRight: '5%',
+        fontFamily: 'GmarketSansTTFMedium',
+        fontSize: 20
     },
 
     textbox: {
-        marginTop: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        borderRadius: 8,
-        borderWidth: 2, 
-        borderColor: '#909090',
+        marginLeft: '5%',
+        marginRight: '5%',
+        width: '90%',
+        height: '35%'
+    },
+
+    inputStyle: {
+        height: Platform.OS == "ios" ? 370 : 230,
+        marginTop: Platform.OS == "ios" ? 10 : 10,
+        padding: 8,
+        textAlignVertical: "top", // 안드로이드 텍스트 상단정렬
+        fontFamily: 'GmarketSansTTFMedium',
     },
 
     hashtag: {
-        marginTop: Platform.OS == 'ios' ? 10 : 0,
-        marginLeft: 10,
-        marginRight: 10,
+        marginTop: '-1%',
+        marginLeft: '1%',
+        marginRight: '5%',
+        width: '70%',
+        color: 'green',
+        padding: 10,
+        fontSize: Platform.OS == 'ios' ? 15 : 13,
+        fontFamily: 'GmarketSansTTFMedium',
+        lineHeight: 20,
     },
   
+    postVerticleLine: {
+        marginTop: '2%',
+        marginBottom: '2%',
+        width: '100%',
+        height: 2,
+        backgroundColor: "#AAAAAA"
+    },
+
     buttoncontainer: {
         flexDirection: 'row'
-    }
+    },
+
+    postButton: {
+        marginTop: '2%',
+        marginLeft: '5%',
+        width: '10%',
+    },
+
+    anonymousButton: {
+        marginTop: '3.5%',
+        marginLeft: '3%',
+        width: '10%',
+        height: '50%',
+    },
+
+    
 });
 
 export default postStyles;

@@ -1,13 +1,13 @@
-import React from 'react';
+import React  from 'react';
 import {TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from '../../styles/community/EmojiButton';
 
-function LikeButton() {
+function CommentButton() {
     return (
-        <TouchableOpacity style = {styles.commentButtonStyle}>
+        <TouchableOpacity style = {styles.articleCommentButtonStyle}>
             <FontAwesome 
-                name = 'heart'
+                name = 'comment'
                 size = {20} 
                 color = 'gray'
             />
@@ -15,4 +15,4 @@ function LikeButton() {
     );
 };
 
-export default LikeButton;
+export default CommentButton;

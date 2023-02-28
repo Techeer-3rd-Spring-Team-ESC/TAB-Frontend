@@ -9,6 +9,9 @@ import PWInputbox from '../../components/emailLogin/PWInputbox';
 import styles from '../../styles/screens/EmailLogin';
 import titleStyles from '../../styles/home/TitleText';
 import emailStyles from '../../styles/emailLogin/LoginButton';
+import KakaoLoginButton from "../../components/login/KakaoLoginButton";
+import axios from "axios";
+import AsyncStorage from "@react-native-community/async-storage";
 
 type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -18,21 +21,36 @@ function EmailLoginScreen() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
-  function userLogin() {
-    console.log("아이디: " + id)
-    console.log("비밀번호: " + password)
-  }
+  async function loginAPI() {
+    try {
+      const response = await axios.post(
+      'http://10.0.2.2:8080/api/v1/member/login',
+        {
+          email: id,
+          password: password
+        },
+      )
+        .then(function (response) {
+            // var str1 = 'Bearer '
+            // var res = str1.concat(response.data.access)
+            // AsyncStorage.setItem('accessToken', res);
+            // console.log('[access] ' + res)
+            console.log(response)
+            navigation.navigate('Main')
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+  };
 
   return (
     <View style = {styles.container}>
-      <View style = {styles.image}>
-        <Image
-          source = {require('../../../assets/images/tab.png')}
-        />
-      </View>
-      <Text style = {titleStyles.logintext}>
-        로그인
-      </Text>
+      <Image style = {styles.image}
+        source = {require('../../../assets/images/tab.png')}
+      />
       <View style = {styles.inputbox}>
         <IDInputbox
           setId={setId}
@@ -46,8 +64,8 @@ function EmailLoginScreen() {
       <TouchableOpacity
         style = {emailStyles.buttonStyle}
         onPress = {() => {
+          // loginAPI()
           navigation.navigate('Main')
-          userLogin()
         }}
       >
         <Text style = {emailStyles.buttonTitle}>

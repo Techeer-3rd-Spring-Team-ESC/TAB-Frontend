@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -12,6 +12,8 @@ import PWInputboxCheck from '../../components/signup/PWInputboxCheck';
 import NameInputbox from '../../components/signup/NameInputbox';
 import signStyles from '../../styles/screens/Signup';
 import styles from '../../styles/signup/SignUpButton';
+import axios from "axios";
+import AsyncStorage from "@react-native-community/async-storage";
 
 type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
@@ -19,42 +21,45 @@ function SignUpScreen() {
   const navigation = useNavigation<SignUpScreenProp>();
 
   
-  const [id, setId] = useState('');
-  const [domain, setDomain] = useState('');
+  const [email, setEmail] = useState('');
   const [idCheck, setIdCheck] = useState('');
   const [password, setPassword] = useState('');
   const [pwCheck, setPwCheck] = useState('');
   const [name, setName] = useState('');
 
-  function userSignup() {
-    console.log("아이디: " + id)
-    console.log("도메인: " + domain)
-    console.log("이메일인증번호: " + idCheck)
-    console.log("비밀번호: " + password)
-    console.log("비밀번호확인: " + pwCheck)
-    console.log("이름: " + name)
-}
+  async function signupAPI() {
+    try {
+      const response = await axios.post(
+      'http://10.0.2.2:8080/api/v1/member/signup',
+        {
+          email: email,
+          password: password,
+          name: name
+        },
+      )
+        .then(function (response) {
+            // console.log(response)
+            navigation.navigate('EmailLogin')
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+  };
 
   return (
     <View style = {signStyles.container}>
-      <Text style = {signStyles.signupText}>
-        회원가입
-      </Text>
+      <Image style = {signStyles.image}
+        source = {require('../../../assets/images/tab.png')}
+      />
       <View style = {signStyles.idContainer}>
         <View style = {signStyles.inputIDBox}>
-          <IDInputbox
-            setId={setId}
-          />
-        </View>
-        <View style = {{
-          marginTop: 15, 
-          marginLeft: 10, 
-          justifyContent: 'center'}}>
-          <Text> @ </Text>
-        </View>
-        <View style = {signStyles.domainBox}>
-          <DomainInputbox
-            setDomain={setDomain}
+          <TextInput
+              style = {signStyles.inputStyle}
+              placeholder = "이메일"
+              onChangeText={(email) => {setEmail(email)}}
           />
         </View>
         <View style = {signStyles.emailCheckbox}>
@@ -62,13 +67,17 @@ function SignUpScreen() {
         </View>
       </View>
       <View style = {signStyles.inputBox}>
-        <IDInputboxCheck
-          setIdCheck={setIdCheck}
+        <TextInput
+          style = {signStyles.inputStyle}
+          placeholder = '인증번호'
+          onChangeText={(password) => {setPassword(password)}}
         />
       </View>
       <View style = {signStyles.inputBox}>
-        <PWInputbox
-          setPassword={setPassword}
+        <TextInput
+          style = {signStyles.inputStyle}
+          placeholder = '비밀번호'
+          onChangeText={(password) => {setPassword(password)}}
         />
       </View>
       <View style = {signStyles.inputBox}>
@@ -85,8 +94,7 @@ function SignUpScreen() {
         <TouchableOpacity
             style = {styles.buttonStyle}
             onPress={() => {
-              userSignup()
-              navigation.navigate('EmailLogin')
+              signupAPI()
             }}
         >
             <Text style = {styles.buttonTitle}>

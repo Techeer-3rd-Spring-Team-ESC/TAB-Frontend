@@ -4,7 +4,6 @@ const styles = StyleSheet.create ({
     checkboxContainer: {
       marginLeft: 20, 
       marginRight: 300,
-      marginBottom: Platform.OS == 'ios' ? 20 : 10,
       padding: 10,
       borderRadius: 8,
       flexDirection: 'row',

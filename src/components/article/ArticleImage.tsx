@@ -9,9 +9,6 @@ function ArticleImage() {
                 resizeMode = "contain"
                 source = {require("../../../assets/images/mainImage.png")}
             />
-            <Text style = {styles.imageSubtitle}>
-                Photo by Rubaitul Azad on Unsplash
-            </Text>
         </View>
     );
 };
