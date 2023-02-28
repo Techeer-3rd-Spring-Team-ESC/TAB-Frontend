@@ -8,7 +8,7 @@ function BookmarkLogo() {
         <TouchableOpacity style = {styles.titleButtonStyle}>
             <FontAwesome 
                 name = 'bookmark'
-                size = {Platform.OS == 'ios' ? 30 : 30} 
+                size = {Platform.OS == 'ios' ? 40 : 30} 
                 color = 'green'
             />
         </TouchableOpacity>

@@ -20,7 +20,7 @@ const titleStyles = StyleSheet.create ({
 
     communityTitletext: {
         marginTop: "-5%",
-        marginLeft: "40%",
+        marginLeft: Platform.OS == 'ios' ? "36%" : "40%",
         color: 'black',
         fontSize: Platform.OS == 'ios' ? 30 : 20,
         fontFamily: 'GmarketSansTTFBold'
@@ -35,10 +35,10 @@ const titleStyles = StyleSheet.create ({
     },
 
     searchTitletext: {
-        marginTop: "-5%",
-        marginLeft: "43%",
+        marginTop: Platform.OS == 'ios' ? "-7%" : "-5%",
+        marginLeft: Platform.OS == 'ios' ? "40%" : "43%",
         color: 'black',
-        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontSize: Platform.OS == 'ios' ? 30 : 23,
         fontFamily: 'GmarketSansTTFBold'
     },
 

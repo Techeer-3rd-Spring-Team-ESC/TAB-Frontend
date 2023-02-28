@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 const emojiButtonStyles = StyleSheet.create ({
     buttonStyle: {
@@ -40,8 +40,8 @@ const emojiButtonStyles = StyleSheet.create ({
     },
 
     titleButtonStyle: {
-        marginTop: "-7%",
-        marginLeft: '60%',
+        marginTop: Platform.OS == 'ios' ? '-9%' : '-8%',
+        marginLeft: Platform.OS == 'ios' ? '65%' : '65%'
     },
 });
 

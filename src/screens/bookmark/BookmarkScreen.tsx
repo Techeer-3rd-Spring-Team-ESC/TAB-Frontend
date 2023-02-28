@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity, ScrollView, SafeAreaView, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -103,17 +103,17 @@ function BookmarkScreen() {
 
     return (
         <ScrollView 
-            stickyHeaderIndices={[0]}  
+            stickyHeaderIndices={[0]}
             style = {communityStyles.container}
         >
-            <View style = {styles.titleContainer}>
+            <SafeAreaView style = {styles.bookmarkTitleContainer}>
                 <TouchableOpacity
-                    style = {backButtonStyles.communityBackButton}
+                    style = {backButtonStyles.bookmarkBackButton}
                     onPress = {() => navigation.navigate('Main')}
                 >
                     <FontAwesome 
                         name = 'chevron-left' 
-                        size = {20} 
+                        size = {Platform.OS == 'ios' ? 25 : 20} 
                         color = 'gray'
                     />
                 </TouchableOpacity>
@@ -121,7 +121,7 @@ function BookmarkScreen() {
                     북마크
                 </Text>
                 <BookmarkLogo/>
-            </View>
+            </SafeAreaView>
             <View style = {communityStyles.listcontainer}>
                 {list?.map((e) =>
                     <View>

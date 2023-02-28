@@ -18,7 +18,7 @@ const informationStyles = StyleSheet.create ({
     },
 
     crollingpost:{
-        marginTop: Platform.OS == 'ios' ? 10 : 10,
+        marginTop: 20,
         flexDirection: 'row',
     },
 

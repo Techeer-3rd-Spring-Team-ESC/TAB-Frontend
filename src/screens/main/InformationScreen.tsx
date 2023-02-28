@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Image, Text, ScrollView, TouchableOpacity, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -22,14 +22,14 @@ function InformationScreen() {
             showsVerticalScrollIndicator={true}
             style = {styles.container}
         >
-            <View style = {styles.titleContainer}>
+            <View style = {styles.infoTitleContainer}>
                 <TouchableOpacity
-                    style = {backButtonStyles.communityBackButton}
+                    style = {backButtonStyles.infoBackButton}
                     onPress = {() => navigation.navigate('Main')}
                 >
                     <FontAwesome 
                         name = 'chevron-left' 
-                        size = {20} 
+                        size = {Platform.OS == 'ios' ? 25 : 20} 
                         color = 'gray'
                     />
                 </TouchableOpacity>

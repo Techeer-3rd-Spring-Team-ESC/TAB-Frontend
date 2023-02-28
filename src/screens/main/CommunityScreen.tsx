@@ -117,7 +117,7 @@ function CommunityScreen() {
                     onPress = {() => navigation.navigate('Main')}
                 >
                     <FontAwesome 
-                        name = 'chevron-left' 
+                        name = 'chevron-left'
                         size = {20} 
                         color = 'gray'
                     />

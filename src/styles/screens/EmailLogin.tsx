@@ -9,7 +9,7 @@ const styles = StyleSheet.create ({
   image: {
     width: "50%",
     height: 100,
-    marginTop: Platform.OS == 'ios' ? 200 : 100,
+    marginTop: Platform.OS == 'ios' ? 250 : 100,
     marginLeft: "25%",
     marginBottom: "20%"
   },

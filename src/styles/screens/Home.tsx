@@ -49,6 +49,7 @@ const homeStyles = StyleSheet.create ({
 
     page: {
         marginTop: '5%',
+        marginBottom: Platform.OS == 'ios' ? '10%' : '0%',
         flexDirection: 'row'
     }
 });

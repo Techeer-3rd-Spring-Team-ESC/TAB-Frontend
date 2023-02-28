@@ -7,8 +7,22 @@ const communityStyles = StyleSheet.create ({
     },
 
     titleContainer: {
-        marginTop: Platform.OS == 'ios' ? "12%" : "5%",
+        marginTop: "5%",
         padding: 10,
+        backgroundColor: 'white',
+        flexDirection: 'row'
+    },
+
+    infoTitleContainer: {
+        marginTop: Platform.OS == 'ios' ? "0%" : "5%",
+        padding: Platform.OS == 'ios' ? 30 : 10,
+        backgroundColor: 'white',
+        flexDirection: 'row'
+    },
+
+    bookmarkTitleContainer: {
+        marginTop: Platform.OS == 'ios' ? "0%" : "0%",
+        padding: Platform.OS == 'ios' ? 20 : 10,
         backgroundColor: 'white',
         flexDirection: 'row'
     },
@@ -49,7 +63,7 @@ const communityStyles = StyleSheet.create ({
     image: {
         width: 130,
         height: 60,
-        marginTop: Platform.OS == 'ios' ? 30 : 0,
+        marginTop: Platform.OS == 'ios' ? 10 : 0,
         resizeMode: 'contain',
     },
     
@@ -67,7 +81,6 @@ const communityStyles = StyleSheet.create ({
     },
 
     listcontainer: {
-        marginTop: Platform.OS == 'ios' ? 30 : 0,
     },
 
     postcontainer:{
