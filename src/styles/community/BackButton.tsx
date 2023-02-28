@@ -17,7 +17,7 @@ const backButtonStyles = StyleSheet.create ({
     },
 
     articleBackButton: {
-        marginTop: "10%",
+        marginTop: Platform.OS == 'ios' ? "10%" : "5%",
         marginLeft: "5%"
     },
 

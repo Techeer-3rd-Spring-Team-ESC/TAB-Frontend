@@ -28,9 +28,8 @@ const communityStyles = StyleSheet.create ({
     },
 
     articleContainer: {
-        marginTop: Platform.OS == 'ios' ? "12%" : "3%",
-        height: '5%',
-        padding: 10,
+        marginTop: Platform.OS == 'ios' ? "5%" : "3%",
+        padding: Platform.OS == 'ios' ? 20 : 10,
         backgroundColor: 'white',
         flexDirection: 'row'
     },

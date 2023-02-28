@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import {View, ScrollView, TouchableOpacity, Text, Image, KeyboardAvoidingView, Button} from 'react-native';
+import {View, ScrollView, TouchableOpacity, Text, Image, KeyboardAvoidingView, Button, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
-import LikeButton from '../../components/article/LikeButton';
-import CommentButton from '../../components/article/CommentButton';
 import ArticleImage from '../../components/article/ArticleImage';
-import ArticleSubtitle from '../../components/article/ArticleSubtitle';
-import ArticleText from '../../components/article/ArticleText';
 import styles from '../../styles/screens/Article';
 import backButtonStyles from "../../styles/community/BackButton";
 import communityStyles from "../../styles/screens/Community";
@@ -107,16 +103,16 @@ function ArticleScreen() {
         >
             <View style = {communityStyles.articleContainer}>
                 <TouchableOpacity
-                    style = {backButtonStyles.communityBackButton}
+                    style = {backButtonStyles.articleBackButton}
                     onPress = {() => navigation.navigate('Community')}
                 >
-                    <FontAwesome 
-                        name = 'chevron-left' 
-                        size = {20} 
+                    <FontAwesome
+                        name = 'chevron-left'
+                        size = {Platform.OS == 'ios' ? 25 : 20} 
                         color = 'gray'
                     />
                 </TouchableOpacity>
-                <Text style = {titleStyles.searchTitletext}>
+                <Text style = {titleStyles.articleTitletext}>
                     게시글
                 </Text>
             </View>

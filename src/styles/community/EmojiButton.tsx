@@ -9,7 +9,7 @@ const emojiButtonStyles = StyleSheet.create ({
 
     articleButtonStyle: {
         marginTop: '-0.5%',
-        marginLeft: '15%',
+        marginLeft: Platform.OS == 'ios' ? "10%" : "15%",
         width: '10%',
         padding: 10
     },
