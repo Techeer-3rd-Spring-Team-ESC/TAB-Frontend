@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 const searchButtonStyles = StyleSheet.create ({
     screenButtonStyle: {
@@ -8,7 +8,7 @@ const searchButtonStyles = StyleSheet.create ({
 
     buttonStyle: {
         marginTop: 10,
-        marginLeft: '35%',
+        marginLeft: Platform.OS == 'ios' ? "43%" : "35%",
         marginBottom: 10,
         padding: 10,
         backgroundColor: '#51b05b',

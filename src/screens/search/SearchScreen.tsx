@@ -20,7 +20,7 @@ function SearchScreen() {
         <View style = {styles.container}>
             <View style = {styles.titleContainer}>
                 <TouchableOpacity
-                    style = {backButtonStyles.communityBackButton}
+                    style = {backButtonStyles.searchBackButton}
                     onPress = {() => navigation.navigate('Community')}
                 >
                     <FontAwesome 

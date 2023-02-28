@@ -33,7 +33,7 @@ function InformationScreen() {
                         color = 'gray'
                     />
                 </TouchableOpacity>
-                <Text style = {titleStyles.searchTitletext}>
+                <Text style = {titleStyles.infoTitletext}>
                     정보
                 </Text>
 

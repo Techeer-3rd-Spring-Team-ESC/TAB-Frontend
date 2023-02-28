@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView} from 'react-native';
+import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -39,12 +39,12 @@ function PostScreen() {
                     >
                         <FontAwesome 
                             name = 'chevron-left' 
-                            size = {20} 
+                            size = {Platform.OS == 'ios' ? 25 : 20} 
                             color = 'gray'
                         />
                     </TouchableOpacity>
                     <Text style = {titleStyles.postTitletext}>
-                        게시글
+                        글쓰기
                     </Text>
                     <TouchableOpacity
                         style = {postStyles.postButtonStyle}

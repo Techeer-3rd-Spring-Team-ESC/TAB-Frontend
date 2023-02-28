@@ -117,7 +117,7 @@ function BookmarkScreen() {
                         color = 'gray'
                     />
                 </TouchableOpacity>
-                <Text style = {titleStyles.searchTitletext}>
+                <Text style = {titleStyles.bookmarkTitletext}>
                     북마크
                 </Text>
                 <BookmarkLogo/>

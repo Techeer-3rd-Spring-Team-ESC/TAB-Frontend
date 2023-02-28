@@ -7,7 +7,7 @@ const postStyles = StyleSheet.create ({
     },
 
     bottomContainer: {
-        marginTop: '7%'
+        marginTop: Platform.OS == 'ios' ? "57%" : "7%"
     },
 
     postButtonStyle: {
@@ -78,7 +78,7 @@ const postStyles = StyleSheet.create ({
     },
 
     anonymousButton: {
-        marginTop: '4%',
+        marginTop: '3.5%',
         marginLeft: '3%',
         width: '10%',
         height: '50%',

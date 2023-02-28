@@ -7,7 +7,7 @@ const backButtonStyles = StyleSheet.create ({
     },
 
     infoBackButton: {
-        marginTop: Platform.OS == 'ios' ? "8%" : "1%",
+        marginTop: Platform.OS == 'ios' ? "13%" : "1%",
         marginLeft: Platform.OS == 'ios' ? "0%" : "5%",
     },
 
@@ -22,7 +22,7 @@ const backButtonStyles = StyleSheet.create ({
     },
 
     searchBackButton: {
-        marginTop: "7%",
+        marginTop: Platform.OS == 'ios' ? "11%" : "1%",
         marginLeft: "5%"
     },
 });

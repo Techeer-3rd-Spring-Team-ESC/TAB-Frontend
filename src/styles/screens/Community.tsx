@@ -7,7 +7,7 @@ const communityStyles = StyleSheet.create ({
     },
 
     titleContainer: {
-        marginTop: "5%",
+        marginTop: Platform.OS == 'ios' ? "13%" : "5%",
         padding: 10,
         backgroundColor: 'white',
         flexDirection: 'row'

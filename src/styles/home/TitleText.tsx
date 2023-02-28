@@ -28,7 +28,7 @@ const titleStyles = StyleSheet.create ({
 
     postTitletext: {
         marginTop: "1%",
-        marginLeft: "35%",
+        marginLeft: Platform.OS == 'ios' ? "30%" : "35%",
         color: 'black',
         fontSize: Platform.OS == 'ios' ? 30 : 20,
         fontFamily: 'GmarketSansTTFBold'
@@ -42,9 +42,25 @@ const titleStyles = StyleSheet.create ({
         fontFamily: 'GmarketSansTTFBold'
     },
 
+    bookmarkTitletext: {
+        marginTop: Platform.OS == 'ios' ? "-6%" : "-5%",
+        marginLeft: Platform.OS == 'ios' ? "35%" : "37%",
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 23,
+        fontFamily: 'GmarketSansTTFBold'
+    },
+
     searchTitletext: {
-        marginTop: Platform.OS == 'ios' ? "-5%" : "-5%",
-        marginLeft: Platform.OS == 'ios' ? "40%" : "43%",
+        marginTop: Platform.OS == 'ios' ? "10%" : "0%",
+        marginLeft: Platform.OS == 'ios' ? "35%" : "37%",
+        color: 'black',
+        fontSize: Platform.OS == 'ios' ? 30 : 23,
+        fontFamily: 'GmarketSansTTFBold'
+    },
+
+    infoTitletext: {
+        marginTop: Platform.OS == 'ios' ? "-7%" : "-6%",
+        marginLeft: Platform.OS == 'ios' ? "40%" : "45%",
         color: 'black',
         fontSize: Platform.OS == 'ios' ? 30 : 23,
         fontFamily: 'GmarketSansTTFBold'
@@ -78,14 +94,14 @@ const titleStyles = StyleSheet.create ({
     },
 
     postText: {
-        marginLeft: '8%',
+        marginLeft: Platform.OS == 'ios' ? "0%" : "8%",
         color: 'green',
-        fontSize: Platform.OS == 'ios' ? 30 : 20,
+        fontSize: Platform.OS == 'ios' ? 25 : 20,
         fontFamily: 'GmarketSansTTFMedium',
     },
 
     anonymousText: {
-        marginTop: '4%',
+        marginTop: Platform.OS == 'ios' ? "3.5%" : "3%",
         marginLeft: '50%',
         color: 'gray',
         fontSize: 17,
