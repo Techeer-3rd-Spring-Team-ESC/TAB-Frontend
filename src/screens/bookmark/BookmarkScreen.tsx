@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {View, Text, TouchableOpacity, ScrollView, SafeAreaView, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -22,6 +22,7 @@ import emojiButtonStyles from "../../styles/community/EmojiButton";
 import communityStyles from "../../styles/screens/Community";
 import profileStyles from "../../styles/community/Profile";
 import postListStyles from "../../styles/community/PostList";
+import axios from "axios";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Bookmark'>;
 
@@ -100,6 +101,45 @@ function BookmarkScreen() {
             likeCount: 1,
         },
     ];
+
+    const [bookmarkList, setBookmarkList] = useState([{
+        id: 0,
+        memberId: 0,
+        category: "",
+        title: "",
+        content: "",
+        file: "",
+        image: "",
+        hashtags: "",
+        isAnonymous: false,
+        likeNumbers: 0,
+        views: 0,
+        createdAt: ""
+    }]);
+
+    useEffect(() => {
+        try {
+            const response = axios.get(
+            'http://10.0.2.2:8080/api/v1/bookmark',
+            {
+                headers: {
+                    page: 1,
+                    size: 10,
+                    direction: "ASC"
+                }
+            },
+            )
+            .then(function (response) {
+                console.log(response.data)
+                setBookmarkList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
 
     return (
         <ScrollView 

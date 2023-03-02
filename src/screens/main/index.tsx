@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -11,6 +11,7 @@ import mainMenuStyles from '../../styles/home/MainMenu';
 import BookmarkIcon from '../../components/home/BookmarkIcon';
 import InformationIcon from '../../components/home/InformationIcon';
 import CommunityIcon from '../../components/home/CommunityIcon';
+import axios from 'axios';
 
 type HomeScreenProp = CompositeNavigationProp<
   StackNavigationProp<RootStackParamList, 'Main'>,
@@ -19,10 +20,35 @@ type HomeScreenProp = CompositeNavigationProp<
 
 function HomeScreen() {
   const navigation = useNavigation<HomeScreenProp>();
+  const [memberList, setMemberList] = useState([{
+    id: 0,
+    email: "tab@tab.com",
+    password: "tab",
+    name: "esc",
+    role: false,
+    active: true
+}]);
+
+  useEffect(() => {
+    try {
+        const response = axios.get(
+        'http://10.0.2.2:8080/api/v1/member',
+        )
+        .then(function (response) {
+            console.log(response.data)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}, []);
+
   return (
     <SafeAreaView style = {mainMenuStyles.mainContainer}>
       <Text style = {titleStyles.titletext}>
-        어서 오세요, 홍길동님!
+        어서 오세요, {memberList[0].name}님!
       </Text>
       <View style = {mainMenuStyles.menuContainer}>
           <TouchableOpacity
