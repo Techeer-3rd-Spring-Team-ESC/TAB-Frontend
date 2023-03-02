@@ -9,6 +9,7 @@ const profileStyles = StyleSheet.create ({
     profileText: {
         marginTop: Platform.OS == 'ios' ? 11 : 10,
         marginLeft: 20,
+        width: '25%',
         color: 'black', 
         fontSize: Platform.OS == 'ios' ? 15 : 15,
         fontFamily: 'GmarketSansTTFMedium',

@@ -1,6 +1,6 @@
 import {StyleSheet, Platform} from 'react-native';
 
-const styles = StyleSheet.create ({
+const rightStyles = StyleSheet.create ({
     buttonStyle: {
         marginTop: Platform.OS == 'ios' ? 15 : 5,
         marginLeft: Platform.OS == 'ios' ? 40 : 30,
@@ -10,4 +10,4 @@ const styles = StyleSheet.create ({
     }
 });
 
-export default styles;
+export default rightStyles;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {View, ScrollView, Text, TouchableOpacity, Image} from 'react-native';
+import {View, ScrollView, Text, TouchableOpacity, Image, Platform} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -23,88 +23,58 @@ import postListStyles from "../../styles/community/PostList";
 import emojiButtonStyles from "../../styles/community/EmojiButton";
 import articleTextStyles from "../../styles/article/ArticleText";
 import { SafeAreaView } from "react-native-safe-area-context";
+import rightStyles from "../../styles/community/RightPageButton";
+import leftStyles from "../../styles/community/LeftPageButton";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
 function CommunityScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
-    const [writerName, setWriterName] = useState("");
-
-    const list = [
-        {
-            category: '정보',
-            title: '안녕1',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕2',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕3',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕4',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕5',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕6',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕7',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕8',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕9',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕10',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-    ];
+    const [page, setPage] = useState(1);
+    const [postList, setPostList] = useState([{
+        id: 0,
+        memberId: 0,
+        category: "",
+        title: "",
+        content: "",
+        file: "",
+        image: "",
+        hashtags: "",
+        isAnonymous: false,
+        likeNumbers: 0,
+        views: 0,
+        createdAt: ""
+    }]);
 
     useEffect(() => {
+        try {
+            const response = axios.get(
+            'http://10.0.2.2:8080/api/v1/post',
+            {
+                headers: {
+                    page: 1,
+                    size: 10,
+                    direction: "ASC"
+                }
+            },
+            )
+            .then(function (response) {
+                console.log(response.data)
+                setPostList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
     }, []);
+
+    function minus() {
+        if (page >= 2) {
+            setPage(page - 1)
+        }
+    }
 
     return (
         <ScrollView 
@@ -137,7 +107,7 @@ function CommunityScreen() {
                 </TouchableOpacity>
             </SafeAreaView>
             <View style = {communityStyles.listcontainer}>
-                {list?.map((e) =>
+                {postList?.map((e) =>
                     <View>
                         <TouchableOpacity
                             key = {e.title}
@@ -156,7 +126,7 @@ function CommunityScreen() {
                             </View>
                             <View style = {communityStyles.postcontainer}> 
                                 <Text style = {profileStyles.profileText}>
-                                    {e.author}
+                                    {e.memberId}
                                 </Text>
                                 <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
                                     <FontAwesome 
@@ -166,11 +136,11 @@ function CommunityScreen() {
                                     />
                                 </TouchableOpacity>
                                 <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.likeCount}
+                                    {e.views}
                                 </Text>
                                 <LikeButton/>
                                 <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.likeCount}
+                                    {e.likeNumbers}
                                 </Text>
                                 <CommentButton/>
                             </View>
@@ -179,11 +149,29 @@ function CommunityScreen() {
                     </View>
                 )}
                 <View style = {homeStyles.page}>
-                        <LeftPageButton/>
-                            <Text style = {titleStyles.pagetext}>
-                            1
-                            </Text>
-                        <RightPageButton/>
+                    <TouchableOpacity 
+                        style = {leftStyles.buttonStyle}
+                        onPress={() => {minus()}}
+                        >
+                        <FontAwesome
+                            name = 'caret-left'
+                            size = {Platform.OS == 'ios' ? 30 : 20} 
+                            color = 'green'
+                        />
+                    </TouchableOpacity>
+                    <Text style = {titleStyles.pagetext}>
+                        {page}
+                    </Text>
+                    <TouchableOpacity 
+                        style = {rightStyles.buttonStyle}
+                        onPress={() => {setPage(page + 1)}}
+                    >
+                        <FontAwesome 
+                            name = 'caret-right'
+                            size = {Platform.OS == 'ios' ? 30 : 20} 
+                            color = 'green'
+                        />
+                    </TouchableOpacity>
                         <PostButton/>
                 </View>
             </View>
