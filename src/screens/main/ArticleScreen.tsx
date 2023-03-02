@@ -23,25 +23,7 @@ type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Article'>;
 
 function ArticleScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
-    const [id, setId] = useState(0);
-    const [memberId, setmemberId] = useState(0);
     const [memberName, setmemberName] = useState('loana Mircea');
-    const [category, setCategory] = useState('정보');
-    const [title, setTitle] = useState('How to Create a Telegram Bot Using Python Making $300 Per Month');
-    const [content, setContent] = useState('Bot development has become one of the most popular activities for developers as well as users in recent time.');
-    const [file, setFile] = useState('');
-    const [image, setImage] = useState('');
-    const [hashtags, setHashtags] = useState('');
-    const [likeNumbers, setLikeNumbers] = useState(10);
-    const [views, setViews] = useState(3000);
-    const [creacted, setCreated] = useState(Date);
-    const [anonymous, setAnonymous] = useState(true);
-    const [postId, setPostId] = useState(0);
-    const [postName, setPostName] = useState('');
-    const [commentContent, setCommentContent] = useState('');
-    const [layer, setLayer] = useState(0);
-    const [commentAnonymous, setCommentAnonymous] = useState(true);
-
     const [modal, setModal] = useState(false);
     const [articleList, setArticleList] = useState([{
         id: 0,
@@ -58,6 +40,16 @@ function ArticleScreen() {
         createdAt: Date
     }]);
 
+    const [commentList, setCommentList] = useState([{
+        id: 0,
+        memberId: 0,
+        postId: 0,
+        commentId: 0,
+        content: "",
+        layer: 0,
+        anonymous: true
+    }]);
+
 
     new Intl.DateTimeFormat('kr').format(new Date());
     const TIME_ZONE = 3240 * 10000;
@@ -65,7 +57,7 @@ function ArticleScreen() {
     const date = new Date(+d + TIME_ZONE).toISOString().split('T')[0];
     const time = d.toTimeString().split(' ')[0];
 
-    const commentList = [
+    const newCommentList = [
         {
             postName: '철수',
             commentContent: 'A Step-by-Step Guid -- Are you looking for a new, creative project? What about building your own Telegram bot in Python? Sounds fun',
@@ -101,18 +93,6 @@ function ArticleScreen() {
         },
     ];
 
-    const hashtagList = [
-        {
-            hashtag: '#안녕하세요'
-        },
-        {
-            hashtag: '#반갑습니다'
-        },
-        {
-            hashtag: '#잘부탁해요'
-        },
-    ];
-
     async function articleAPI() {
         try {
             const response = axios.get(
@@ -138,8 +118,26 @@ function ArticleScreen() {
         }
     }
 
+    async function commentAPI() {
+        try {
+            const response = axios.get(
+            'http://10.0.2.2:8080/api/v1/posts/1/comment',
+            )
+            .then(function (response) {
+                console.log(response.data)
+                setCommentList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         articleAPI()
+        commentAPI()
     }, []);
 
     return (
@@ -231,7 +229,7 @@ function ArticleScreen() {
             </View>
 
             <View style = {articleTitleStyles.commentContainer}>
-                {commentList?.map((e) =>
+                {newCommentList?.map((e) =>
                     <View>
                         <TouchableOpacity 
                             key = {e.postName}
