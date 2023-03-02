@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {View, ScrollView, TouchableOpacity, Text, Image, KeyboardAvoidingView, Button, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -16,6 +16,8 @@ import emojiButtonStyles from "../../styles/community/EmojiButton";
 import postListStyles from "../../styles/community/PostList";
 import { TextInput } from "react-native-gesture-handler";
 import articleStyles from "../../styles/screens/Article";
+import axios from "axios";
+import AsyncStorage from "@react-native-community/async-storage";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Article'>;
 
@@ -41,6 +43,21 @@ function ArticleScreen() {
     const [commentAnonymous, setCommentAnonymous] = useState(true);
 
     const [modal, setModal] = useState(false);
+    const [articleList, setArticleList] = useState([{
+        id: 0,
+        memberId: 0,
+        category: "",
+        title: "",
+        content: "",
+        file: "",
+        image: "",
+        hashtags: "",
+        isAnonymous: false,
+        likeNumbers: 0,
+        views: 0,
+        createdAt: Date
+    }]);
+
 
     new Intl.DateTimeFormat('kr').format(new Date());
     const TIME_ZONE = 3240 * 10000;
@@ -96,6 +113,35 @@ function ArticleScreen() {
         },
     ];
 
+    async function articleAPI() {
+        try {
+            const response = axios.get(
+            'http://10.0.2.2:8080/api/v1/post',
+            {
+                headers: {
+                    page: 1,
+                    size: 10,
+                    direction: "ASC",
+                    // Authorization: await AsyncStorage.getItem('accessToken')
+                }
+            },
+            )
+            .then(function (response) {
+                console.log(response.data)
+                setArticleList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        articleAPI()
+    }, []);
+
     return (
         <ScrollView 
             stickyHeaderIndices={[0]}  
@@ -118,11 +164,11 @@ function ArticleScreen() {
             </View>
 
             <Text style = {profileStyles.profileText}>
-                    {category}
+                    {articleList[0].category}
             </Text>
             <View style = {articleTitleStyles.titleContainer}>
                 <Text style = {articleTitleStyles.titleText}>
-                    {title}
+                    {articleList[0].title}
                 </Text>
                 <View style = {styles.articleContainer}>
                     <Text style = {profileStyles.profileText}>
@@ -139,15 +185,15 @@ function ArticleScreen() {
                         />
                     </TouchableOpacity>
                     <Text style = {emojiButtonStyles.articleLikeCountStyle}>
-                        {views}
+                        {articleList[0].views}
                     </Text>
                 </View>
                 <View style = {styles.articleContainer}>
-                    {hashtagList?.map((e) =>
-                        <View key = {e.hashtag}>
+                    {articleList?.map((e) =>
+                        <View key = {e.hashtags}>
                             <View style={articleStyles.hashtag}>
                                 <Text style={articleTextStyles.hashtagText}>
-                                    {e.hashtag}
+                                    {e.hashtags}
                                 </Text>
                             </View>
                         </View>
@@ -157,7 +203,7 @@ function ArticleScreen() {
             <ArticleImage/>
             <View style = {articleTextStyles.titleContainer}>
                 <Text style = {articleTextStyles.articleText}>
-                    {content}
+                    {articleList[0].content}
                 </Text>
             </View>
             
@@ -169,7 +215,7 @@ function ArticleScreen() {
                         color = '#DD4A4A'
                     />
                     <Text style = {articleTextStyles.likeText}>
-                        {likeNumbers}
+                        {articleList[0].likeNumbers}
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style = {articleStyles.bookmarkButton}>
