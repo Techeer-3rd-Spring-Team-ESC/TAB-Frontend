@@ -100,30 +100,6 @@ function ArticleScreen() {
         },
     ];
 
-    // async function articleAPI() {
-    //     try {
-    //         const response = axios.get(
-    //         'http://10.0.2.2:8080/api/v1/post',
-    //         {
-    //             headers: {
-    //                 page: 1,
-    //                 size: 10,
-    //                 direction: "ASC",
-    //                 // Authorization: await AsyncStorage.getItem('accessToken')
-    //             }
-    //         },
-    //         )
-    //         .then(function (response) {
-    //             setArticleList(response.data)
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
     useEffect(() => {
         articleAPI()
         commentAPI()

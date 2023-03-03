@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create ({
+const searchboxStyles = StyleSheet.create ({
     inputStyle: {
         backgroundColor: 'white',
         borderColor: '#FFFFF',
@@ -8,4 +8,4 @@ const styles = StyleSheet.create ({
     }
 });
 
-export default styles;
+export default searchboxStyles;

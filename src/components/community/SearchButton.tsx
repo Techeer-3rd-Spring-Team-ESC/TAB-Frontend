@@ -1,12 +1,12 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import styles from '../../styles/community/SearchButton';
+import searchButtonStyles from '../../styles/community/SearchButton';
 
 function SearchButton() {
     return (
         <TouchableOpacity
-            style = {styles.buttonStyle}
+            style = {searchButtonStyles.buttonStyle}
         >
             <FontAwesome 
                 name = 'search' 
