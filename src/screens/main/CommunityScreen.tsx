@@ -52,14 +52,13 @@ function CommunityScreen() {
             'http://10.0.2.2:8080/api/v1/post',
             {
                 headers: {
-                    page: 1,
+                    page: page,
                     size: 10,
                     direction: "ASC"
                 }
             },
             )
             .then(function (response) {
-                console.log(response.data)
                 setPostList(response.data)
             })
             .catch(function (error) {
@@ -107,11 +106,11 @@ function CommunityScreen() {
                 </TouchableOpacity>
             </SafeAreaView>
             <View style = {communityStyles.listcontainer}>
-                {postList?.map((e) =>
+                {postList?.map((e, index) =>
                     <View>
                         <TouchableOpacity
-                            key = {e.title}
-                            onPress = {() => navigation.navigate('Article')}
+                            key = {index}
+                            onPress = {() => navigation.navigate('Article', { id: postList[index].id})}
                         >
                             <Text style = {profileStyles.profileText}>
                                 {e.category}

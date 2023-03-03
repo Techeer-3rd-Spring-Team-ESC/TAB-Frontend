@@ -116,7 +116,7 @@ function BookmarkScreen() {
         views: 0,
         createdAt: ""
     }]);
-
+    
     useEffect(() => {
         try {
             const response = axios.get(

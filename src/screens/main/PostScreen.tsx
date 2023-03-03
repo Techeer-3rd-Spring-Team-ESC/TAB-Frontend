@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {useNavigation} from '@react-navigation/native';
@@ -14,17 +14,82 @@ import { TextInput } from "react-native-gesture-handler";
 import articleTextStyles from "../../styles/article/ArticleText";
 import articleStyles from "../../styles/screens/Article";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
+import axios from "axios";
 
 type PostScreenProp = StackNavigationProp <RootStackParamList, 'Post'>;
 
 function PostScreen() {
     const navigation = useNavigation<PostScreenProp>();
-    const [anonymousChecked, setAnonymousChecked] = useState('first');
-    const [categoryChecked, setCategoryChecked] = useState('first');
     const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+    const [content, setContent] = useState('');
     const [hashtag, setHashtag] = useState('');
+    const [file, setFile] = useState('');
+    const [image, setImage] = useState('');
     const [isChecked, setisChecked] = useState(false);
+    const [postList, setPostList] = useState([{
+        memberId: 0,
+        category: "",
+        title: '',
+        content: '',
+        file: '',
+        image: '',
+        hashtags: '',
+        anonymous: false
+    }]);
+
+    async function postArticle() {
+        try {
+            const response = axios.post(
+            'http://10.0.2.2:8080/api/v1/post',
+                {
+                    memberId: 1,
+                    category: "Backend",
+                    title: title,
+                    content: content,
+                    file: file,
+                    image: image,
+                    hashtags: hashtag,
+                    anonymous: isChecked
+                })
+            .then(function (response) {
+                navigation.navigate('Community')
+                console.log(response.data)
+                setPostList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    //   useEffect(() => {
+    //     async function postArticle() {
+    //         try {
+    //             const response = axios.post(
+    //             'http://10.0.2.2:8080/api/v1/bookmark',
+    //                 {
+    //                     headers: {
+    //                         page: 1,
+    //                         size: 10,
+    //                         direction: "ASC"
+    //                     }
+    //                 })
+    //             .then(function (response) {
+    //                 console.log(response.data)
+    //                 setPostList(response.data)
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error);
+    //             });
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //     postArticle();
+    //   }, [postId]);
 
     return (
         <KeyboardAwareScrollView
@@ -35,7 +100,7 @@ function PostScreen() {
                 <View style = {communityStyles.titleContainer}>
                     <TouchableOpacity
                         style = {backButtonStyles.communityBackButton}
-                        onPress = {() => navigation.navigate('Community')}
+                        onPress = {() => postArticle()}
                     >
                         <FontAwesome 
                             name = 'chevron-left' 
@@ -68,7 +133,7 @@ function PostScreen() {
                                 placeholder = "다른사람들과 공유하고싶은이야기를 적어주세요. &#13;&#10;링크나 사진등을 업로드할수있습니다."
                                 placeholderTextColor={'#D9D9D9'}
                                 multiline = {true} // 아이폰 텍스트 상단정렬
-                                onChangeText={(text) => {setText(text)}}
+                                onChangeText={(content) => {setContent(content)}}
                                 // onSubmitEditing={onPress}
                                 returnKeyType="done"
                             />

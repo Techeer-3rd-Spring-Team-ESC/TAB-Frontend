@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {View, ScrollView, TouchableOpacity, Text, Image, KeyboardAvoidingView, Button, Platform} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
 import ArticleImage from '../../components/article/ArticleImage';
@@ -23,9 +23,12 @@ type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Article'>;
 
 function ArticleScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
+    type ScreenRouteProp = RouteProp<RootStackParamList,"Article">;
+    const route = useRoute<ScreenRouteProp>();
     const [memberName, setmemberName] = useState('loana Mircea');
     const [modal, setModal] = useState(false);
-    const [articleList, setArticleList] = useState([{
+    const [id, setId] = useState(0);
+    const [articleList, setArticleList] = useState({
         id: 0,
         memberId: 0,
         category: "",
@@ -38,7 +41,7 @@ function ArticleScreen() {
         likeNumbers: 0,
         views: 0,
         createdAt: Date
-    }]);
+    });
 
     const [commentList, setCommentList] = useState([{
         id: 0,
@@ -56,6 +59,10 @@ function ArticleScreen() {
     const d = new Date();
     const date = new Date(+d + TIME_ZONE).toISOString().split('T')[0];
     const time = d.toTimeString().split(' ')[0];
+
+    const hashtagList = [
+        articleList.hashtags
+    ]
 
     const newCommentList = [
         {
@@ -93,21 +100,48 @@ function ArticleScreen() {
         },
     ];
 
+    // async function articleAPI() {
+    //     try {
+    //         const response = axios.get(
+    //         'http://10.0.2.2:8080/api/v1/post',
+    //         {
+    //             headers: {
+    //                 page: 1,
+    //                 size: 10,
+    //                 direction: "ASC",
+    //                 // Authorization: await AsyncStorage.getItem('accessToken')
+    //             }
+    //         },
+    //         )
+    //         .then(function (response) {
+    //             setArticleList(response.data)
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+
+    useEffect(() => {
+        articleAPI()
+        commentAPI()
+        setId(route.params?.id)
+    }, []);
+
     async function articleAPI() {
         try {
             const response = axios.get(
-            'http://10.0.2.2:8080/api/v1/post',
+            `http://10.0.2.2:8080/api/v1/post/${id}`,
             {
                 headers: {
-                    page: 1,
-                    size: 10,
-                    direction: "ASC",
+                    page: id,
                     // Authorization: await AsyncStorage.getItem('accessToken')
                 }
             },
             )
             .then(function (response) {
-                console.log(response.data)
                 setArticleList(response.data)
             })
             .catch(function (error) {
@@ -124,7 +158,6 @@ function ArticleScreen() {
             'http://10.0.2.2:8080/api/v1/posts/1/comment',
             )
             .then(function (response) {
-                console.log(response.data)
                 setCommentList(response.data)
             })
             .catch(function (error) {
@@ -134,11 +167,6 @@ function ArticleScreen() {
             console.log(error);
         }
     }
-
-    useEffect(() => {
-        articleAPI()
-        commentAPI()
-    }, []);
 
     return (
         <ScrollView 
@@ -162,11 +190,11 @@ function ArticleScreen() {
             </View>
 
             <Text style = {profileStyles.profileText}>
-                    {articleList[0].category}
+                    {articleList.category}
             </Text>
             <View style = {articleTitleStyles.titleContainer}>
                 <Text style = {articleTitleStyles.titleText}>
-                    {articleList[0].title}
+                    {articleList.title}
                 </Text>
                 <View style = {styles.articleContainer}>
                     <Text style = {profileStyles.profileText}>
@@ -183,25 +211,23 @@ function ArticleScreen() {
                         />
                     </TouchableOpacity>
                     <Text style = {emojiButtonStyles.articleLikeCountStyle}>
-                        {articleList[0].views}
+                        {articleList.views}
                     </Text>
                 </View>
                 <View style = {styles.articleContainer}>
-                    {articleList?.map((e) =>
-                        <View key = {e.hashtags}>
+                        <View>
                             <View style={articleStyles.hashtag}>
                                 <Text style={articleTextStyles.hashtagText}>
-                                    {e.hashtags}
+                                    {articleList.hashtags}
                                 </Text>
                             </View>
                         </View>
-                    )}
                 </View>
             </View>
             <ArticleImage/>
             <View style = {articleTextStyles.titleContainer}>
                 <Text style = {articleTextStyles.articleText}>
-                    {articleList[0].content}
+                    {articleList.content}
                 </Text>
             </View>
             
@@ -213,7 +239,7 @@ function ArticleScreen() {
                         color = '#DD4A4A'
                     />
                     <Text style = {articleTextStyles.likeText}>
-                        {articleList[0].likeNumbers}
+                        {articleList.likeNumbers}
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style = {articleStyles.bookmarkButton}>
