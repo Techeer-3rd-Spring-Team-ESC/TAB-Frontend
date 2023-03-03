@@ -51,8 +51,8 @@ const titleStyles = StyleSheet.create ({
     },
 
     searchTitletext: {
-        marginTop: Platform.OS == 'ios' ? "10%" : "0%",
-        marginLeft: Platform.OS == 'ios' ? "35%" : "37%",
+        marginTop: Platform.OS == 'ios' ? "10%" : "-6%",
+        marginLeft: Platform.OS == 'ios' ? "35%" : "43%",
         color: 'black',
         fontSize: Platform.OS == 'ios' ? 30 : 23,
         fontFamily: 'GmarketSansTTFBold'

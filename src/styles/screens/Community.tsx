@@ -57,6 +57,7 @@ const communityStyles = StyleSheet.create ({
 
     searchcontainer: {
         flexDirection: 'row',
+        marginBottom: 5,
     },
 
     image: {
@@ -79,7 +80,15 @@ const communityStyles = StyleSheet.create ({
         flexDirection: 'row',
     },
 
+    newcontainer: {
+    },
+
     listcontainer: {
+        height: 510
+    },
+
+    searchListContainer: {
+        height: 440
     },
 
     postcontainer:{

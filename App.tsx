@@ -21,15 +21,12 @@ import CommunityScreen from './src/screens/main/CommunityScreen';
 import SearchScreen from './src/screens/search/SearchScreen';
 import {RootStackParamList} from './src/screens/RootStackParams';
 
-  const Stack = createStackNavigator<RootStackParamList>();
-
+const Stack = createStackNavigator<RootStackParamList>();
 
 import React, {type PropsWithChildren} from 'react';
 import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-
-
 
 const Section: React.FC<
   PropsWithChildren<{

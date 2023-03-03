@@ -105,48 +105,50 @@ function CommunityScreen() {
                     />
                 </TouchableOpacity>
             </SafeAreaView>
-            <View style = {communityStyles.listcontainer}>
-                {postList?.map((e, index) =>
-                    <View>
-                        <TouchableOpacity
-                            key = {index}
-                            onPress = {() => navigation.navigate('Article', { id: postList[index].id})}
-                        >
-                            <Text style = {profileStyles.profileText}>
-                                {e.category}
-                            </Text>
-                            <View style = {postListStyles.buttonStyle}>
-                                <Text
-                                    style = {postListStyles.listTitle}
-                                    numberOfLines={2} 
-                                >
-                                    {e.title}
-                                </Text>
-                            </View>
-                            <View style = {communityStyles.postcontainer}> 
+            <View style = {communityStyles.container}>
+                <View style = {communityStyles.listcontainer}>
+                    {postList?.map((e, index) =>
+                        <View>
+                            <TouchableOpacity
+                                key = {index}
+                                onPress = {() => navigation.navigate('Article', { id: postList[index].id})}
+                            >
                                 <Text style = {profileStyles.profileText}>
-                                    {e.memberId}
+                                    {e.category}
                                 </Text>
-                                <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
-                                    <FontAwesome 
-                                        name = 'eye'
-                                        size = {20} 
-                                        color = 'gray'
-                                    />
-                                </TouchableOpacity>
-                                <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.views}
-                                </Text>
-                                <LikeButton/>
-                                <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.likeNumbers}
-                                </Text>
-                                <CommentButton/>
-                            </View>
-                        </TouchableOpacity>
-                        <View style = {articleTextStyles.communityVerticleLine}/>
-                    </View>
-                )}
+                                <View style = {postListStyles.buttonStyle}>
+                                    <Text
+                                        style = {postListStyles.listTitle}
+                                        numberOfLines={2} 
+                                    >
+                                        {e.title}
+                                    </Text>
+                                </View>
+                                <View style = {communityStyles.postcontainer}> 
+                                    <Text style = {profileStyles.profileText}>
+                                        {e.memberId}
+                                    </Text>
+                                    <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
+                                        <FontAwesome 
+                                            name = 'eye'
+                                            size = {20} 
+                                            color = 'gray'
+                                        />
+                                    </TouchableOpacity>
+                                    <Text style = {emojiButtonStyles.likeCountStyle}>
+                                        {e.views}
+                                    </Text>
+                                    <LikeButton/>
+                                    <Text style = {emojiButtonStyles.likeCountStyle}>
+                                        {e.likeNumbers}
+                                    </Text>
+                                    <CommentButton/>
+                                </View>
+                            </TouchableOpacity>
+                            <View style = {articleTextStyles.communityVerticleLine}/>
+                        </View>
+                    )}
+                </View>
                 <View style = {homeStyles.page}>
                     <TouchableOpacity 
                         style = {leftStyles.buttonStyle}
