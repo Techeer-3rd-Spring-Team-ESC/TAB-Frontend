@@ -59,10 +59,15 @@ function ArticleScreen() {
     const [commentContent, setCommentContent] = useState('');
     const [likeNumbers, setLikeNumbers] = useState(0);
 
-    const [isFilled, setIsFilled] = useState(false);
+    const [isHeartFilled, setIsHeartFilled] = useState(false);
+    const [isBookmarkFilled, setIsBookmarkFilled] = useState(false);
 
-    const handlePress = () => {
-        setIsFilled(!isFilled);
+    const handleHeartPress = () => {
+        setIsHeartFilled(!isHeartFilled);
+    };
+
+    const handleBookmarkPress = () => {
+        setIsBookmarkFilled(!isBookmarkFilled);
     };
 
     new Intl.DateTimeFormat('kr').format(new Date());
@@ -113,7 +118,6 @@ function ArticleScreen() {
 
     useEffect(() => {
         articleAPI()
-        likeAPI()
         commentAPI()
         commentPostAPI()
         setId(route.params?.id)
@@ -268,25 +272,28 @@ function ArticleScreen() {
             <View style = {articleStyles.newButtoncontainer}>
                 <TouchableOpacity 
                     style = {articleStyles.heartButton}
-                    onPress = {handlePress}
+                    onPress = {handleHeartPress}
                 >
                     <FontAwesome 
-                        name={isFilled ? 'heart' : 'heart-o'}
+                        name={isHeartFilled ? 'heart' : 'heart-o'}
                         size = {30}
                         color = '#DD4A4A'
                     />
                     <Text style = {articleTextStyles.likeText}>
-                        {articleList.likeNumbers}
+                        {isHeartFilled ? articleList.likeNumbers +1 : articleList.likeNumbers }
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {articleStyles.bookmarkButton}>
-                    <FontAwesome 
-                        name = 'bookmark'
+                <TouchableOpacity 
+                    style = {articleStyles.bookmarkButton}
+                    onPress = {handleBookmarkPress}
+                >
+                    <FontAwesome
+                        name = {isBookmarkFilled ? 'bookmark' : 'bookmark-o'}
                         size = {40} 
                         color = 'green'
                     />
                     <Text style = {articleTextStyles.bookmarkText}>
-                        저장
+                        {isBookmarkFilled ? '제거' : '저장'}
                     </Text>
                 </TouchableOpacity>
             </View>
