@@ -28,6 +28,7 @@ function ArticleScreen() {
     const [memberName, setmemberName] = useState('loana Mircea');
     const [modal, setModal] = useState(false);
     const [id, setId] = useState(0);
+    const [click, setClick] = useState(false);
     const [articleList, setArticleList] = useState({
         id: 0,
         memberId: 0,
@@ -53,6 +54,16 @@ function ArticleScreen() {
         anonymous: true
     }]);
 
+    const [commentId, setCommentId] = useState(0);
+    const [commentLayer, setCommentLayer] = useState(0);
+    const [commentContent, setCommentContent] = useState('');
+    const [likeNumbers, setLikeNumbers] = useState(0);
+
+    const [isFilled, setIsFilled] = useState(false);
+
+    const handlePress = () => {
+        setIsFilled(!isFilled);
+    };
 
     new Intl.DateTimeFormat('kr').format(new Date());
     const TIME_ZONE = 3240 * 10000;
@@ -102,7 +113,9 @@ function ArticleScreen() {
 
     useEffect(() => {
         articleAPI()
+        likeAPI()
         commentAPI()
+        commentPostAPI()
         setId(route.params?.id)
     }, []);
 
@@ -128,6 +141,27 @@ function ArticleScreen() {
         }
     }
 
+    async function likeAPI() {
+        try {
+            const response = axios.post(
+            `http://10.0.2.2:8080/api/v1/post/${id}`,
+            {
+                page: id,
+                // Authorization: await AsyncStorage.getItem('accessToken')
+            },
+            )
+            .then(function (response) {
+                setLikeNumbers(response.data.likeNumbers)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async function commentAPI() {
         try {
             const response = axios.get(
@@ -135,6 +169,30 @@ function ArticleScreen() {
             )
             .then(function (response) {
                 setCommentList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function commentPostAPI() {
+        try {
+            const response = axios.post(
+            'http://10.0.2.2:8080/api/v1/posts/1/comment',
+            {
+                memberId: articleList.memberId,
+                postId: articleList.id,
+                commentId: 1,
+                content: "내용내용내용",
+                layer: 1,
+                anonymous: true
+            },
+            )
+            .then(function (response) {
+                // console.log(response.data)
             })
             .catch(function (error) {
                 console.log(error);
@@ -208,10 +266,13 @@ function ArticleScreen() {
             </View>
             
             <View style = {articleStyles.newButtoncontainer}>
-                <TouchableOpacity style = {articleStyles.heartButton}>
+                <TouchableOpacity 
+                    style = {articleStyles.heartButton}
+                    onPress = {handlePress}
+                >
                     <FontAwesome 
-                        name = 'heart'
-                        size = {30} 
+                        name={isFilled ? 'heart' : 'heart-o'}
+                        size = {30}
                         color = '#DD4A4A'
                     />
                     <Text style = {articleTextStyles.likeText}>
