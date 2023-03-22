@@ -119,13 +119,12 @@ function ArticleScreen() {
     useEffect(() => {
         articleAPI()
         commentAPI()
-        commentPostAPI()
         setId(route.params?.id)
     }, []);
 
     async function articleAPI() {
         try {
-            const response = axios.get(
+            const response = await axios.get(
             `http://10.0.2.2:8080/api/v1/post/${id}`,
             {
                 headers: {
@@ -147,7 +146,7 @@ function ArticleScreen() {
 
     async function likeAPI() {
         try {
-            const response = axios.post(
+            const response = await axios.post(
             `http://10.0.2.2:8080/api/v1/post/${id}`,
             {
                 page: id,
@@ -168,7 +167,7 @@ function ArticleScreen() {
 
     async function commentAPI() {
         try {
-            const response = axios.get(
+            const response = await axios.get(
             'http://10.0.2.2:8080/api/v1/posts/1/comment',
             )
             .then(function (response) {
@@ -184,7 +183,7 @@ function ArticleScreen() {
 
     async function commentPostAPI() {
         try {
-            const response = axios.post(
+            const response = await axios.post(
             'http://10.0.2.2:8080/api/v1/posts/1/comment',
             {
                 memberId: articleList.memberId,
@@ -338,7 +337,7 @@ function ArticleScreen() {
                                 </View>
                             </View>: null}
                         </TouchableOpacity>
-                        <View style = {articleTitleStyles.comment2Container}>
+                        {/* <View style = {articleTitleStyles.comment2Container}>
                             {comment2List?.map((e) =>
                                 <View key = {e.postName}>
                                     <View style = {articleTextStyles.commentVerticleLine}/>
@@ -357,7 +356,7 @@ function ArticleScreen() {
                                     </View>
                                 </View>
                             )}
-                        </View>
+                        </View> */}
                     </View>
                 )}
             </View>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
+import {View, Text, TouchableOpacity, PermissionsAndroid, KeyboardAvoidingView, Platform, Alert} from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -11,7 +11,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import titleStyles from "../../styles/home/TitleText";
 import searchButtonStyles from "../../styles/community/SearchButton";
 import { TextInput } from "react-native-gesture-handler";
-import articleTextStyles from "../../styles/article/ArticleText";
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import articleStyles from "../../styles/screens/Article";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import axios from "axios";
@@ -36,60 +36,74 @@ function PostScreen() {
         hashtags: '',
         anonymous: false
     }]);
+    const [photo, setPhoto] = useState(undefined);
 
-    async function postArticle() {
-        try {
-            const response = axios.post(
-            'http://10.0.2.2:8080/api/v1/post',
-                {
-                    memberId: 1,
-                    category: "Backend",
-                    title: title,
-                    content: content,
-                    file: file,
-                    image: image,
-                    hashtags: hashtag,
-                    anonymous: isChecked
-                })
-            .then(function (response) {
-                navigation.navigate('Community')
-                console.log(response.data)
-                setPostList(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        } catch (error) {
-            console.log(error);
-        }
+    const showPicker = async () => {
+        Alert.alert(
+            "뭘로 올릴래?",
+            "선택해",
+            [
+              {
+                text: "카메라로 찍기",
+                onPress: async() =>{
+                  const result = await launchCamera({
+                    mediaType : 'photo', 
+                    cameraType : 'back', 
+                  });
+                    if (result.didCancel){ 
+                      return null;
+                    }
+                    const localUri = result.assets[0].uri;
+                    const uriPath = localUri.split("//").pop();
+                    const imageName = localUri.split("/").pop();
+                    setPhoto("file://"+uriPath);
+                    console.log(result)
+                }
+              },
+              {
+                text: "앨범에서 선택",
+                onPress: async() =>{
+                  const result = await launchImageLibrary();
+                  if (result.didCancel){
+                    return null;
+                  } 
+                  const localUri = result.assets[0].uri;
+                  const uriPath = localUri.split("//").pop();
+                  const imageName = localUri.split("/").pop();
+                  setPhoto(result.assets[0].uri);
+                }
+              },
+            ],
+            {cancelable: false}
+          );
     }
-
-
-    //   useEffect(() => {
-    //     async function postArticle() {
-    //         try {
-    //             const response = axios.post(
-    //             'http://10.0.2.2:8080/api/v1/bookmark',
-    //                 {
-    //                     headers: {
-    //                         page: 1,
-    //                         size: 10,
-    //                         direction: "ASC"
-    //                     }
-    //                 })
-    //             .then(function (response) {
-    //                 console.log(response.data)
-    //                 setPostList(response.data)
-    //             })
-    //             .catch(function (error) {
-    //                 console.log(error);
-    //             });
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     }
-    //     postArticle();
-    //   }, [postId]);
+    
+        async function postArticle() {
+            try {
+                const response = axios.post(
+                'http://10.0.2.2:8080/api/v1/post',
+                    {
+                        memberId: 1,
+                        category: "Backend",
+                        title: title,
+                        content: content,
+                        // file: file,
+                        image: photo,
+                        hashtags: hashtag,
+                        anonymous: isChecked
+                    })
+                .then(function (response) {
+                    navigation.navigate('Community')
+                    console.log(response.data)
+                    setPostList(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error.response.data);
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        }
 
     return (
         <KeyboardAwareScrollView
@@ -100,7 +114,7 @@ function PostScreen() {
                 <View style = {communityStyles.titleContainer}>
                     <TouchableOpacity
                         style = {backButtonStyles.communityBackButton}
-                        onPress = {() => postArticle()}
+                        onPress = {() => navigation.navigate('Community')}
                     >
                         <FontAwesome 
                             name = 'chevron-left' 
@@ -113,7 +127,7 @@ function PostScreen() {
                     </Text>
                     <TouchableOpacity
                         style = {postStyles.postButtonStyle}
-                        onPress = {() => navigation.navigate('Community')}
+                        onPress = {() => postArticle()}
                     >
                         <Text style = {titleStyles.postText}>
                             등록
@@ -149,6 +163,7 @@ function PostScreen() {
                     >
                         <TouchableOpacity
                             style = {postStyles.postButton}
+                            onPress={showPicker}
                         >
                             <FontAwesome 
                                 name = 'image'
