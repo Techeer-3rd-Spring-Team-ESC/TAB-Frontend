@@ -25,10 +25,10 @@ import rightStyles from "../../styles/community/RightPageButton";
 import PostButton from "../../styles/community/PostButton";
 import postListStyles from "../../styles/community/PostList";
 
-type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Search'>;
+type SearchScreenProp = StackNavigationProp<RootStackParamList, 'Search'>;
 
 function SearchScreen() {
-    const navigation = useNavigation<BookmarkScreenProp>();
+    const navigation = useNavigation<SearchScreenProp>();
     const [word, setWord] = useState("");
     const [page, setPage] = useState(1);
     const [searchList, setSearchList] = useState([{
@@ -59,9 +59,12 @@ function SearchScreen() {
             `http://10.0.2.2:8080/api/v1/post/search/${word}`,
             {
                 headers: {
-                    page: 1,
-                    size: 10,
-                    direction: "ASC"
+                    word: word,
+                    pageRequest: {
+                        page: 1,
+                        size: 10,
+                        direction: "ASC"
+                    }
                 },
             },
             )

@@ -126,16 +126,9 @@ function ArticleScreen() {
         try {
             const response = await axios.get(
             `http://10.0.2.2:8080/api/v1/post/${id}`,
-            {
-                headers: {
-                    id: id,
-                    // Authorization: await AsyncStorage.getItem('accessToken')
-                }
-            },
             )
             .then(function (response) {
                 setArticleList(response.data)
-                setId(response.data.id)
             })
             .catch(function (error) {
                 console.log(error);
@@ -273,8 +266,9 @@ function ArticleScreen() {
                 <TouchableOpacity 
                     style = {articleStyles.heartButton}
                     onPress = {handleHeartPress}
+                    onPressIn={likeAPI}
                 >
-                    <FontAwesome 
+                    <FontAwesome
                         name={isHeartFilled ? 'heart' : 'heart-o'}
                         size = {30}
                         color = '#DD4A4A'
@@ -286,6 +280,7 @@ function ArticleScreen() {
                 <TouchableOpacity 
                     style = {articleStyles.bookmarkButton}
                     onPress = {handleBookmarkPress}
+                    
                 >
                     <FontAwesome
                         name = {isBookmarkFilled ? 'bookmark' : 'bookmark-o'}

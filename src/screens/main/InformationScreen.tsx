@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {View, Image, Text, ScrollView, TouchableOpacity, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -15,6 +15,29 @@ type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Information'>
 
 function InformationScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
+
+    // useEffect(() => {
+    //     try {
+    //         const response = axios.get(
+    //         'http://10.0.2.2:8080/api/v1/bookmark',
+    //         {
+    //             headers: {
+    //                 page: 1,
+    //                 size: 10,
+    //                 direction: "ASC"
+    //             }
+    //         },
+    //         )
+    //         .then(function (response) {
+    //             setBookmarkList(response.data)
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }, []);
 
     return (
         <ScrollView
@@ -39,78 +62,16 @@ function InformationScreen() {
 
             </View>
             <View style = {styles.listcontainer}>
-                <View style = {informationStyles.crollingpost}>
+                {/* {bookmarkList?.map((e, index) =>
                     <Image style = {styles.image}
                         source = {require('../../../assets/images/tab.png')}
                     />
                     <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
+                )} */}
                     <Image style = {styles.image}
                         source = {require('../../../assets/images/tab.png')}
                     />
                     <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
-                <View style = {informationStyles.crollingpost}>
-                    <Image style = {styles.image}
-                        source = {require('../../../assets/images/tab.png')}
-                    />
-                    <PostList/>
-                </View>
             </View>
         </ScrollView>
     );

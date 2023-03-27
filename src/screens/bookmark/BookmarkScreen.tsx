@@ -29,93 +29,7 @@ type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Bookmark'>;
 function BookmarkScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
 
-    const list = [
-        {
-            category: '정보',
-            title: '안녕1',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕2',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕3',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕4',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕5',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕6',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕7',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕8',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕9',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-        {
-            category: '정보',
-            title: '안녕10',
-            author: 'loana Mircea',
-            image: '../../../assets/images/tab.png',
-            likeCount: 1,
-        },
-    ];
-
-    const [bookmarkList, setBookmarkList] = useState([{
-        id: 0,
-        memberId: 0,
-        category: "",
-        title: "",
-        content: "",
-        file: "",
-        image: "",
-        hashtags: "",
-        isAnonymous: false,
-        likeNumbers: 0,
-        views: 0,
-        createdAt: ""
-    }]);
+    const [bookmarkList, setBookmarkList] = useState([]);
     
     useEffect(() => {
         try {
@@ -130,7 +44,6 @@ function BookmarkScreen() {
             },
             )
             .then(function (response) {
-                console.log(response.data)
                 setBookmarkList(response.data)
             })
             .catch(function (error) {
@@ -163,10 +76,10 @@ function BookmarkScreen() {
                 <BookmarkLogo/>
             </SafeAreaView>
             <View style = {communityStyles.listcontainer}>
-                {list?.map((e) =>
+                {bookmarkList?.map((e, index) =>
                     <View>
                         <TouchableOpacity
-                            key = {e.title}
+                            key = {index}
                             onPress = {() => navigation.navigate('Article')}
                         >
                             <Text style = {profileStyles.profileText}>
@@ -182,7 +95,7 @@ function BookmarkScreen() {
                             </View>
                             <View style = {communityStyles.postcontainer}> 
                                 <Text style = {profileStyles.profileText}>
-                                    {e.author}
+                                    {/* {e.author} */}
                                 </Text>
                                 <TouchableOpacity style = {emojiButtonStyles.buttonStyle}>
                                     <FontAwesome 
@@ -192,11 +105,11 @@ function BookmarkScreen() {
                                     />
                                 </TouchableOpacity>
                                 <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.likeCount}
+                                    {e.views}
                                 </Text>
                                 <LikeButton/>
                                 <Text style = {emojiButtonStyles.likeCountStyle}>
-                                    {e.likeCount}
+                                    {e.likeNumbers}
                                 </Text>
                                 <CommentButton/>
                             </View>

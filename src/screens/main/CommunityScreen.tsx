@@ -32,24 +32,15 @@ function CommunityScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
     const [page, setPage] = useState(1);
     const [id, setId] = useState(0);
-    const [postList, setPostList] = useState([{
-        id: 0,
-        memberId: 0,
-        category: "",
-        title: "",
-        content: "",
-        file: "",
-        image: "",
-        hashtags: "",
-        isAnonymous: false,
-        likeNumbers: 0,
-        views: 0,
-        createdAt: ""
-    }]);
+    const [postList, setPostList] = useState([]);
 
     useEffect(() => {
+        getAPI()
+    }, [postList.length]);
+
+    async function getAPI() {
         try {
-            const response = axios.get(
+            const response = await axios.get(
             'http://10.0.2.2:8080/api/v1/post',
             {
                 headers: {
@@ -61,7 +52,7 @@ function CommunityScreen() {
             )
             .then(function (response) {
                 setPostList(response.data)
-                setId(response.data.id)
+                setId(postList[0])
             })
             .catch(function (error) {
                 console.log(error);
@@ -69,21 +60,14 @@ function CommunityScreen() {
         } catch (error) {
             console.log(error);
         }
-    }, []);
-
+    }
     async function cancelAPI() {
         try {
             const response = await axios.delete(
             `http://10.0.2.2:8080/api/v1/post/${id}`,
-            {
-                headers: {
-                    id: id,
-                }
-            },
             )
             .then(function (response) {
                 console.log(response);
-
             })
             .catch(function (error) {
                 console.log(error);
