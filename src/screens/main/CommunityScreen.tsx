@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {View, ScrollView, Text, TouchableOpacity, Image, Platform} from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../screens/RootStackParams';
@@ -25,12 +24,14 @@ import articleTextStyles from "../../styles/article/ArticleText";
 import { SafeAreaView } from "react-native-safe-area-context";
 import rightStyles from "../../styles/community/RightPageButton";
 import leftStyles from "../../styles/community/LeftPageButton";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 type BookmarkScreenProp = StackNavigationProp<RootStackParamList, 'Community'>;
 
 function CommunityScreen() {
     const navigation = useNavigation<BookmarkScreenProp>();
     const [page, setPage] = useState(1);
+    const [id, setId] = useState(0);
     const [postList, setPostList] = useState([{
         id: 0,
         memberId: 0,
@@ -60,6 +61,7 @@ function CommunityScreen() {
             )
             .then(function (response) {
                 setPostList(response.data)
+                setId(response.data.id)
             })
             .catch(function (error) {
                 console.log(error);
@@ -68,6 +70,28 @@ function CommunityScreen() {
             console.log(error);
         }
     }, []);
+
+    async function cancelAPI() {
+        try {
+            const response = await axios.delete(
+            `http://10.0.2.2:8080/api/v1/posts/${id}`,
+            {
+                headers: {
+                    id: id,
+                }
+            },
+            )
+            .then(function (response) {
+                console.log(response);
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     function minus() {
         if (page >= 2) {
@@ -113,9 +137,21 @@ function CommunityScreen() {
                                 key = {index}
                                 onPress = {() => navigation.navigate('Article', { id: postList[index].id})}
                             >
-                                <Text style = {profileStyles.profileText}>
-                                    {e.category}
-                                </Text>
+                                <View style = {profileStyles.textContainer}>
+                                    <Text style = {profileStyles.profileText}>
+                                        {e.category}
+
+                                    </Text>
+                                    <TouchableOpacity 
+                                        style = {profileStyles.cacelText}
+                                        onPress ={()=>cancelAPI()}>
+                                        <FontAwesome
+                                            name = 'trash'
+                                            size = {20} 
+                                            color = 'gray'
+                                        />
+                                    </TouchableOpacity>
+                                </View>
                                 <View style = {postListStyles.buttonStyle}>
                                     <Text
                                         style = {postListStyles.listTitle}

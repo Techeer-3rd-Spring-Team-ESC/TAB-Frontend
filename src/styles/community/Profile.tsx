@@ -6,6 +6,10 @@ const profileStyles = StyleSheet.create ({
         flexDirection: 'row',
     },
 
+    textContainer: {
+        flexDirection: 'row'
+    },
+
     profileText: {
         marginTop: Platform.OS == 'ios' ? 11 : 10,
         marginLeft: 20,
@@ -13,6 +17,11 @@ const profileStyles = StyleSheet.create ({
         color: 'black', 
         fontSize: Platform.OS == 'ios' ? 15 : 15,
         fontFamily: 'GmarketSansTTFMedium',
+    },
+    
+    cacelText: {
+        marginTop: Platform.OS == 'ios' ? 11 : 10,
+        marginLeft: '60%'
     },
 
     commentProfileText: {
