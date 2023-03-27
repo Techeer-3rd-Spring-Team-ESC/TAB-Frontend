@@ -74,7 +74,7 @@ function CommunityScreen() {
     async function cancelAPI() {
         try {
             const response = await axios.delete(
-            `http://10.0.2.2:8080/api/v1/posts/${id}`,
+            `http://10.0.2.2:8080/api/v1/post/${id}`,
             {
                 headers: {
                     id: id,
@@ -107,7 +107,7 @@ function CommunityScreen() {
             <SafeAreaView style = {communityStyles.titleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.communityBackButton}
-                    onPress = {() => navigation.navigate('Main')}
+                    onPress = {() => navigation.goBack()}
                 >
                     <FontAwesome 
                         name = 'chevron-left'

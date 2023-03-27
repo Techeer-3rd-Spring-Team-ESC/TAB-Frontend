@@ -128,13 +128,14 @@ function ArticleScreen() {
             `http://10.0.2.2:8080/api/v1/post/${id}`,
             {
                 headers: {
-                    page: id,
+                    id: id,
                     // Authorization: await AsyncStorage.getItem('accessToken')
                 }
             },
             )
             .then(function (response) {
                 setArticleList(response.data)
+                setId(response.data.id)
             })
             .catch(function (error) {
                 console.log(error);
@@ -213,7 +214,7 @@ function ArticleScreen() {
             <View style = {communityStyles.articleContainer}>
                 <TouchableOpacity
                     style = {backButtonStyles.articleBackButton}
-                    onPress = {() => navigation.navigate('Community')}
+                    onPress = {() => navigation.goBack()}
                 >
                     <FontAwesome
                         name = 'chevron-left'
